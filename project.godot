@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Scn="*res://LevelControl/scene_switcher.tscn"
 Globals="*res://Globals.gd"
+ImportPluginCSV="*res://addons/csv-data-importer/import_plugin.gd"
 
 [display]
 
@@ -26,6 +27,19 @@ window/size/viewport_width=540
 window/size/viewport_height=960
 window/size/always_on_top=true
 window/stretch/scale=0.5
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
+
+[importer_defaults]
+
+com.timothyqiu.godot-csv-importer={
+"delimiter": 0,
+"detect_numbers": false,
+"force_float": true,
+"headers": true
+}
 
 [input]
 

@@ -5,6 +5,9 @@ class_name Level
 
 @onready var heckler_handler: HecklerHandler = $Projectiles/HecklerHandler
 
-#
 #func _ready() -> void:
-	#heckler_handler.send_projectiles("sine", 30, "beer_can", 0.6)
+	#read_csv()
+
+#
+#func read_csv():
+	#var csv = preload("res://LevelControl/heckler_spawning_list.csv").resources

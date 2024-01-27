@@ -26,4 +26,4 @@ func interpret_dict(dict: Dictionary):
 	var heckler: Heckler = get_heckler(row, col)
 	heckler.send_projectiles(pattern, number, type, spacing_sec)
 
-	
+
