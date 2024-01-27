@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://4jg1cfimm6ej"]
+[gd_scene load_steps=6 format=3 uid="uid://4jg1cfimm6ej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dt1rp"]
 [ext_resource type="Texture2D" uid="uid://cc2cowvhkm3tr" path="res://Graphics/Sully.png" id="2_3y420"]
 [ext_resource type="PackedScene" uid="uid://d1i32see57qax" path="res://Custom Components/inspect_component.tscn" id="3_7akyb"]
+[ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="4_5ap0g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dddic"]
 radius = 63.0
@@ -25,3 +26,6 @@ region_rect = Rect2(256, 512, 64, 64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(10, -263)
 shape = SubResource("CapsuleShape2D_dddic")
+
+[node name="Gun1" parent="." instance=ExtResource("4_5ap0g")]
+position = Vector2(0, -308)
