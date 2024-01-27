@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://csxxkojlf6t8k"]
+
+[ext_resource type="Script" path="res://Custom Components/Mover.gd" id="1_d2buc"]
+[ext_resource type="Script" path="res://Weapons/word.gd" id="1_w5bag"]
+[ext_resource type="Texture2D" uid="uid://chd8ip4t380c8" path="res://Graphics/Square.png" id="2_7exe0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d3uq"]
+size = Vector2(338.227, 71.1481)
+
+[node name="Bullet2" type="StaticBody2D"]
+position = Vector2(33, 0)
+scale = Vector2(0.310442, 0.295159)
+script = ExtResource("1_w5bag")
+
+[node name="Mover" type="Node" parent="."]
+script = ExtResource("1_d2buc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.61061, -1.694)
+shape = SubResource("RectangleShape2D_6d3uq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.556863, 0.87451, 1)
+scale = Vector2(1.31416, 0.27112)
+texture = ExtResource("2_7exe0")

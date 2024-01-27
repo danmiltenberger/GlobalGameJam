@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl4pfjln2i4ur"]
+
+[ext_resource type="Script" path="res://Weapons/gun_2.gd" id="1_amwm8"]
+[ext_resource type="PackedScene" uid="uid://csxxkojlf6t8k" path="res://Weapons/bullet_2.tscn" id="2_dch8w"]
+[ext_resource type="Texture2D" uid="uid://bqd180kpqj1eq" path="res://Graphics/Shotgun.png" id="2_lh22r"]
+
+[node name="Gun2" type="Node2D"]
+script = ExtResource("1_amwm8")
+bullet_scn = ExtResource("2_dch8w")
+cooldown_base_sec = 0.5
+bullet_speed = 600.0
+lifetime_sec = 0.4
+
+[node name="Left" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite2D" parent="Left"]
+position = Vector2(122.6, -57)
+rotation = -3.14159
+scale = Vector2(0.26, 0.26)
+texture = ExtResource("2_lh22r")
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Shoot" type="Sprite2D" parent="Left"]
+position = Vector2(122.6, -48.8)
+rotation = -3.14159
+scale = Vector2(0.26, 0.26)
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Right" type="Node2D" parent="."]
+
+[node name="Base" type="Sprite2D" parent="Right"]
+position = Vector2(122.6, 51)
+rotation = -3.14159
+scale = Vector2(0.26, -0.26)
+texture = ExtResource("2_lh22r")
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Shoot" type="Sprite2D" parent="Right"]
+position = Vector2(122.6, 45.2)
+rotation = -3.14159
+scale = Vector2(0.26, -0.26)
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="InstancePoint" type="Marker2D" parent="."]
+position = Vector2(311, -33)
+
+[node name="InstancePoint2" type="Marker2D" parent="."]
+position = Vector2(313, -15)
+
+[node name="InstancePoint3" type="Marker2D" parent="."]
+position = Vector2(331, -8)
+
+[node name="InstancePoint4" type="Marker2D" parent="."]
+position = Vector2(331, 11)
+
+[node name="InstancePoint5" type="Marker2D" parent="."]
+position = Vector2(314, 17)
+
+[node name="InstancePoint6" type="Marker2D" parent="."]
+position = Vector2(311, 35)

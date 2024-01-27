@@ -4,12 +4,12 @@ extends Node2D
 
 @export var bullet_scn: PackedScene
 
-@export var cooldown_base_sec: float = 0.2
+@export var cooldown_base_sec: float = 1.8
 var cooldown_remaining_sec: float = 0.0
 @export var bullet_speed: float = 1500.0
 @export var lifetime_sec: float = 1.2
+@export var spread_degs: float = 70.0
 
-@onready var marker: Marker2D = get_node("InstancePoint")
 @onready var left: Node2D = get_node("Left")
 @onready var right: Node2D = get_node("Right")
 @onready var left_shoot: Node2D = get_node("Left/Shoot")
@@ -17,9 +17,14 @@ var cooldown_remaining_sec: float = 0.0
 
 @onready var shoot_graphic_timer := Timer.new()
 
+var markers: Array[Marker2D] = []
 var bullets: Array[Node2D] = []
 
 func _ready() -> void:
+	for c in get_children():
+		if c is Marker2D:
+			markers.append(c)
+
 	shoot_graphic_timer.one_shot = true
 	shoot_graphic_timer.wait_time = cooldown_base_sec
 	shoot_graphic_timer.connect("timeout", reset_shoot_graphic)
@@ -50,24 +55,30 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var bullet := bullet_scn.instantiate()
-	get_tree().get_current_scene().add_child(bullet)
-	bullet.global_position = marker.global_position
-	bullet.rotation = rotation
-	bullet.get_node("Mover").speed = bullet_speed
-	bullets.append(bullet)
+	var degs := -spread_degs / 2.0
+	var deg_step := spread_degs / (markers.size() - 1)
+	for marker in markers:
+		var bullet := bullet_scn.instantiate()
+		get_tree().get_current_scene().add_child(bullet)
+		bullet.global_position = marker.global_position
+		bullet.rotation = rotation + deg_to_rad(degs)
+		bullet.get_node("Mover").speed = bullet_speed
+		bullets.append(bullet)
+
+		var auto_free_timer := Timer.new()
+		auto_free_timer.wait_time = lifetime_sec
+		auto_free_timer.autostart = true
+		auto_free_timer.connect("timeout", bullet.queue_free)
+		add_child(auto_free_timer)
+
+		degs += deg_step
 
 	left_shoot.show()
 	right_shoot.show()
 	shoot_graphic_timer.start()
 
-	var auto_free_timer := Timer.new()
-	auto_free_timer.wait_time = lifetime_sec
-	auto_free_timer.autostart = true
-	auto_free_timer.connect("timeout", bullet.queue_free)
-	add_child(auto_free_timer)
-
 func reset_shoot_graphic():
 	left_shoot.hide()
 	right_shoot.hide()
 	
+		

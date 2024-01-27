@@ -12,6 +12,13 @@ class_name Player
 
 @onready var inspect_component: InspectComponent = $InspectComponent
 
+@onready var gun1: Node2D = $Gun1
+@onready var gun2: Node2D = $Gun2
+@onready var guns = [gun1, gun2]
+@onready var currentGun = gun1
+
+func _ready():
+	update_gun()
 
 func _process(delta: float) -> void:
 	# move
@@ -23,11 +30,26 @@ func _process(delta: float) -> void:
 	position.x = clamp(position.x, stage_left, stage_right)
 	position.y = clamp(position.y, stage_top, stage_bot)
 
+	# weapon switching
+	if Input.is_action_just_pressed("weapon1"):
+		currentGun = gun1
+		update_gun()
+	elif Input.is_action_just_pressed("weapon2"):
+		currentGun = gun2
+		update_gun()
+
 	# health
 	var inspect_dict: Dictionary = {
 		"Health" : health
 	}
 	inspect_component.display(inspect_dict)
+
+func update_gun():
+	for gun in guns:
+		gun.hide()
+		gun.process_mode = Node.PROCESS_MODE_DISABLED
+	currentGun.show()
+	currentGun.process_mode = Node.PROCESS_MODE_INHERIT
 		
 func take_damage(damage: int):
 	health -= damage
