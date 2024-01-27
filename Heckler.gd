@@ -11,6 +11,9 @@ class_name Heckler
 
 var standing_up: bool = false
 
+func _ready():
+	$Sprite2D.hide()
+
 func send_projectiles(pattern: String, number: int, type: String, spacing_sec: float):
 	standing_up = true
 	var proj_type : PackedScene
