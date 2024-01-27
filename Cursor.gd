@@ -5,6 +5,6 @@ extends Node2D
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	position = get_global_mouse_position()
 	inspect_component.display(area_tracker.tracked_bodies_list)

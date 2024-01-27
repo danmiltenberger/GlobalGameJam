@@ -12,14 +12,14 @@ speed = 1500
 damage = 50
 health = 20
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_gxefl")
-region_rect = Rect2(128, 512, 64, 64)
-
-[node name="CollisionShape2D" parent="AreaOfEffectTracker/Area2D" index="0"]
+[node name="AreaOfEffectTracker_Area2D#CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(-20, -14)
 rotation = 3.66519
 shape = SubResource("CapsuleShape2D_txw1b")
 
-[node name="HurtboxHealthComponent" parent="." index="2"]
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_gxefl")
+region_rect = Rect2(128, 512, 64, 64)
+
+[node name="HurtboxHealthComponent" parent="." index="3"]
 visible = false

@@ -8,7 +8,7 @@ func _ready() -> void:
 	for i in range(repetitions):
 		for line in csv:
 			var dispatch_interval_sec: float = interpret_dict(line)
-			await get_tree().create_timer(dispatch_interval_sec).timeout
+			
 
 
 func get_heckler(row: int, col: int) -> Heckler:

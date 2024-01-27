@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjljibe7tb3s"]
+
+[ext_resource type="Script" path="res://GameControl.gd" id="1_es2hv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p48de"]
+font_size = 40
+
+[node name="GameControl" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_es2hv")
+
+[node name="PausedLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GAME PAUSED"
+label_settings = SubResource("LabelSettings_p48de")
