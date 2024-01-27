@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61bpk56b3c5y"]
+
+[ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_r0cad"]
+[ext_resource type="Texture2D" uid="uid://rhmfbc2rc0wy" path="res://Graphics/WaterBottle.png" id="2_6odtl"]
+
+[node name="WaterBottle" instance=ExtResource("1_r0cad")]
+damage = -100
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_6odtl")

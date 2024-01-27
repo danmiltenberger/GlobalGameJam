@@ -20,7 +20,7 @@ func _ready():
 func create_starter_level():
 	# get and build the file
 	var file_path_str = build_file_path(starter_scene_str)
-	var starter_level = load(file_path_str)
+	var starter_level = load(file_path_str)	#TODO - fix this line
 	current_level = starter_level.instantiate()
 	add_child(current_level)
 	

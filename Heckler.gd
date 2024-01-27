@@ -8,13 +8,22 @@ class_name Heckler
 @onready var beer_can: PackedScene = preload("res://Projectiles/beer_can.tscn")
 @onready var cabbage: PackedScene = preload("res://Projectiles/cabbage.tscn")
 @onready var tomato: PackedScene = preload("res://Projectiles/tomato.tscn")
+@onready var water_bottle: PackedScene = preload("res://Projectiles/water_bottle.tscn")
+
 
 var standing_up: bool = false
 
 func _ready():
-	$Sprite2D.hide()
+	$Sprite2D.visible = false
+	
+func _process(_delta: float) -> void:
+	if standing_up:
+		$Sprite2D.visible = true
+	else:
+		$Sprite2D.visible = false
 
 func send_projectiles(pattern: String, number: int, type: String, spacing_sec: float):
+	print(pattern, number, type, spacing_sec)
 	standing_up = true
 	var proj_type : PackedScene
 	match type:
@@ -24,6 +33,8 @@ func send_projectiles(pattern: String, number: int, type: String, spacing_sec: f
 			proj_type = cabbage
 		"beer_can":
 			proj_type = beer_can
+		"water_bottle":
+			proj_type = water_bottle
 		_:
 			print_debug("unexpected projectile type: ", type)
 			proj_type = tomato

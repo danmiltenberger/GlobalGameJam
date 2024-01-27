@@ -4,7 +4,8 @@
 
 [node name="Cabbage" instance=ExtResource("1_eh8f2")]
 speed = 1000
+damage = 100
 health = 10
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 region_rect = Rect2(384, 512, 64, 64)

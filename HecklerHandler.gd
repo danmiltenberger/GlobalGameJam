@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 				var dispatch_interval_sec: float = line["dispatch_interval_sec"]
 				interpret_dict(line)
 				timer.start(dispatch_interval_sec)
-				print_debug("awaiting timer timeout")
+				#print_debug("awaiting timer timeout")
 				await timer.timeout
 
 func get_heckler(row: int, col: int) -> Heckler:
