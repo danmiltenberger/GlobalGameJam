@@ -14,7 +14,8 @@ class_name Player
 
 @onready var gun1: Node2D = $Gun1
 @onready var gun2: Node2D = $Gun2
-@onready var guns = [gun1, gun2]
+@onready var gun3: Node2D = $Gun3
+@onready var guns = [gun1, gun2, gun3]
 @onready var currentGun = gun1
 
 func _ready():
@@ -36,6 +37,9 @@ func _process(delta: float) -> void:
 		update_gun()
 	elif Input.is_action_just_pressed("weapon2"):
 		currentGun = gun2
+		update_gun()
+	elif Input.is_action_just_pressed("weapon3"):
+		currentGun = gun3
 		update_gun()
 
 	# health

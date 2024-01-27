@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4jg1cfimm6ej"]
+[gd_scene load_steps=8 format=3 uid="uid://4jg1cfimm6ej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dt1rp"]
 [ext_resource type="Texture2D" uid="uid://cc2cowvhkm3tr" path="res://Graphics/Sully.png" id="2_3y420"]
 [ext_resource type="PackedScene" uid="uid://d1i32see57qax" path="res://Custom Components/inspect_component.tscn" id="3_7akyb"]
 [ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="4_5ap0g"]
 [ext_resource type="PackedScene" uid="uid://bl4pfjln2i4ur" path="res://Weapons/gun_2.tscn" id="5_wixu5"]
+[ext_resource type="PackedScene" uid="uid://d4lsui76kc8y7" path="res://Weapons/gun_3.tscn" id="6_nhj0i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dddic"]
 radius = 63.0
@@ -34,4 +35,7 @@ shape = SubResource("CapsuleShape2D_dddic")
 position = Vector2(0, -308)
 
 [node name="Gun2" parent="." instance=ExtResource("5_wixu5")]
+position = Vector2(0, -308)
+
+[node name="Gun3" parent="." instance=ExtResource("6_nhj0i")]
 position = Vector2(0, -308)
