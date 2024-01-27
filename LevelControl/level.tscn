@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=5 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
+[ext_resource type="Texture2D" uid="uid://chd8ip4t380c8" path="res://Graphics/Square.png" id="2_tvqoc"]
 [ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_xob3y"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hyn5u")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(540, 960)
+scale = Vector2(1.68, 1.68)
+
 [node name="Environment" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Environment"]
+modulate = Color(1, 0, 0.8, 0.286275)
+position = Vector2(540, 960)
+scale = Vector2(4.219, 7.5)
+texture = ExtResource("2_tvqoc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Environment"]
 position = Vector2(546, 1816)
