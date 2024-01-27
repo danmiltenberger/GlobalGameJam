@@ -7,6 +7,5 @@ func set_text(text: String):
     label.text = "  " + text.trim_prefix(" ").trim_suffix(" ") + "  "
 
 func _process(_delta):
-    print_debug(label.position.x + label.size.x / 2)
     collision.shape.extents = Vector2(label.size.x, label.size.y)
     collision.position = Vector2(label.position.x, 0)

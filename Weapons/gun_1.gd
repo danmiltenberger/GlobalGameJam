@@ -50,10 +50,10 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var bullet := bullet_scn.instantiate()
+	var bullet: Node2D = bullet_scn.instantiate()
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.global_position = marker.global_position
-	bullet.rotation = rotation
+	bullet.rotation = rotation + PI
 	bullet.get_node("Mover").speed = bullet_speed
 	bullets.append(bullet)
 
