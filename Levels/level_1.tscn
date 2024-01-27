@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c732t822vm88s"]
+
+[ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
+[ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="2_gjao6"]
+
+[node name="Level1" instance=ExtResource("1_vkf8y")]
+
+[node name="Projectile" parent="Projectiles" index="0" instance=ExtResource("2_gjao6")]
+position = Vector2(31, 108)

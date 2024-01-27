@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0xeas375osr8"]
 
-[ext_resource type="Script" path="res://AreaTrackerComponent.gd" id="1_0mhq0"]
+[ext_resource type="Script" path="res://Custom Components/AreaTrackerComponent.gd" id="1_0mhq0"]
 
 
 [node name="AreaTrackerComponent" type="Node2D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjgiidi7lj7nv"]
 
-[ext_resource type="Script" path="res://scene_switcher.gd" id="1_8uo8u"]
+[ext_resource type="Script" path="res://LevelControl/scene_switcher.gd" id="1_8uo8u"]
 
 [sub_resource type="Animation" id="Animation_qwk2d"]
 length = 0.001

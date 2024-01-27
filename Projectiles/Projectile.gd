@@ -4,9 +4,10 @@ class_name Projectile
 # this is the beer cans, tomatoes, etc that move down the screen
 
 @export var speed: int = 100
+@export var damage: int = 10
 
 func _process(delta: float) -> void:
 	move_down_screen(delta)
 	
 func move_down_screen(delta):
-	position.y -= speed * delta
+	position.y += speed * delta
