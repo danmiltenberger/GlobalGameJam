@@ -1,5 +1,5 @@
 pattern,number,type,spacing_sec,dispatch_interval_sec,col,row
-circle,10,tomato,1,5,3,8
-circle,10,cabbage,1,5,3,8
+circle,10,cabbage,1,5,5,11
+sine,10,tomato,1,5,5,11
 circle,10,beer_can,1,5,3,8
-circle,10,water_bottle,1,5,3,8
+circle,1,water_bottle,1,5,3,8

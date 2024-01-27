@@ -5,3 +5,10 @@ extends Node
 var dev_mode: bool = true
 
 var game_paused: bool = false
+
+var health:
+	get:
+		return health
+	set(value):
+		health = value
+		return health

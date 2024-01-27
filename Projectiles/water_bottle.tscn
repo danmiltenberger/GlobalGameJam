@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rhmfbc2rc0wy" path="res://Graphics/WaterBottle.png" id="2_6odtl"]
 
 [node name="WaterBottle" instance=ExtResource("1_r0cad")]
+speed = 1000
 damage = -100
 
 [node name="Sprite2D" parent="." index="1"]

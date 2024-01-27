@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8r7k42cl70n" path="res://Graphics/tomato_v1.png" id="2_pi0vn"]
 
 [node name="Tomato" instance=ExtResource("1_t8ghr")]
-speed = 2000
+speed = 2500
 health = 10
 
 [node name="Sprite2D" parent="." index="1"]

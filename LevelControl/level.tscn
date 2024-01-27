@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
-[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 [ext_resource type="PackedScene" uid="uid://bvfab7k7sikh" path="res://Custom Components/cursor.tscn" id="5_8yygk"]
@@ -30,3 +30,16 @@ scale = Vector2(0.5, 0.5)
 [node name="HecklerHandler" parent="." instance=ExtResource("4_x8qmw")]
 
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Control" type="Control" parent="CanvasGroup"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 673.0
+
+[node name="Label" type="Label" parent="CanvasGroup/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

@@ -1,0 +1,8 @@
+pattern,number,type,spacing_sec,dispatch_interval_sec,col,row
+circle,20,tomato,0.5,4,5,10
+line,1,water_bottle,0.5,0,4,1
+sine,30,cabbage,1.2,4,3,11
+line,5,beer_can,0.8,0,4,5
+line,1,water_bottle,0.5,0,4,1
+line,1,water_bottle,0.5,0,4,1
+circle,20,beer_can,0.1,5,4,4

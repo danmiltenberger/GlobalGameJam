@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		$Sprite2D.visible = false
 
 func send_projectiles(pattern: String, number: int, type: String, spacing_sec: float):
-	print(pattern, number, type, spacing_sec)
+	printt(pattern, number, type, spacing_sec)
 	standing_up = true
 	var proj_type : PackedScene
 	match type:
@@ -83,7 +83,7 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 
 func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 	var projectile: Projectile
-	var amplitude: float = 1000 # pixels
+	var amplitude: float = 1500 # pixels
 	var angle_spacing : int = 30
 	for i in range(number):
 		# create and organize
