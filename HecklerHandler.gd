@@ -13,7 +13,7 @@ func _ready() -> void:
 	timer = Timer.new()
 	add_child(timer)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if activated == false:
 		activated = true
 		for i in range(repetitions):
