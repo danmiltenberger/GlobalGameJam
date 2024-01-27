@@ -7,7 +7,7 @@
 [node name="Level1" instance=ExtResource("1_vkf8y")]
 
 [node name="HecklerHandler" parent="Projectiles" index="0" instance=ExtResource("4_fxlfk")]
-position = Vector2(479, -544)
+position = Vector2(479, 306)
 scale = Vector2(0.25, 0.25)
 
 [node name="Gun1" parent="Player" index="3" instance=ExtResource("3_fhgrs")]

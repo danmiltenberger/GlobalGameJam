@@ -3,11 +3,12 @@ class_name Projectile
 
 # this is the beer cans, tomatoes, etc that move down the screen
 
-@export var speed: int = 100
+@export var speed: int = 500
 @export var damage: int = 10
 @export var health: int = 100
 
 @onready var AOE_tracker: AreaTrackerComponent = $AreaOfEffectTracker
+var direction: Vector2 = Vector2.DOWN
 
 func hit(atk: int):
 	$HurtboxHealthComponent.hit(atk)
@@ -23,7 +24,9 @@ func _process(delta: float) -> void:
 			#destroy()
 	
 func move_down_screen(delta):
-	position.y += speed * delta
+	position += speed * direction.normalized() * delta
+
+
 
 func destroy():
 	#TODO - play a destroy animation?
