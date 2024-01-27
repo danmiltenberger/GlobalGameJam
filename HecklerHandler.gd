@@ -64,5 +64,18 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 		await get_tree().create_timer(spacing_sec).timeout
 
 func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
-	
+	var projectile: Projectile
+	var amplitude: float = 1000 # pixels
+	var angle_spacing : int = 60
+	for i in range(number):
+		# create and organize
+		projectile = proj.instantiate()
+		add_child(projectile)
+		
+		# the direction (down) doesn't change, but the position does
+		projectile.position.x = amplitude * sin(deg_to_rad(angle_spacing * i))
+		
+		await get_tree().create_timer(spacing_sec).timeout
 	pass
+
+
