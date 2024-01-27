@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlukjfs2piam1"]
+[gd_scene load_steps=4 format=3 uid="uid://cm8d3so7vqlri"]
 
 [ext_resource type="Texture2D" uid="uid://chd8ip4t380c8" path="res://Graphics/Square.png" id="1_hsthd"]
 [ext_resource type="Script" path="res://Weapons/bullet_1.gd" id="1_xuetb"]
 
-[node name="Bullet1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06itj"]
+size = Vector2(338.227, 71.1481)
+
+[node name="Bullet1" type="StaticBody2D"]
 modulate = Color(0.345098, 0.85098, 1, 1)
 position = Vector2(33, 0)
 scale = Vector2(0.310442, 0.295159)
 script = ExtResource("1_xuetb")
 speed = 2400.0
+damage = 500
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.61061, -1.694)
+shape = SubResource("RectangleShape2D_06itj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.31416, 0.27112)

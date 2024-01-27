@@ -7,7 +7,8 @@ class_name Projectile
 @export var damage: int = 10
 @export var health: int = 100
 
-@onready var AOE_tracker: AreaTrackerComponent = $AreaOfEffectTracker
+@onready var collision_area: AreaTrackerComponent = $CollisionArea
+
 var direction: Vector2 = Vector2.DOWN
 
 func hit(atk: int):
@@ -15,13 +16,14 @@ func hit(atk: int):
 
 func _process(delta: float) -> void:
 	move_down_screen(delta)
-	for body in AOE_tracker.tracked_bodies_list:
-		if body is Player:
+	for body in collision_area.tracked_bodies_list:
+		if body is Player:		# if it hits the player
 		#	print_debug("projectile collision!")
 			body.take_damage(damage)
 			destroy()
-		#elif body is PlayerProjectile:
-			#destroy()
+		elif body is Word:		# if it hits a player's words
+			body.queue_free()	#TODO - do we like this behavior?
+			destroy()
 	
 func move_down_screen(delta):
 	position += speed * direction.normalized() * delta

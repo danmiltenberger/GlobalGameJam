@@ -14,7 +14,7 @@ func _ready() -> void:
 func get_heckler(row: int, col: int) -> Heckler:
 	var path: String = "Row"+str(row) +"/Heckler"+str(col)
 	var heckler: Heckler = get_node(path)
-	print_debug(path)
+	#print_debug(path)
 	return heckler
 
 
@@ -28,6 +28,5 @@ func interpret_dict(dict: Dictionary) -> float:
 	var dispatch_interval_sec: float = dict["dispatch_interval_sec"]
 	var heckler = get_heckler(row, col)
 	heckler.send_projectiles(pattern, number, type, spacing_sec)
-	print_debug("")
 	return dispatch_interval_sec
 

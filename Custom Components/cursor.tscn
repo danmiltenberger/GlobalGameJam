@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvfab7k7sikh"]
+
+[ext_resource type="Script" path="res://Cursor.gd" id="1_c4ct4"]
+[ext_resource type="Script" path="res://Custom Components/AreaTrackerComponent.gd" id="2_jen0x"]
+[ext_resource type="Script" path="res://Custom Components/inspect_component.gd" id="3_x5oas"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j5mjd"]
+radius = 60.6712
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource("1_c4ct4")
+
+[node name="AreaTrackerComponent" type="Node2D" parent="." node_paths=PackedStringArray("tracked_area")]
+script = ExtResource("2_jen0x")
+tracked_area = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="AreaTrackerComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrackerComponent/Area2D"]
+shape = SubResource("CircleShape2D_j5mjd")
+
+[node name="InspectComponent" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_x5oas")

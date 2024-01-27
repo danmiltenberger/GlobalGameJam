@@ -40,7 +40,7 @@ func send_line(number: int, proj: PackedScene, spacing_sec: float):
 	# send one projectile after another in a vertical line going down the screen
 	var projectile: Node2D
 	for i in range(number):
-		print_debug("sent projectile!", projectile)
+		#print_debug("sent projectile!", projectile)
 		projectile = proj.instantiate()
 		add_child(projectile)
 		projectile.global_position = global_position
