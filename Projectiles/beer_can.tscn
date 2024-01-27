@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://207cral52hyg"]
+[gd_scene load_steps=3 format=3 uid="uid://207cral52hyg"]
 
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_k3be2"]
+[ext_resource type="Texture2D" uid="uid://dyo1yonon6xxq" path="res://Graphics/Beer.png" id="2_gxefl"]
 
 [node name="BeerCan" instance=ExtResource("1_k3be2")]
 speed = 200
@@ -8,4 +9,11 @@ damage = 50
 health = 20
 
 [node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_gxefl")
 region_rect = Rect2(128, 512, 64, 64)
+
+[node name="CollisionShape2D" parent="AreaOfEffectTracker/Area2D" index="0"]
+visible = true
+
+[node name="HurtboxHealthComponent" parent="." index="2"]
+visible = false

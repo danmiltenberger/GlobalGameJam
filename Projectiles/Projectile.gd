@@ -7,14 +7,14 @@ class_name Projectile
 @export var damage: int = 10
 @export var health: int = 100
 
-@onready var area_tracker: AreaTrackerComponent = $AreaTrackerComponent
+@onready var AOE_tracker: AreaTrackerComponent = $AreaOfEffectTracker
 
 func hit(atk: int):
 	$HurtboxHealthComponent.hit(atk)
 
 func _process(delta: float) -> void:
 	move_down_screen(delta)
-	for body in area_tracker.tracked_bodies_list:
+	for body in AOE_tracker.tracked_bodies_list:
 		if body is Player:
 		#	print_debug("projectile collision!")
 			body.take_damage(damage)

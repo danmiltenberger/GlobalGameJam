@@ -1,32 +1,31 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7gcuvs68u04l"]
 
 [ext_resource type="Script" path="res://Projectiles/Projectile.gd" id="1_ywo5n"]
-[ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_ocypl"]
+[ext_resource type="Texture2D" uid="uid://bu7271sqa2cou" path="res://Graphics/cabbage.png" id="2_26mdl"]
 [ext_resource type="Script" path="res://Custom Components/AreaTrackerComponent.gd" id="3_gkr1v"]
 [ext_resource type="PackedScene" uid="uid://b4n187f86jht8" path="res://Custom Components/HurtboxHealthComponent.tscn" id="4_tfxlr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4os4"]
-radius = 20.025
+radius = 515.079
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3veu2"]
-radius = 20.0
+radius = 547.571
 
 [node name="Projectile" type="Node2D"]
 script = ExtResource("1_ywo5n")
 speed = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ocypl")
-region_enabled = true
+texture = ExtResource("2_26mdl")
 region_rect = Rect2(0, 512, 64, 64)
 
-[node name="AreaTrackerComponent" type="Node2D" parent="." node_paths=PackedStringArray("tracked_area")]
+[node name="AreaOfEffectTracker" type="Node2D" parent="." node_paths=PackedStringArray("tracked_area")]
 script = ExtResource("3_gkr1v")
 tracked_area = NodePath("Area2D")
 
-[node name="Area2D" type="Area2D" parent="AreaTrackerComponent"]
+[node name="Area2D" type="Area2D" parent="AreaOfEffectTracker"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrackerComponent/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfEffectTracker/Area2D"]
 shape = SubResource("CircleShape2D_c4os4")
 
 [node name="HurtboxHealthComponent" parent="." node_paths=PackedStringArray("hurt_box", "sprite") instance=ExtResource("4_tfxlr")]
