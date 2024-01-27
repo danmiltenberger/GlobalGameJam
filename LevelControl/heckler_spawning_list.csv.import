@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dfbn3r6hep3cn"
+
+[deps]
+
+files=["res://LevelControl/heckler_spawning_list.number.translation", "res://LevelControl/heckler_spawning_list.type.translation", "res://LevelControl/heckler_spawning_list.spacing.translation", "res://LevelControl/heckler_spawning_list.dispatch.translation"]
+
+source_file="res://LevelControl/heckler_spawning_list.csv"
+dest_files=["res://LevelControl/heckler_spawning_list.number.translation", "res://LevelControl/heckler_spawning_list.type.translation", "res://LevelControl/heckler_spawning_list.spacing.translation", "res://LevelControl/heckler_spawning_list.dispatch.translation"]
+
+[params]
+
+compress=true
+delimiter=0

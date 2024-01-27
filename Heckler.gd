@@ -52,7 +52,7 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 	
 	# divide 180 deg by the number of projectiles
 	# counter clockwise from east
-	var deg_each: float = 180 / number
+	var deg_each: float = 180.0 / number
 	for i in range(number):
 		# create and organize
 		projectile = proj.instantiate()
