@@ -13,8 +13,8 @@ height = 422.0
 script = ExtResource("1_dt1rp")
 stage_left = 150
 stage_right = 950
-stage_top = 1200
-stage_bot = 1500
+stage_top = 1600
+stage_bot = 1900
 speed = 750
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
