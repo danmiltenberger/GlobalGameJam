@@ -13,9 +13,11 @@ func _process(delta: float) -> void:
 	move_down_screen(delta)
 	for body in area_tracker.tracked_bodies_list:
 		if body is Player:
-			print_debug("projectile collision!")
+		#	print_debug("projectile collision!")
 			body.take_damage(damage)
 			destroy()
+		#elif body is PlayerProjectile:
+			#destroy()
 	
 func move_down_screen(delta):
 	position.y += speed * delta

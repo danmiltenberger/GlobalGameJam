@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://pioiwm2jyoih"]
+
+[ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="1_1ku8r"]
+
+[node name="Gun1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ku8r")
+region_enabled = true
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="InstancePoint" type="Marker2D" parent="."]
+position = Vector2(0, -22)

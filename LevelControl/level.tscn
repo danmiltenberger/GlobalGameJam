@@ -1,10 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=4 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
+[ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_xob3y"]
+[ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hyn5u")
 
 [node name="Environment" type="Node2D" parent="."]
 
+[node name="Sprite2D" type="Sprite2D" parent="Environment"]
+position = Vector2(546, 1816)
+scale = Vector2(16, 3)
+texture = ExtResource("2_xob3y")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("3_w8w0m")]
+position = Vector2(214, 1816)

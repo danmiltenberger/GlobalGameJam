@@ -4,7 +4,9 @@ class_name Player
 
 # left and right bounds for the player
 @export var stage_left: int = 50
-@export var stage_right : int = 500
+@export var stage_right : int = 1000
+@export var stage_top: int = 1980 - 300
+@export var stage_bot: int = 1980 - 100
 @export var speed: int = 500
 @export var health: int = 100
 
@@ -27,8 +29,15 @@ func move():
 func check_off_stage():
 	if position.x <= stage_left:
 		position.x = stage_left
-	elif position.x >= stage_right:
+		
+	if position.x >= stage_right:
 		position.x = stage_right
+		
+	if position.y <= stage_top:
+		position.y = stage_top
+		
+	if position.y >= stage_bot:
+		position.y = stage_bot
 		
 func take_damage(damage: int):
 	health -= damage
