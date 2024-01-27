@@ -7,4 +7,4 @@ class_name Level
 
 
 func _ready() -> void:
-	heckler_handler.send_projectiles("sine", 30, "beer_can", 1.2)
+	heckler_handler.send_projectiles("sine", 30, "beer_can", 0.6)
