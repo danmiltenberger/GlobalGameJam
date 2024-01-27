@@ -1,3 +1,3 @@
-pattern,number,type,spacing_sec,dispatch_interval_sec
-circle,9,cabbage,1,5
-line,10,beer_can,1,5
+pattern,number,type,spacing_sec,dispatch_interval_sec,col,row
+circle,9,cabbage,1,5,3,8
+line,10,beer_can,1,5,5,8

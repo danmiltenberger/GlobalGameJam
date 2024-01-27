@@ -1,24 +1,26 @@
 [gd_scene load_steps=5 format=3 uid="uid://4jg1cfimm6ej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dt1rp"]
-[ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_e4vh7"]
+[ext_resource type="Texture2D" uid="uid://cc2cowvhkm3tr" path="res://Graphics/Sully.png" id="2_3y420"]
 [ext_resource type="PackedScene" uid="uid://d1i32see57qax" path="res://Custom Components/inspect_component.tscn" id="3_7akyb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dddic"]
-radius = 22.0
-height = 84.0
+radius = 63.0
+height = 422.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_dt1rp")
-stage_right = 1030
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_dddic")
+stage_left = 150
+stage_right = 950
+stage_top = 1200
+stage_bot = 1500
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 2)
-texture = ExtResource("2_e4vh7")
-region_enabled = true
+texture = ExtResource("2_3y420")
 region_rect = Rect2(256, 512, 64, 64)
 
 [node name="InspectComponent" parent="." instance=ExtResource("3_7akyb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -263)
+shape = SubResource("CapsuleShape2D_dddic")
