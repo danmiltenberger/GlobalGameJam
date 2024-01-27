@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://4jg1cfimm6ej"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_dt1rp"]
+[ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_e4vh7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dddic"]
+radius = 22.0
+height = 84.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dt1rp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dddic")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 2)
+texture = ExtResource("2_e4vh7")
+region_enabled = true
+region_rect = Rect2(256, 512, 64, 64)
