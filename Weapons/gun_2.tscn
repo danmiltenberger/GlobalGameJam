@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl4pfjln2i4ur"]
+[gd_scene load_steps=6 format=3 uid="uid://bl4pfjln2i4ur"]
 
 [ext_resource type="Script" path="res://Weapons/gun_2.gd" id="1_amwm8"]
 [ext_resource type="PackedScene" uid="uid://csxxkojlf6t8k" path="res://Weapons/bullet_2.tscn" id="2_dch8w"]
 [ext_resource type="Texture2D" uid="uid://bqd180kpqj1eq" path="res://Graphics/Shotgun.png" id="2_lh22r"]
+[ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_eypct"]
+[ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_ckn4b"]
 
 [node name="Gun2" type="Node2D"]
 script = ExtResource("1_amwm8")
@@ -10,6 +12,7 @@ bullet_scn = ExtResource("2_dch8w")
 cooldown_base_sec = 0.5
 bullet_speed = 600.0
 lifetime_sec = 0.4
+lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_eypct"), ExtResource("4_ckn4b")])
 
 [node name="Left" type="Node2D" parent="."]
 

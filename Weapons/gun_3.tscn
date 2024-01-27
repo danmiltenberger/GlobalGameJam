@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4lsui76kc8y7"]
+[gd_scene load_steps=8 format=3 uid="uid://d4lsui76kc8y7"]
 
 [ext_resource type="Script" path="res://Weapons/gun_3.gd" id="1_47i84"]
 [ext_resource type="PackedScene" uid="uid://7aewwkjgc424" path="res://Weapons/bullet_3.tscn" id="2_fv1ks"]
 [ext_resource type="Texture2D" uid="uid://r1nd8hyahrp8" path="res://Graphics/Gun1.png" id="3_1qw51"]
+[ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_ngcwt"]
+[ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_pdq0k"]
 [ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun1_Badum.png" id="4_whgql"]
 [ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun1_Badum_Left.png" id="5_udkvl"]
 
@@ -10,8 +12,9 @@
 modulate = Color(0.952941, 0.364706, 0.364706, 1)
 script = ExtResource("1_47i84")
 bullet_scn = ExtResource("2_fv1ks")
-cooldown_base_sec = 0.12
+bullet_speed = 500.0
 lifetime_sec = 5.0
+lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_ngcwt"), ExtResource("4_pdq0k")])
 
 [node name="Left" type="Node2D" parent="."]
 

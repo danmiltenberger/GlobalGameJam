@@ -50,6 +50,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.490196, 0.831373, 0.980392, 0.231373)
+color = Color(0.490196, 0.831373, 0.980392, 0.611765)
 
 [node name="TextContainer" type="Node2D" parent="."]

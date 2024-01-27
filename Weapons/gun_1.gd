@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var line: Line = lines.pick_random();
+	var line := lines.pick_random() as Line
 	var bullet := bullet_scn.instantiate() as Node2D
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.global_position = marker.global_position

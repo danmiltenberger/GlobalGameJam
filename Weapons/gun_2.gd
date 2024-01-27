@@ -10,6 +10,8 @@ var cooldown_remaining_sec: float = 0.0
 @export var lifetime_sec: float = 1.2
 @export var spread_degs: float = 70.0
 
+@export var lines: Array[Line] = []
+
 @onready var left: Node2D = get_node("Left")
 @onready var right: Node2D = get_node("Right")
 @onready var left_shoot: Node2D = get_node("Left/Shoot")
@@ -54,14 +56,16 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
+	var line := lines.pick_random() as Line
 	var degs := -spread_degs / 2.0
 	var deg_step := spread_degs / (markers.size() - 1)
 	for marker in markers:
-		var bullet := bullet_scn.instantiate()
+		var bullet := bullet_scn.instantiate() as Node2D
 		get_tree().get_current_scene().add_child(bullet)
 		bullet.global_position = marker.global_position
-		bullet.rotation = rotation + deg_to_rad(degs)
+		bullet.rotation = rotation + PI + deg_to_rad(degs)
 		bullet.get_node("Mover").speed = bullet_speed
+		bullet.get_node("LabelResizer").set_text(line.text)
 
 		var auto_free_timer := Timer.new()
 		auto_free_timer.wait_time = lifetime_sec
