@@ -13,12 +13,12 @@ script = ExtResource("1_hyn5u")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Stage" type="Sprite2D" parent="Environment"]
-position = Vector2(547, 964)
+position = Vector2(540, 960)
 texture = ExtResource("2_so7so")
 
 [node name="Curtains" type="Sprite2D" parent="Environment"]
 z_index = 100
-position = Vector2(547, 964)
+position = Vector2(540, 960)
 texture = ExtResource("3_65kmd")
 
 [node name="Projectiles" type="Node2D" parent="."]
