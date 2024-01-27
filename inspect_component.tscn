@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1i32see57qax"]
+
+[ext_resource type="Script" path="res://Custom Components/inspect_component.gd" id="1_ehd8d"]
+
+[node name="InspectComponent" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ehd8d")
