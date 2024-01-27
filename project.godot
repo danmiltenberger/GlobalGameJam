@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Scn="*res://LevelControl/scene_switcher.tscn"
 Globals="*res://Globals.gd"
-ImportPluginCSV="*res://addons/csv-data-importer/import_plugin.gd"
 
 [display]
 

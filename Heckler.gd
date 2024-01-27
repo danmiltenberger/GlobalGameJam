@@ -63,7 +63,7 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 		var deg = deg_each*i + 180
 		var dir_x = tan(deg_to_rad(deg))
 		var dir = Vector2(dir_x, dir_y)
-		projectile.direction = Vector2(dir_x, dir_y)
+		projectile.direction = dir
 		await get_tree().create_timer(spacing_sec).timeout
 	standing_up = false
 

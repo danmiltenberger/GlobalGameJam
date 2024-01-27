@@ -3,7 +3,7 @@ class_name Level
 
 # handles all the projectiles and stuff which is shared between different levels
 
-@onready var heckler_handler: HecklerHandler = $Projectiles/HecklerHandler
+#@onready var heckler_handler: HecklerHandler = $Projectiles/HecklerHandler
 
 #func _ready() -> void:
 	#read_csv()

@@ -1,17 +1,18 @@
 [remap]
 
-importer="csv_translation"
-type="Translation"
+importer="com.timothyqiu.godot-csv-importer"
+type="Resource"
 uid="uid://be0v2tpxmd045"
+path="res://.godot/imported/heckler_spawning_list.csv-232956f2c4f7457d7bb38f6782b702ac.res"
 
 [deps]
 
-files=["res://LevelControl/heckler_spawning_list.number.translation", "res://LevelControl/heckler_spawning_list.type.translation", "res://LevelControl/heckler_spawning_list.spacing.translation", "res://LevelControl/heckler_spawning_list.dispatch.translation", "res://LevelControl/heckler_spawning_list.col.translation", "res://LevelControl/heckler_spawning_list.row.translation"]
-
 source_file="res://LevelControl/heckler_spawning_list.csv"
-dest_files=["res://LevelControl/heckler_spawning_list.number.translation", "res://LevelControl/heckler_spawning_list.type.translation", "res://LevelControl/heckler_spawning_list.spacing.translation", "res://LevelControl/heckler_spawning_list.dispatch.translation", "res://LevelControl/heckler_spawning_list.col.translation", "res://LevelControl/heckler_spawning_list.row.translation"]
+dest_files=["res://.godot/imported/heckler_spawning_list.csv-232956f2c4f7457d7bb38f6782b702ac.res"]
 
 [params]
 
-compress=true
 delimiter=0
+headers=true
+detect_numbers=true
+force_float=true
