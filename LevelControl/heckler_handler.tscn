@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxh6pfj8joxx6"]
+
+[ext_resource type="Script" path="res://HecklerHandler.gd" id="1_r88gf"]
+
+[node name="HecklerHandler" type="Node2D"]
+script = ExtResource("1_r88gf")

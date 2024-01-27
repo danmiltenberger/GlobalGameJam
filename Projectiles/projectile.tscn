@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7gcuvs68u04l"]
+[gd_scene load_steps=7 format=3 uid="uid://c7gcuvs68u04l"]
 
 [ext_resource type="Script" path="res://Projectiles/Projectile.gd" id="1_ywo5n"]
 [ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="2_ocypl"]
 [ext_resource type="Script" path="res://Custom Components/AreaTrackerComponent.gd" id="3_gkr1v"]
+[ext_resource type="PackedScene" uid="uid://b4n187f86jht8" path="res://Custom Components/HurtboxHealthComponent.tscn" id="4_tfxlr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4os4"]
 radius = 20.025
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3veu2"]
+radius = 20.0
 
 [node name="Projectile" type="Node2D"]
 script = ExtResource("1_ywo5n")
@@ -24,3 +28,12 @@ tracked_area = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrackerComponent/Area2D"]
 shape = SubResource("CircleShape2D_c4os4")
+
+[node name="HurtboxHealthComponent" parent="." node_paths=PackedStringArray("hurt_box", "sprite") instance=ExtResource("4_tfxlr")]
+hurt_box = NodePath("Area2D")
+sprite = NodePath("../Sprite2D")
+
+[node name="Area2D" type="Area2D" parent="HurtboxHealthComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxHealthComponent/Area2D"]
+shape = SubResource("CircleShape2D_3veu2")

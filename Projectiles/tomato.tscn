@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqn34jqx2vd1t"]
+
+[ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_t8ghr"]
+
+[node name="Tomato" instance=ExtResource("1_t8ghr")]
+health = 10

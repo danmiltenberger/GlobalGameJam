@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c732t822vm88s"]
+[gd_scene load_steps=4 format=3 uid="uid://c732t822vm88s"]
 
 [ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="2_gjao6"]
+[ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="3_fhgrs"]
 
 [node name="Level1" instance=ExtResource("1_vkf8y")]
 
 [node name="Projectile" parent="Projectiles" index="0" instance=ExtResource("2_gjao6")]
 position = Vector2(31, 108)
+
+[node name="Gun1" parent="Player" index="3" instance=ExtResource("3_fhgrs")]
+position = Vector2(0, -65)

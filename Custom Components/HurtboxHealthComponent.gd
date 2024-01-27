@@ -27,24 +27,17 @@ func _process(_delta):
 	if gets_killed and current_health <= 0:
 		is_dead()
 
-func hit(atk: Attack):
+func hit(atk: int):
 	#print("hit!")
 	flash_red()
-	current_health -= atk.damage
-	print("took damage: ", atk.damage)
+	current_health -= atk
+	print("took damage: ", atk)
 	
 	# start by checking if the entity should be killed
 	if (gets_killed) and (current_health <= 0):
 		is_dead()
 
-	# and then check through the conditions
-	if gets_knockback:
-		#print("knockback function: ", atk.knockback)
-		pass
-		
-	if gets_stunned:
-		#print("stun function: ", atk.stun)
-		pass
+
 
 
 func is_dead():

@@ -5,9 +5,12 @@ class_name Projectile
 
 @export var speed: int = 100
 @export var damage: int = 10
+@export var health: int = 100
 
 @onready var area_tracker: AreaTrackerComponent = $AreaTrackerComponent
 
+func hit(atk: int):
+	$HurtboxHealthComponent.hit(atk)
 
 func _process(delta: float) -> void:
 	move_down_screen(delta)
