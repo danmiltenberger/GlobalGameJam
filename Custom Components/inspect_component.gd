@@ -1,11 +1,6 @@
 extends VBoxContainer
 class_name InspectComponent
 
-@export var auto_get_values : bool = true
-@export var main_component : Node2D
-@export var health_component : HurtboxHealthComponent
-@export var just_health: bool = false
-
 @export var font_size: int = 30
 @export var outline_size: int = 10
 
@@ -23,34 +18,12 @@ func _ready():
 	label_settings = LabelSettings.new()
 	
 
-#func get_values() -> Dictionary:
-	#var nodes = main_component.get_children()
-	#for node in nodes:
-		#if node is HurtboxHealthComponent:
-			#health = node.current_health
-		#elif node is AttackLogicComponent:
-			#can_attack = node.can_attack
-			#atk_cooldown = node.cooldown_sec
-		#else:
-			#continue
-	#var dict = {
-		#"Health" : health,
-		#"Can Attack": can_attack,
-		#"Atk Cooldown": atk_cooldown,
-	#}
-	#return dict
-
 func _process(_delta):
 	if Globals.dev_mode == true:
 		visible = true
 	else:
 		visible = false
 		
-	if health_component != null and just_health:
-		var dict = {
-			"Health": health_component.current_health
-		}
-		show_dict(dict)
 
 func display(item):
 	if item is Array:

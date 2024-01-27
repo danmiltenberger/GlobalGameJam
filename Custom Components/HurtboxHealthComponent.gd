@@ -18,7 +18,6 @@ var current_health: int
 @onready var parent = $".".get_parent()
 
 # set the flash red shader to the sprite
-@onready var flash_red_shader = preload("res://Moving Creatures/creature.gdshader")
 
 func _ready():
 	current_health = max_health
