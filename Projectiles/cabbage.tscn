@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_eh8f2"]
 
 [node name="Cabbage" instance=ExtResource("1_eh8f2")]
+speed = 1000
 health = 10
 
 [node name="Sprite2D" parent="." index="0"]

@@ -1,14 +1,14 @@
 extends Node2D
 class_name HecklerHandler
-
-
-
+@export var repetitions: int = 10
 # take a csv with defined paramters, pass to individual hecklers
 # the individual hecklers are children
 func _ready() -> void:
 	var csv = preload("res://LevelControl/heckler_spawning_list.csv").records
-	for line in csv:
-		interpret_dict(line)
+	for i in range(repetitions):
+		for line in csv:
+			var dispatch_interval_sec: float = interpret_dict(line)
+			await get_tree().create_timer(dispatch_interval_sec).timeout
 
 
 func get_heckler(row: int, col: int) -> Heckler:
@@ -18,15 +18,16 @@ func get_heckler(row: int, col: int) -> Heckler:
 	return heckler
 
 
-
-func interpret_dict(dict: Dictionary):
+func interpret_dict(dict: Dictionary) -> float:
 	var row: int = dict["row"]
 	var col: int = dict["col"]
 	var pattern: String = dict["pattern"]
 	var number: int = dict["number"]
 	var type: String = dict["type"]
 	var spacing_sec: float = dict["spacing_sec"]
+	var dispatch_interval_sec: float = dict["dispatch_interval_sec"]
 	var heckler = get_heckler(row, col)
 	heckler.send_projectiles(pattern, number, type, spacing_sec)
-
+	print_debug("")
+	return dispatch_interval_sec
 

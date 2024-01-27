@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6c30485b8jgc" path="res://Graphics/Circle.png" id="2_r0aav"]
 
 [node name="Heckler" type="Node2D"]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 script = ExtResource("1_qsmpf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
