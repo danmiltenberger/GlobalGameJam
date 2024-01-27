@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c1xn6ejsbqdbd" path="res://Graphics/Placeholder/kenny_tilesheet.png" id="1_1ku8r"]
 [ext_resource type="Script" path="res://Weapons/gun_1.gd" id="1_kb3em"]
-[ext_resource type="PackedScene" uid="uid://dlukjfs2piam1" path="res://Weapons/bullet_1.tscn" id="2_dhpsx"]
+[ext_resource type="PackedScene" path="res://Weapons/bullet_1.tscn" id="2_dhpsx"]
 
 [node name="Gun1" type="Node2D"]
 script = ExtResource("1_kb3em")

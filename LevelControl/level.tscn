@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=5 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://dqgelk5oqm05j" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
+[ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hyn5u")
@@ -18,3 +19,5 @@ texture = ExtResource("2_so7so")
 [node name="Player" parent="." instance=ExtResource("3_w8w0m")]
 position = Vector2(214, 1504)
 scale = Vector2(0.5, 0.5)
+
+[node name="HecklerHandler" parent="." instance=ExtResource("4_x8qmw")]

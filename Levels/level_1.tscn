@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c732t822vm88s"]
 
 [ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
-[ext_resource type="PackedScene" path="res://LevelControl/heckler_handler.tscn" id="4_fxlfk"]
+[ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_fxlfk"]
 
 [node name="Level1" instance=ExtResource("1_vkf8y")]
 
