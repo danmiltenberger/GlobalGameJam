@@ -13,31 +13,21 @@ class_name Player
 @onready var inspect_component: InspectComponent = $InspectComponent
 
 
-func _process(_delta: float) -> void:
-	move()
-	check_off_stage()
+func _process(delta: float) -> void:
+	# move
+	var direction = Input.get_vector("ui_left","ui_right","ui_up", "ui_down")
+	velocity = direction * speed
+	position += velocity * delta
+
+	# clamp to stage
+	position.x = clamp(position.x, stage_left, stage_right)
+	position.y = clamp(position.y, stage_top, stage_bot)
+
+	# health
 	var inspect_dict: Dictionary = {
 		"Health" : health
 	}
 	inspect_component.display(inspect_dict)
-
-func move():
-	var direction = Input.get_vector("ui_left","ui_right","ui_up", "ui_down")
-	velocity = direction * speed
-	move_and_slide()
-
-func check_off_stage():
-	if position.x <= stage_left:
-		position.x = stage_left
-		
-	if position.x >= stage_right:
-		position.x = stage_right
-		
-	if position.y <= stage_top:
-		position.y = stage_top
-		
-	if position.y >= stage_bot:
-		position.y = stage_bot
 		
 func take_damage(damage: int):
 	health -= damage
