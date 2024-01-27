@@ -1,17 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c732t822vm88s"]
+[gd_scene load_steps=4 format=3 uid="uid://c732t822vm88s"]
 
 [ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
-[ext_resource type="PackedScene" uid="uid://207cral52hyg" path="res://Projectiles/beer_can.tscn" id="2_u43q6"]
 [ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="3_fhgrs"]
-[ext_resource type="PackedScene" uid="uid://cbie3h413glfw" path="res://Projectiles/cabbage.tscn" id="3_jbasp"]
+[ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_fxlfk"]
 
 [node name="Level1" instance=ExtResource("1_vkf8y")]
 
-[node name="BeerCan" parent="Projectiles" index="0" instance=ExtResource("2_u43q6")]
-position = Vector2(499, -282)
-
-[node name="Cabbage" parent="Projectiles" index="1" instance=ExtResource("3_jbasp")]
-position = Vector2(492, 916)
+[node name="HecklerHandler" parent="Projectiles" index="0" instance=ExtResource("4_fxlfk")]
+position = Vector2(479, -544)
+scale = Vector2(0.25, 0.25)
 
 [node name="Gun1" parent="Player" index="3" instance=ExtResource("3_fhgrs")]
 position = Vector2(0, -65)

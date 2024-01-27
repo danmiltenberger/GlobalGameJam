@@ -7,6 +7,3 @@ health = 10
 
 [node name="Sprite2D" parent="." index="0"]
 region_rect = Rect2(384, 512, 64, 64)
-
-[node name="CollisionShape2D" parent="AreaOfEffectTracker/Area2D" index="0"]
-visible = true

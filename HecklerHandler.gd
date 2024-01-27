@@ -23,9 +23,9 @@ func send_projectiles(pattern: String, number: int, type: String):
 			proj_type = tomato
 
 	match pattern:
-		"Line":
+		"line":
 			send_line(number, proj_type)
-		"Circle":
+		"circle":
 			send_circle(number, proj_type)
 		_:
 			print_debug("couldn't find pattern: ", pattern)
@@ -34,10 +34,13 @@ func send_projectiles(pattern: String, number: int, type: String):
 func send_line(number: int, proj: PackedScene):
 	# send one projectile after another in a vertical line going down the screen
 	var projectile: Node2D
+	var spacing_sec: float = 3.0 # seconds to wait before dispatching next one
 	for i in range(number):
+		print_debug("sent projectile!", projectile)
 		projectile = proj.instantiate()
+		add_child(projectile)
 		projectile.global_position = global_position
-
+		await get_tree().create_timer(spacing_sec).timeout
 	pass
 
 func send_circle(number: int, proj: PackedScene):
