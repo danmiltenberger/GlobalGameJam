@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d0ac7lq8hhc60"]
 
 [ext_resource type="PackedScene" uid="uid://dvjljibe7tb3s" path="res://LevelControl/game_control.tscn" id="1_hy6id"]
-[ext_resource type="PackedScene" uid="uid://cjgiidi7lj7nv" path="res://LevelControl/scene_switcher.tscn" id="2_2br3h"]
+[ext_resource type="PackedScene" path="res://LevelControl/scene_switcher.tscn" id="2_2br3h"]
 
 [node name="Root" type="Node2D"]
 
