@@ -10,7 +10,8 @@
 script = ExtResource("1_kb3em")
 bullet_scn = ExtResource("2_dhpsx")
 cooldown_base_sec = 0.5
-bullet_speed = 2200.0
+bullet_speed = 220.0
+lifetime_sec = 5.0
 
 [node name="Left" type="Node2D" parent="."]
 

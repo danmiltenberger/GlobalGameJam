@@ -1,39 +1,47 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm8d3so7vqlri"]
 
 [ext_resource type="Script" path="res://Weapons/word.gd" id="1_2tbfn"]
-[ext_resource type="Texture2D" uid="uid://chd8ip4t380c8" path="res://Graphics/Square.png" id="1_hsthd"]
 [ext_resource type="Script" path="res://Custom Components/Mover.gd" id="2_7drju"]
+[ext_resource type="Script" path="res://Custom Components/LabelResizer.gd" id="3_xsix6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06itj"]
-size = Vector2(338.227, 71.1481)
+size = Vector2(164, 79)
 
 [node name="Bullet1" type="StaticBody2D"]
-position = Vector2(33, 0)
+position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.310442, 0.295159)
 script = ExtResource("1_2tbfn")
 
 [node name="Mover" type="Node" parent="."]
 script = ExtResource("2_7drju")
 
+[node name="LabelResizer" type="Node" parent="."]
+script = ExtResource("3_xsix6")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.61061, -1.694)
+position = Vector2(82, 2.08165e-12)
 shape = SubResource("RectangleShape2D_06itj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.345098, 0.85098, 1, 1)
-scale = Vector2(1.31416, 0.27112)
-texture = ExtResource("1_hsthd")
-
 [node name="Label" type="Label" parent="."]
+z_index = 10
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -115.964
-offset_top = -54.2081
-offset_right = 633.036
-offset_bottom = 71.7919
+offset_top = -40.656
+offset_right = 164.0
+offset_bottom = 38.344
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 76
-text = "TEXT"
+theme_override_font_sizes/font_size = 58
+text = " TEXT "
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.490196, 0.831373, 0.980392, 0.231373)
