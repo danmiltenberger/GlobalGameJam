@@ -1,14 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c732t822vm88s"]
+[gd_scene load_steps=3 format=3 uid="uid://c732t822vm88s"]
 
 [ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
-[ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="3_fhgrs"]
-[ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_fxlfk"]
+[ext_resource type="PackedScene" path="res://LevelControl/heckler_handler.tscn" id="4_fxlfk"]
 
 [node name="Level1" instance=ExtResource("1_vkf8y")]
 
 [node name="HecklerHandler" parent="Projectiles" index="0" instance=ExtResource("4_fxlfk")]
 position = Vector2(479, 306)
 scale = Vector2(0.25, 0.25)
-
-[node name="Gun1" parent="Player" index="3" instance=ExtResource("3_fhgrs")]
-position = Vector2(0, -65)
