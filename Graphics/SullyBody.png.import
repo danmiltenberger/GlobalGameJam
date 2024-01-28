@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bokthx3wvhs7q"
-path="res://.godot/imported/Gun_Badum_Left.png-9d6752fc954cb47c54a55a964d9408f7.ctex"
+uid="uid://djxb4aacauf7j"
+path="res://.godot/imported/SullyBody.png-6f5adc31a5a962e670506ef91bc731b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Gun_Badum_Left.png"
-dest_files=["res://.godot/imported/Gun_Badum_Left.png-9d6752fc954cb47c54a55a964d9408f7.ctex"]
+source_file="res://Graphics/SullyBody.png"
+dest_files=["res://.godot/imported/SullyBody.png-6f5adc31a5a962e670506ef91bc731b7.ctex"]
 
 [params]
 

@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bqd180kpqj1eq" path="res://Graphics/Shotgun.png" id="2_lh22r"]
 [ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_eypct"]
 [ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_ckn4b"]
+[ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun_Badum_Flipped.png" id="5_o83x8"]
 [ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun_Badum.png" id="6_yfu2c"]
-[ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun_Badum_Left.png" id="7_eovrn"]
 
 [node name="Gun2" type="Node2D"]
 script = ExtResource("1_amwm8")
@@ -16,52 +16,52 @@ bullet_speed = 600.0
 lifetime_sec = 0.4
 lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_eypct"), ExtResource("4_ckn4b")])
 
+[node name="Right" type="Node2D" parent="."]
+
+[node name="Shoot" type="Sprite2D" parent="Right"]
+position = Vector2(438.18, 90.6003)
+rotation = -3.14159
+scale = Vector2(0.34, -0.34)
+texture = ExtResource("5_o83x8")
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Base" type="Sprite2D" parent="Right"]
+position = Vector2(57.8005, 76.2009)
+rotation = -3.14159
+scale = Vector2(0.38, -0.38)
+texture = ExtResource("2_lh22r")
+region_rect = Rect2(320, 576, 64, 64)
+
 [node name="Left" type="Node2D" parent="."]
 
 [node name="Shoot" type="Sprite2D" parent="Left"]
-position = Vector2(392.02, -73)
+position = Vector2(438.18, 90.6003)
 rotation = -3.14159
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.34, -0.34)
 texture = ExtResource("6_yfu2c")
 region_rect = Rect2(320, 576, 64, 64)
 
 [node name="Base" type="Sprite2D" parent="Left"]
-position = Vector2(122.6, -57)
+position = Vector2(57.8005, 76.2009)
 rotation = -3.14159
-scale = Vector2(0.26, 0.26)
-texture = ExtResource("2_lh22r")
-region_rect = Rect2(320, 576, 64, 64)
-
-[node name="Right" type="Node2D" parent="."]
-
-[node name="Shoot" type="Sprite2D" parent="Right"]
-position = Vector2(392.02, 67)
-rotation = -3.14159
-scale = Vector2(0.26, -0.26)
-texture = ExtResource("7_eovrn")
-region_rect = Rect2(320, 576, 64, 64)
-
-[node name="Base" type="Sprite2D" parent="Right"]
-position = Vector2(122.6, 51)
-rotation = -3.14159
-scale = Vector2(0.26, -0.26)
+scale = Vector2(0.38, -0.38)
 texture = ExtResource("2_lh22r")
 region_rect = Rect2(320, 576, 64, 64)
 
 [node name="InstancePoint" type="Marker2D" parent="."]
-position = Vector2(311, -33)
+position = Vector2(351, -36)
 
 [node name="InstancePoint2" type="Marker2D" parent="."]
-position = Vector2(313, -15)
+position = Vector2(353, -18)
 
 [node name="InstancePoint3" type="Marker2D" parent="."]
-position = Vector2(331, -8)
+position = Vector2(371, -11)
 
 [node name="InstancePoint4" type="Marker2D" parent="."]
-position = Vector2(331, 11)
+position = Vector2(371, 8)
 
 [node name="InstancePoint5" type="Marker2D" parent="."]
-position = Vector2(314, 17)
+position = Vector2(354, 14)
 
 [node name="InstancePoint6" type="Marker2D" parent="."]
-position = Vector2(311, 35)
+position = Vector2(351, 32)

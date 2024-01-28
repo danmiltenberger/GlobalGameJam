@@ -11,10 +11,12 @@ class_name Player
 @export var health: int = 100
 
 @onready var inspect_component: InspectComponent = $InspectComponent
+@onready var arm: Node2D = $Arm
+@export var base_arm_degs := -75.0
 
-@onready var gun1: Node2D = $Gun1
-@onready var gun2: Node2D = $Gun2
-@onready var gun3: Node2D = $Gun3
+@onready var gun1: Node2D = $Arm/Gun1
+@onready var gun2: Node2D = $Arm/Gun2
+@onready var gun3: Node2D = $Arm/Gun3
 @onready var guns = [gun1, gun2, gun3]
 @onready var currentGun = gun1
 
@@ -41,6 +43,16 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("weapon3"):
 		currentGun = gun3
 		update_gun()
+
+	# aim at mouse
+	var mouse_world_pos := get_global_mouse_position()
+	var arm_to_mouse := mouse_world_pos - arm.global_position
+	var angle_to_mouse_raw := arm_to_mouse.angle()
+	var is_right = abs(angle_to_mouse_raw) < PI/2
+	print_debug(is_right)
+	arm.global_rotation = angle_to_mouse_raw + deg_to_rad(base_arm_degs if is_right else -base_arm_degs)
+	arm.scale.y = 1 if is_right else -1
+	currentGun.is_right = is_right
 
 	# health
 	var inspect_dict: Dictionary = {

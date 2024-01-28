@@ -3,6 +3,7 @@ extends Node2D
 # when the player presses shoot, send a word in that direction
 
 @export var bullet_scn: PackedScene
+@export var is_right := true
 
 @export var cooldown_base_sec: float = 1.8
 var cooldown_remaining_sec: float = 0.0
@@ -34,19 +35,13 @@ func _ready() -> void:
 	right_shoot.hide()
 
 func _process(delta: float) -> void:
-	# point to mouse
-	var mouse_world_pos := get_global_mouse_position()
-	var gun_to_mouse := mouse_world_pos - global_position
-	var angle_to_mouse := gun_to_mouse.angle()
-	rotation = angle_to_mouse
-
 	# toggle left or right graphics
-	if abs(angle_to_mouse) > PI/2:
-		left.show()
-		right.hide()
-	else:
+	if is_right:
 		left.hide()
 		right.show()
+	else:
+		left.show()
+		right.hide()
 
 	# shoot automatically
 	cooldown_remaining_sec -= delta
@@ -63,7 +58,7 @@ func shoot():
 		var bullet := bullet_scn.instantiate() as Node2D
 		get_tree().get_current_scene().add_child(bullet)
 		bullet.global_position = marker.global_position
-		bullet.rotation = rotation + PI + deg_to_rad(degs)
+		bullet.rotation = global_rotation + PI + deg_to_rad(degs)
 		bullet.get_node("Mover").speed = bullet_speed
 		bullet.get_node("LabelResizer").set_text(line.text)
 
@@ -83,4 +78,3 @@ func reset_shoot_graphic():
 	left_shoot.hide()
 	right_shoot.hide()
 	
-		
