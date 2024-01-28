@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	# shoot automatically
 	cooldown_remaining_sec -= delta
 	if cooldown_remaining_sec <= 0.0:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") && !Globals.stuckFiring:
 			shoot()
 
 func shoot():

@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 	# shoot automatically
 	cooldown_remaining_sec -= delta
 	if cooldown_remaining_sec <= 0.0:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") && !Globals.stuckFiring:
 			shoot()
 
 func shoot():
@@ -64,7 +64,18 @@ func shoot():
 	auto_free_timer.wait_time = line.timing
 	auto_free_timer.start()
 
+	var stuck_timer := Timer.new()
+	add_child(stuck_timer)
+	stuck_timer.process_mode = Node.PROCESS_MODE_ALWAYS
+	stuck_timer.connect("timeout", _done_stuck)
+	stuck_timer.connect("timeout", stuck_timer.queue_free)
+	stuck_timer.wait_time = line.timing + bullet.get_node("Bomber").lifetime
+	stuck_timer.start()
+	Globals.stuckFiring = true
+
 	left_shoot.show()
 	right_shoot.show()
-	
+
+func _done_stuck():
+	Globals.stuckFiring = false
 	Globals.currentGunIndex = Globals.previousGunIndex

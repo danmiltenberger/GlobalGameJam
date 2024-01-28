@@ -29,7 +29,7 @@ var total_healing_taken: int = 0	# tracks how much healing (water bottles)
 
 #region Settings
 #TODO - change this to true, but for testing it's quite
-var play_sound: bool = false
+var play_sound: bool = true
 
 #endregion
 
