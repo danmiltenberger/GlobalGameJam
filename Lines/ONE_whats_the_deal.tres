@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://swpakjvm0a88"]
+
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_87t7v"]
+[ext_resource type="AudioStream" uid="uid://crf0a5e46ah2k" path="res://Audio/Jokes/Single Fire Samples/whats the deal.mp3" id="1_rv71x"]
+
+[resource]
+script = ExtResource("1_87t7v")
+text = "What's the deal~"
+audio = ExtResource("1_rv71x")

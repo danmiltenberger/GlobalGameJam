@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ehmodn8ov5ga"
+path="res://.godot/imported/my friend told me that i'm old man hot, and let me tell you, i've never been so offended by something i completely agree with.mp3-28c24018e0e44e2c277c4c30b2eb5d60.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/my friend told me that i'm old man hot, and let me tell you, i've never been so offended by something i completely agree with.mp3"
+dest_files=["res://.godot/imported/my friend told me that i'm old man hot, and let me tell you, i've never been so offended by something i completely agree with.mp3-28c24018e0e44e2c277c4c30b2eb5d60.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

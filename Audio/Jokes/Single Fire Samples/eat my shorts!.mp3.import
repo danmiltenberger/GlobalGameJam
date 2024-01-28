@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tw57o0rc1x6d"
+path="res://.godot/imported/eat my shorts!.mp3-fcc7a671f1141dd309705f7135afca63.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/eat my shorts!.mp3"
+dest_files=["res://.godot/imported/eat my shorts!.mp3-fcc7a671f1141dd309705f7135afca63.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

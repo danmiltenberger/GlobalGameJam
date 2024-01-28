@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2nvasl6fxy7f"
+path="res://.godot/imported/LEEEEROY JENKINSSSSSS.mp3-0fddd124335df41a42dd5b1d4f025ff0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Bomb Samples/LEEEEROY JENKINSSSSSS.mp3"
+dest_files=["res://.godot/imported/LEEEEROY JENKINSSSSSS.mp3-0fddd124335df41a42dd5b1d4f025ff0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

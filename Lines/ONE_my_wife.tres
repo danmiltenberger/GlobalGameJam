@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://dvonaw72fxsrt"]
+
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_wp0lm"]
+[ext_resource type="AudioStream" uid="uid://d4ic0gl8nlatp" path="res://Audio/Jokes/Single Fire Samples/my wife.mp3" id="1_wxkft"]
+
+[resource]
+script = ExtResource("1_wp0lm")
+text = "My wife..."
+audio = ExtResource("1_wxkft")

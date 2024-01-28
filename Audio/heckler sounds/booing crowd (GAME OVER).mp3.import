@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqw3ft4y7tvl6"
+path="res://.godot/imported/booing crowd (GAME OVER).mp3-d816fe3163247a497faccd3c6ed3348a.mp3str"
+
+[deps]
+
+source_file="res://Audio/heckler sounds/booing crowd (GAME OVER).mp3"
+dest_files=["res://.godot/imported/booing crowd (GAME OVER).mp3-d816fe3163247a497faccd3c6ed3348a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

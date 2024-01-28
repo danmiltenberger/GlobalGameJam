@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd7tv7t3cw0fx"
+path="res://.godot/imported/boo with GET OFF THE STAGE.mp3-f47857f1d8e552b80e68062f38eee830.mp3str"
+
+[deps]
+
+source_file="res://Audio/heckler sounds/boo with GET OFF THE STAGE.mp3"
+dest_files=["res://.godot/imported/boo with GET OFF THE STAGE.mp3-f47857f1d8e552b80e68062f38eee830.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kj2ja0l5vlpf"
+path="res://.godot/imported/Your Momma!.mp3-bd92a4697892dad5e6ac4cf03afe1d8d.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/Your Momma!.mp3"
+dest_files=["res://.godot/imported/Your Momma!.mp3-bd92a4697892dad5e6ac4cf03afe1d8d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

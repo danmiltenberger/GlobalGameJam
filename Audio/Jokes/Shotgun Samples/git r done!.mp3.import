@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qumoa4cmesmf"
+path="res://.godot/imported/git r done!.mp3-433f28ebf559411487b9180af8f3f738.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Shotgun Samples/git r done!.mp3"
+dest_files=["res://.godot/imported/git r done!.mp3-433f28ebf559411487b9180af8f3f738.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://benbjmnktwa72"
+path="res://.godot/imported/i never forget a face. but in your case I'll make an exception.mp3-20be2923660e77de756a5a0a03984f54.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/i never forget a face. but in your case I'll make an exception.mp3"
+dest_files=["res://.godot/imported/i never forget a face. but in your case I'll make an exception.mp3-20be2923660e77de756a5a0a03984f54.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

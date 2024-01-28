@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://tc5pyhqk26r8"]
+
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_dmtb2"]
+[ext_resource type="AudioStream" uid="uid://tw57o0rc1x6d" path="res://Audio/Jokes/Single Fire Samples/eat my shorts!.mp3" id="1_xwxbr"]
+
+[resource]
+script = ExtResource("1_dmtb2")
+text = "Eat my shorts!"
+audio = ExtResource("1_xwxbr")

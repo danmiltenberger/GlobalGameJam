@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhu4gdhqqaaju"
+path="res://.godot/imported/Bottle Break.mp3-0936c4d6ea81c9fdc06cb2ece65eaeaf.mp3str"
+
+[deps]
+
+source_file="res://Audio/projectile food sounds/Bottle Break.mp3"
+dest_files=["res://.godot/imported/Bottle Break.mp3-0936c4d6ea81c9fdc06cb2ece65eaeaf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

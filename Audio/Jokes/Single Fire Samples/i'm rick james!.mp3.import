@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5e2bynionn0x"
+path="res://.godot/imported/i'm rick james!.mp3-500556bb30c4545e69c040cb008c6809.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/i'm rick james!.mp3"
+dest_files=["res://.godot/imported/i'm rick james!.mp3-500556bb30c4545e69c040cb008c6809.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

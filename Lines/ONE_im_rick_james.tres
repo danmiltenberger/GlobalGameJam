@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://cuewl5uveb5sp"]
+
+[ext_resource type="AudioStream" uid="uid://c5e2bynionn0x" path="res://Audio/Jokes/Single Fire Samples/i'm rick james!.mp3" id="1_b61to"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_operj"]
+
+[resource]
+script = ExtResource("1_operj")
+text = "I'm Rick James!"
+audio = ExtResource("1_b61to")

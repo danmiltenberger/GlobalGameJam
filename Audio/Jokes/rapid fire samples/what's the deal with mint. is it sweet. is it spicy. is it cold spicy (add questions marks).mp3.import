@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8pube5rkysyd"
+path="res://.godot/imported/what's the deal with mint. is it sweet. is it spicy. is it cold spicy (add questions marks).mp3-6b8a2d72b6527ac4839cf388a1a24338.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/what's the deal with mint. is it sweet. is it spicy. is it cold spicy (add questions marks).mp3"
+dest_files=["res://.godot/imported/what's the deal with mint. is it sweet. is it spicy. is it cold spicy (add questions marks).mp3-6b8a2d72b6527ac4839cf388a1a24338.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

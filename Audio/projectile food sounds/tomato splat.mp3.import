@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1k2mrxpeis4b"
+path="res://.godot/imported/tomato splat.mp3-c5c6e05226885e0da1de098a209b725d.mp3str"
+
+[deps]
+
+source_file="res://Audio/projectile food sounds/tomato splat.mp3"
+dest_files=["res://.godot/imported/tomato splat.mp3-c5c6e05226885e0da1de098a209b725d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crf0a5e46ah2k"
+path="res://.godot/imported/whats the deal.mp3-ebe56f25d22dd7f270a2ece124f905de.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/whats the deal.mp3"
+dest_files=["res://.godot/imported/whats the deal.mp3-ebe56f25d22dd7f270a2ece124f905de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

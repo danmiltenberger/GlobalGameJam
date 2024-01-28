@@ -11,6 +11,7 @@ var cooldown_remaining_sec: float = 0.0
 @export var lifetime_sec: float = 1.2
 
 @export var lines: Array[Line] = []
+var lines_shuffled: Array[Line] = []
 
 @onready var marker: Marker2D = get_node("InstancePoint")
 @onready var left: Node2D = get_node("Left")
@@ -45,13 +46,19 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var line := lines.pick_random() as Line
+
+	if lines_shuffled.size() == 0:
+		lines_shuffled.append_array(lines)
+		lines_shuffled.shuffle()
+	var line: Line = lines_shuffled.pop_front()
+
 	var bullet := bullet_scn.instantiate() as Node2D
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.global_position = marker.global_position
 	bullet.rotation = global_rotation + PI
 	bullet.get_node("Mover").speed = bullet_speed
 	bullet.get_node("LabelResizer").set_text(line.text)
+	Globals.play_sound_once(line.audio)
 
 	left_shoot.show()
 	right_shoot.show()

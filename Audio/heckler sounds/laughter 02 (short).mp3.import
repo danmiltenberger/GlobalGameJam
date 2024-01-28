@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgibiput3ulv5"
+path="res://.godot/imported/laughter 02 (short).mp3-b712f9471a72483e701b9e707781d43b.mp3str"
+
+[deps]
+
+source_file="res://Audio/heckler sounds/laughter 02 (short).mp3"
+dest_files=["res://.godot/imported/laughter 02 (short).mp3-b712f9471a72483e701b9e707781d43b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

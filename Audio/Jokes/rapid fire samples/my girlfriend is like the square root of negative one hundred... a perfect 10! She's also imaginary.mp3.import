@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://el1g87jwdk1q"
+path="res://.godot/imported/my girlfriend is like the square root of negative one hundred... a perfect 10! She's also imaginary.mp3-ca438a01639f82ae9af01beeef6979b0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/my girlfriend is like the square root of negative one hundred... a perfect 10! She's also imaginary.mp3"
+dest_files=["res://.godot/imported/my girlfriend is like the square root of negative one hundred... a perfect 10! She's also imaginary.mp3-ca438a01639f82ae9af01beeef6979b0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

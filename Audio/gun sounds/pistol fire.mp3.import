@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7hkipvkmw8ff"
+path="res://.godot/imported/pistol fire.mp3-9242f357fd9490f594ab6cc334baaefc.mp3str"
+
+[deps]
+
+source_file="res://Audio/gun sounds/pistol fire.mp3"
+dest_files=["res://.godot/imported/pistol fire.mp3-9242f357fd9490f594ab6cc334baaefc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

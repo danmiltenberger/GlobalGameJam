@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dk7j1exdihk03"
+path="res://.godot/imported/i like tinder, because it hurts less when you are rejected by someone you DON'T know.mp3-5c9fe4ba6e76609442f704ed2ad4bedb.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/i like tinder, because it hurts less when you are rejected by someone you DON'T know.mp3"
+dest_files=["res://.godot/imported/i like tinder, because it hurts less when you are rejected by someone you DON'T know.mp3-5c9fe4ba6e76609442f704ed2ad4bedb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

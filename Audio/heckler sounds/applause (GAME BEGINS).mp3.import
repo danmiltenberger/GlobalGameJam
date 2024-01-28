@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf00aefcghe8p"
+path="res://.godot/imported/applause (GAME BEGINS).mp3-68b3e7b979bf0b6638ea345eec59d0a4.mp3str"
+
+[deps]
+
+source_file="res://Audio/heckler sounds/applause (GAME BEGINS).mp3"
+dest_files=["res://.godot/imported/applause (GAME BEGINS).mp3-68b3e7b979bf0b6638ea345eec59d0a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

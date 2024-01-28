@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bn2n13ut8fbkd"
+path="res://.godot/imported/i'm so pale, i burn if i look at a picture of the sun.mp3-ae6361b1f10c74b4cda90937ed0fc39c.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/rapid fire samples/i'm so pale, i burn if i look at a picture of the sun.mp3"
+dest_files=["res://.godot/imported/i'm so pale, i burn if i look at a picture of the sun.mp3-ae6361b1f10c74b4cda90937ed0fc39c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

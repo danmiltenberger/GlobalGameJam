@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://b236x74nvcyth"]
+
+[ext_resource type="AudioStream" uid="uid://dm01r4j2txlvf" path="res://Audio/Jokes/Single Fire Samples/baba booey.mp3" id="1_m8kmq"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_qapef"]
+
+[resource]
+script = ExtResource("1_qapef")
+text = "BABA BOOEY!"
+audio = ExtResource("1_m8kmq")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxrexa6ev8vv7"
+path="res://.godot/imported/check please!.mp3-c11c8386cc0b883f70ea85eb55194abc.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/check please!.mp3"
+dest_files=["res://.godot/imported/check please!.mp3-c11c8386cc0b883f70ea85eb55194abc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

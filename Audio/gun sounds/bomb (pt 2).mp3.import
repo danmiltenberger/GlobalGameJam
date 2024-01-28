@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c15gts0husw78"
+path="res://.godot/imported/bomb (pt 2).mp3-219759453b0de235bb5a5cff72da58ae.mp3str"
+
+[deps]
+
+source_file="res://Audio/gun sounds/bomb (pt 2).mp3"
+dest_files=["res://.godot/imported/bomb (pt 2).mp3-219759453b0de235bb5a5cff72da58ae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4ic0gl8nlatp"
+path="res://.godot/imported/my wife.mp3-604e245179f5b14d1470933c209fc7a6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Jokes/Single Fire Samples/my wife.mp3"
+dest_files=["res://.godot/imported/my wife.mp3-604e245179f5b14d1470933c209fc7a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

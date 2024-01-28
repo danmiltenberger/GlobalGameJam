@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://bwhwjlfj4f0db"]
+
+[ext_resource type="AudioStream" uid="uid://dibtck7ssf6qx" path="res://Audio/Jokes/Single Fire Samples/jinkies!.mp3" id="1_bcusx"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_jtyjc"]
+
+[resource]
+script = ExtResource("1_jtyjc")
+text = "JINKIES!"
+audio = ExtResource("1_bcusx")

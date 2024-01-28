@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqc63jcvcmef0"
+path="res://.godot/imported/laughter with applause (long).mp3-6b84ae8c389e121027e3ac95498b8e98.mp3str"
+
+[deps]
+
+source_file="res://Audio/heckler sounds/laughter with applause (long).mp3"
+dest_files=["res://.godot/imported/laughter with applause (long).mp3-6b84ae8c389e121027e3ac95498b8e98.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

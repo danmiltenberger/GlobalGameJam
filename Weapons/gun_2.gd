@@ -12,6 +12,7 @@ var cooldown_remaining_sec: float = 0.0
 @export var spread_degs: float = 70.0
 
 @export var lines: Array[Line] = []
+var lines_shuffled: Array[Line] = []
 
 @onready var left: Node2D = get_node("Left")
 @onready var right: Node2D = get_node("Right")
@@ -51,7 +52,12 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var line := lines.pick_random() as Line
+
+	if lines_shuffled.size() == 0:
+		lines_shuffled.append_array(lines)
+		lines_shuffled.shuffle()
+	var line: Line = lines_shuffled.pop_front()
+
 	var degs := -spread_degs / 2.0
 	var deg_step := spread_degs / (markers.size() - 1)
 	for marker in markers:
@@ -61,6 +67,7 @@ func shoot():
 		bullet.rotation = global_rotation + PI + deg_to_rad(degs)
 		bullet.get_node("Mover").speed = bullet_speed
 		bullet.get_node("LabelResizer").set_text(line.text)
+		Globals.play_sound_once(line.audio)
 
 		var auto_free_timer := Timer.new()
 		auto_free_timer.wait_time = lifetime_sec
