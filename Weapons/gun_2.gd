@@ -27,7 +27,7 @@ func _ready() -> void:
 			markers.append(c)
 
 	shoot_graphic_timer.one_shot = true
-	shoot_graphic_timer.wait_time = cooldown_base_sec
+	shoot_graphic_timer.wait_time = cooldown_base_sec * 0.75
 	shoot_graphic_timer.connect("timeout", reset_shoot_graphic)
 	add_child(shoot_graphic_timer)
 	left_shoot.hide()
