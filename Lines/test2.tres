@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Line" load_steps=2 format=3 uid="uid://bti1vxmcl0j2j"]
+
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="1_gtfs7"]
+
+[resource]
+script = ExtResource("1_gtfs7")
+text = "tezzzt"

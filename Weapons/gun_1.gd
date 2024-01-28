@@ -9,6 +9,8 @@ var cooldown_remaining_sec: float = 0.0
 @export var bullet_speed: float = 1500.0
 @export var lifetime_sec: float = 1.2
 
+@export var lines: Array[Line] = []
+
 @onready var marker: Marker2D = get_node("InstancePoint")
 @onready var left: Node2D = get_node("Left")
 @onready var right: Node2D = get_node("Right")
@@ -16,8 +18,6 @@ var cooldown_remaining_sec: float = 0.0
 @onready var right_shoot: Node2D = get_node("Right/Shoot")
 
 @onready var shoot_graphic_timer := Timer.new()
-
-var bullets: Array[Node2D] = []
 
 func _ready() -> void:
 	shoot_graphic_timer.one_shot = true
@@ -50,12 +50,13 @@ func _process(delta: float) -> void:
 
 func shoot():
 	cooldown_remaining_sec = cooldown_base_sec
-	var bullet := bullet_scn.instantiate()
+	var line := lines.pick_random() as Line
+	var bullet := bullet_scn.instantiate() as Node2D
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.global_position = marker.global_position
-	bullet.rotation = rotation
+	bullet.rotation = rotation + PI
 	bullet.get_node("Mover").speed = bullet_speed
-	bullets.append(bullet)
+	bullet.get_node("LabelResizer").set_text(line.text)
 
 	left_shoot.show()
 	right_shoot.show()

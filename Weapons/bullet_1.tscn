@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm8d3so7vqlri"]
+[gd_scene load_steps=6 format=3 uid="uid://cm8d3so7vqlri"]
 
 [ext_resource type="Script" path="res://Weapons/word.gd" id="1_2tbfn"]
 [ext_resource type="Script" path="res://Custom Components/Mover.gd" id="2_7drju"]
@@ -7,6 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06itj"]
 size = Vector2(164, 79)
 
+[sub_resource type="LabelSettings" id="LabelSettings_yxd8m"]
+font_size = 58
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Bullet1" type="StaticBody2D"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.310442, 0.295159)
@@ -14,6 +19,7 @@ script = ExtResource("1_2tbfn")
 
 [node name="Mover" type="Node" parent="."]
 script = ExtResource("2_7drju")
+rotation_offset = 180.0
 
 [node name="LabelResizer" type="Node" parent="."]
 script = ExtResource("3_xsix6")
@@ -31,10 +37,10 @@ offset_top = -40.656
 offset_right = 164.0
 offset_bottom = 38.344
 grow_vertical = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 24
-theme_override_font_sizes/font_size = 58
-text = " TEXT "
+pivot_offset = Vector2(2.08165e-12, 39.5)
+text = " TEXT WORD"
+label_settings = SubResource("LabelSettings_yxd8m")
+vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 z_index = -1
@@ -44,4 +50,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.490196, 0.831373, 0.980392, 0.231373)
+color = Color(0.490196, 0.831373, 0.980392, 0.611765)
+
+[node name="TextContainer" type="Node2D" parent="."]
