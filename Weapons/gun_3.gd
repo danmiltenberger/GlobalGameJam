@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 
 	# shoot
 	if current_line == null:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") && !Globals.stuckFiring:
 			shoot()
 	
 	# automatic shoot whole line

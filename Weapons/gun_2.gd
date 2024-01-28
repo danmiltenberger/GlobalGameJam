@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 	# shoot automatically
 	cooldown_remaining_sec -= delta
 	if cooldown_remaining_sec <= 0.0:
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") && !Globals.stuckFiring:
 			shoot()
 
 func shoot():
@@ -57,6 +57,7 @@ func shoot():
 		lines_shuffled.append_array(lines)
 		lines_shuffled.shuffle()
 	var line: Line = lines_shuffled.pop_front()
+	Globals.play_sound_once(line.audio)
 
 	var degs := -spread_degs / 2.0
 	var deg_step := spread_degs / (markers.size() - 1)
@@ -68,7 +69,6 @@ func shoot():
 		bullet.get_node("Mover").speed = bullet_speed
 		var text_to_use := line.text if randf() < 0.5 else "#$@%*!@&!*"
 		bullet.get_node("LabelResizer").set_text(text_to_use)
-		Globals.play_sound_once(line.audio)
 
 		var auto_free_timer := Timer.new()
 		add_child(auto_free_timer)
