@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	player_pause_unpause()
 	game_over()
+	$PauseMenu.visible = get_tree().paused
 
 func close_all_menus():
 	$PauseMenu.visible = false

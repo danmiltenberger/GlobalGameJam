@@ -22,14 +22,15 @@ func create_starter_level():
 	var file_path_str = build_file_path(starter_scene_str)
 	var starter_level = load(file_path_str)	#TODO - fix this line
 	current_level = starter_level.instantiate()
+	current_level.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(current_level)
 	
 	
 	# when everything is ready, show the player and unpause
 	fade_from_black()
-	#current_level.get_tree().paused = true
+	#get_tree().paused = true
 	#await animator.animation_finished
-	#current_level.get_tree().paused = false
+	#get_tree().paused = false
 
 
 func change(next_scene_str: String):
@@ -47,25 +48,23 @@ func change(next_scene_str: String):
 	
 	# the new one is now the current one
 	current_level = next_level.instantiate()
+	current_level.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(current_level)
 	
 	# TODO - wait for transition to complete and then unpause
 	fade_from_black()
 
-var is_paused: bool
 func pause():
-	is_paused = true
 	print_debug("paused current level:", current_level)
-	current_level.get_tree().paused = true
+	get_tree().paused = true
 
 func unpause():
-	is_paused = false
 	print_debug("unpaused current level:", current_level)
-	current_level.get_tree().paused = false
+	get_tree().paused = false
 
 func toggle_pause():
 	# swap
-	is_paused = not is_paused
+	var is_paused = not get_tree().paused
 	
 	# use swapped value
 	printt("toggle pause: is_paused = ", is_paused)

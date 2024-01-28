@@ -4,8 +4,6 @@ extends Node
 
 var dev_mode: bool = true
 
-var game_paused: bool = false
-
 var health: float = 100.0:
 	get:
 		return health

@@ -65,8 +65,8 @@ offset_bottom = 2.0
 columns = 2
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 2
 layer = 10
-visible = false
 
 [node name="PauseMenuControl" type="VBoxContainer" parent="PauseMenu"]
 anchors_preset = 8
