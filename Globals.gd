@@ -12,6 +12,8 @@ var health: float = 100.0:
 	set(value):
 		health = value
 		return health
+        
+var currentGunIndex := 0
 	
 var jokes_landed: int = 0		# how many times a word hit a tomato
 var total_damage_taken: int = 0	# tracks how much damage

@@ -3,3 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_vkf8y"]
 
 [node name="Level1" instance=ExtResource("1_vkf8y")]
+
+[node name="GunPanel2" parent="GameInterface/GunSelectors" index="1"]
+gun_index = 1
+
+[node name="GunPanel3" parent="GameInterface/GunSelectors" index="2"]
+gun_index = 2
+
+[node name="GunPanel4" parent="GameInterface/GunSelectors" index="3"]
+gun_index = 3

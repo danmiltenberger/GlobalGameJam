@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdqk4v00m7u2e"]
+
+[ext_resource type="Script" path="res://LevelControl/gun_panel.gd" id="1_3vy6l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jdixi"]
+bg_color = Color(0, 0, 0, 0.211765)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.101961, 0.101961, 0.101961, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpb5y"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yhjf0"]
+bg_color = Color(0, 0, 0, 0.313726)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2lvp5"]
+bg_color = Color(0, 0, 0, 0.192157)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_568xt"]
+bg_color = Color(1, 1, 1, 0.301961)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="GunPanel" type="PanelContainer"]
+offset_right = 135.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jdixi")
+script = ExtResource("1_3vy6l")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpb5y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yhjf0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2lvp5")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_568xt")
+action_mode = 0

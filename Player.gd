@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Player
 
-
 # left and right bounds for the player
 @export var stage_left: int = 50
 @export var stage_right : int = 1000
@@ -17,7 +16,6 @@ class_name Player
 @onready var gun2: Node2D = $Arm/Gun2
 @onready var gun3: Node2D = $Arm/Gun3
 @onready var guns = [gun1, gun2, gun3]
-@onready var currentGun = gun1
 
 func _ready():
 	update_gun()
@@ -34,14 +32,12 @@ func _process(delta: float) -> void:
 
 	# weapon switching
 	if Input.is_action_just_pressed("weapon1"):
-		currentGun = gun1
-		update_gun()
+		Globals.currentGunIndex = 0
 	elif Input.is_action_just_pressed("weapon2"):
-		currentGun = gun2
-		update_gun()
+		Globals.currentGunIndex = 1
 	elif Input.is_action_just_pressed("weapon3"):
-		currentGun = gun3
-		update_gun()
+		Globals.currentGunIndex = 2
+	update_gun()
 
 	# aim at mouse
 	var mouse_world_pos := get_global_mouse_position()
@@ -51,7 +47,7 @@ func _process(delta: float) -> void:
 	#print_debug(is_right)
 	arm.global_rotation = angle_to_mouse_raw + deg_to_rad(base_arm_degs if is_right else -base_arm_degs)
 	arm.scale.y = 1 if is_right else -1
-	currentGun.is_right = is_right
+	guns[Globals.currentGunIndex].is_right = is_right
 
 	# health
 	#var inspect_dict: Dictionary = {
@@ -63,8 +59,8 @@ func update_gun():
 	for gun in guns:
 		gun.hide()
 		gun.process_mode = Node.PROCESS_MODE_DISABLED
-	currentGun.show()
-	currentGun.process_mode = Node.PROCESS_MODE_INHERIT
+	guns[Globals.currentGunIndex].show()
+	guns[Globals.currentGunIndex].process_mode = Node.PROCESS_MODE_INHERIT
 		
 func take_damage(damage: int):
 	Globals.health -= damage
