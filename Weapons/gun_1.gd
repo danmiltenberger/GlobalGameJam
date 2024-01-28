@@ -53,7 +53,7 @@ func shoot():
 	var line: Line = lines_shuffled.pop_front()
 
 	var bullet := bullet_scn.instantiate() as Node2D
-	get_tree().get_current_scene().add_child(bullet)
+	SceneSwitcher.current_level.add_child(bullet)
 	bullet.global_position = marker.global_position
 	bullet.rotation = global_rotation + PI
 	bullet.get_node("Mover").speed = bullet_speed

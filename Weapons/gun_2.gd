@@ -64,7 +64,7 @@ func shoot():
 	var deg_step := spread_degs / (markers.size() - 1)
 	for marker in markers:
 		var bullet := bullet_scn.instantiate() as Node2D
-		get_tree().get_current_scene().add_child(bullet)
+		SceneSwitcher.current_level.add_child(bullet)
 		bullet.global_position = marker.global_position
 		bullet.rotation = global_rotation + PI + deg_to_rad(degs)
 		bullet.get_node("Mover").speed = bullet_speed

@@ -10,7 +10,7 @@ class_name SceneSwitcher
 @onready var animator: AnimationPlayer = $AnimationPlayer
 
 
-var current_level: Node2D
+static var current_level: Node2D
 
 func _ready():
 	#print("scene switcher: activating")
