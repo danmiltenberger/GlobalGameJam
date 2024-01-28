@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://207cral52hyg"]
+[gd_scene load_steps=5 format=3 uid="uid://207cral52hyg"]
 
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_k3be2"]
 [ext_resource type="Texture2D" uid="uid://dyo1yonon6xxq" path="res://Graphics/Beer.png" id="2_gxefl"]
+[ext_resource type="AudioStream" uid="uid://bhu4gdhqqaaju" path="res://Audio/projectile food sounds/Bottle Break.mp3" id="2_tbmkg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_txw1b"]
 radius = 178.191
@@ -11,6 +12,7 @@ height = 1102.0
 speed = 1500
 damage = 50
 health = 20
+sound = ExtResource("2_tbmkg")
 
 [node name="AreaOfEffectTracker_Area2D#CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(-20, -14)

@@ -6,7 +6,8 @@ class_name GunPanel extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	button.connect("pressed", _on_button_pressed)
+	# button.connect("pressed", _on_button_pressed)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

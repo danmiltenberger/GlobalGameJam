@@ -32,18 +32,19 @@ var play_sound: bool = true
 #endregion
 
 
-func play_sound_once(sound: AudioStream):
+func play_sound_once(sound: AudioStream, volume := 0.0):
 	if play_sound:
 		var player := AudioStreamPlayer.new()
+		player.volume_db = volume
 		player.stream = sound
 		get_tree().get_root().add_child(player)
 		player.play()
 		player.connect("finished", player.queue_free)
 
-func play_sound_once_by_path(path: String, sec := -1.0, volume := 1.0):
+func play_sound_once_by_path(path: String, sec := -1.0, volume := 0.0):
 	if play_sound:
 		var player := AudioStreamPlayer.new()
-		# player.volume_db *= volume
+		player.volume_db = volume
 		var sound := load(path) as AudioStream
 		player.stream = sound
 		get_tree().get_root().add_child(player)
