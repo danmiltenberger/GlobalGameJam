@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://Custom Components/Mover.gd" id="2_b8nkd"]
 [ext_resource type="Script" path="res://Custom Components/LabelResizer.gd" id="3_kb7q0"]
 [ext_resource type="Script" path="res://Custom Components/Bomber.gd" id="4_k7s1q"]
-[ext_resource type="Texture2D" uid="uid://bu7271sqa2cou" path="res://Graphics/cabbage.png" id="4_tynlq"]
 [ext_resource type="PackedScene" uid="uid://ba7i5b2xdnd2q" path="res://Weapons/bullet_4b.tscn" id="5_7w8np"]
 [ext_resource type="Script" path="res://Custom Components/Rotator.gd" id="5_ojs6k"]
+[ext_resource type="Texture2D" uid="uid://buhgrwjurefhe" path="res://Graphics/Bomb.png" id="6_bajdw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06itj"]
 size = Vector2(164, 79)
@@ -41,18 +41,18 @@ position = Vector2(82, 2.08165e-12)
 shape = SubResource("RectangleShape2D_06itj")
 
 [node name="Bomb" type="Sprite2D" parent="."]
-z_index = 20
+z_index = 60
 position = Vector2(-80.5303, -1.14012e-10)
 rotation = -8.29791e-05
 scale = Vector2(0.332281, 0.332281)
-texture = ExtResource("4_tynlq")
+texture = ExtResource("6_bajdw")
 
 [node name="Rotator" type="Node" parent="Bomb"]
 script = ExtResource("5_ojs6k")
 speed = 440.0
 
 [node name="Label" type="Label" parent="."]
-z_index = 10
+z_index = 50
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5

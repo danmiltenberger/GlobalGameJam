@@ -16,6 +16,8 @@ var health: float = 100.0:
 var currentGunIndex := 0
 var previousGunIndex := 0
 func setGunIndex(index: int):
+	if currentGunIndex == index:
+		return
 	previousGunIndex = currentGunIndex
 	currentGunIndex = index
 
