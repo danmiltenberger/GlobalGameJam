@@ -113,7 +113,7 @@ texture = ExtResource("15_eyrl7")
 
 [node name="Stage" type="Sprite2D" parent="Environment/Background"]
 z_index = 12
-position = Vector2(540, 965)
+position = Vector2(540, 956)
 texture = ExtResource("16_j6w5x")
 
 [node name="Player" parent="." instance=ExtResource("3_w8w0m")]
