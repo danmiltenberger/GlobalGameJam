@@ -66,7 +66,8 @@ func shoot():
 		bullet.global_position = marker.global_position
 		bullet.rotation = global_rotation + PI + deg_to_rad(degs)
 		bullet.get_node("Mover").speed = bullet_speed
-		bullet.get_node("LabelResizer").set_text(line.text)
+		var text_to_use := line.text if randf() < 0.5 else "#$@%*!@&!*"
+		bullet.get_node("LabelResizer").set_text(text_to_use)
 		Globals.play_sound_once(line.audio)
 
 		var auto_free_timer := Timer.new()

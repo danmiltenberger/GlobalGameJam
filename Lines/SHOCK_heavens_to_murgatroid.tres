@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://dpdcyiuvolfib"]
+
+[ext_resource type="AudioStream" uid="uid://kj2ja0l5vlpf" path="res://Audio/Jokes/Single Fire Samples/Your Momma!.mp3" id="1_el8ce"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_rl0h5"]
+
+[resource]
+script = ExtResource("2_rl0h5")
+text = "MURGATROID"
+audio = ExtResource("1_el8ce")

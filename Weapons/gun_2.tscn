@@ -1,20 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl4pfjln2i4ur"]
+[gd_scene load_steps=13 format=3 uid="uid://bl4pfjln2i4ur"]
 
 [ext_resource type="Script" path="res://Weapons/gun_2.gd" id="1_amwm8"]
 [ext_resource type="PackedScene" uid="uid://csxxkojlf6t8k" path="res://Weapons/bullet_2.tscn" id="2_dch8w"]
 [ext_resource type="Texture2D" uid="uid://bqd180kpqj1eq" path="res://Graphics/Shotgun.png" id="2_lh22r"]
-[ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_eypct"]
-[ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_ckn4b"]
+[ext_resource type="Resource" uid="uid://bai85pyw6rv2m" path="res://Lines/SHOCK_exit_stage_left.tres" id="3_w7gts"]
+[ext_resource type="Resource" uid="uid://6l7yygmj8nh8" path="res://Lines/SHOCK_git_r_done.tres" id="4_llbxw"]
+[ext_resource type="Resource" uid="uid://dpdcyiuvolfib" path="res://Lines/SHOCK_heavens_to_murgatroid.tres" id="5_3glxo"]
 [ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun_Badum_Flipped.png" id="5_o83x8"]
+[ext_resource type="Resource" uid="uid://7pq3whroeryg" path="res://Lines/SHOCK_no_soup_for_you.tres" id="6_6djbm"]
 [ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun_Badum.png" id="6_yfu2c"]
+[ext_resource type="Resource" uid="uid://df5xj5071ti5b" path="res://Lines/SHOCK_ok_boomer.tres" id="7_bie44"]
+[ext_resource type="Resource" uid="uid://beqgatkemsdfj" path="res://Lines/SHOCK_redneck.tres" id="8_uun4m"]
+[ext_resource type="Resource" uid="uid://ct5wsgtigsjve" path="res://Lines/SHOCK_yaas_queen.tres" id="9_m14pq"]
 
 [node name="Gun2" type="Node2D"]
 script = ExtResource("1_amwm8")
 bullet_scn = ExtResource("2_dch8w")
-cooldown_base_sec = 0.5
-bullet_speed = 600.0
-lifetime_sec = 0.4
-lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_eypct"), ExtResource("4_ckn4b")])
+cooldown_base_sec = 2.0
+bullet_speed = 450.0
+lifetime_sec = 0.8
+lines = Array[Resource]([ExtResource("3_w7gts"), ExtResource("4_llbxw"), ExtResource("5_3glxo"), ExtResource("6_6djbm"), ExtResource("7_bie44"), ExtResource("8_uun4m"), ExtResource("9_m14pq")])
 
 [node name="Right" type="Node2D" parent="."]
 

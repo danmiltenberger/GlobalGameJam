@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://6l7yygmj8nh8"]
+
+[ext_resource type="AudioStream" uid="uid://qumoa4cmesmf" path="res://Audio/Jokes/Shotgun Samples/git r done!.mp3" id="1_jjxef"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_pa3r3"]
+
+[resource]
+script = ExtResource("2_pa3r3")
+text = "GIT 'R DONE"
+audio = ExtResource("1_jjxef")

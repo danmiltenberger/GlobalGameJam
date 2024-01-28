@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://beqgatkemsdfj"]
+
+[ext_resource type="AudioStream" uid="uid://iiswir3aty4n" path="res://Audio/Jokes/Shotgun Samples/you might be a redneck.mp3" id="1_8u2iv"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_2xdgs"]
+
+[resource]
+script = ExtResource("2_2xdgs")
+text = "REDNECK"
+audio = ExtResource("1_8u2iv")

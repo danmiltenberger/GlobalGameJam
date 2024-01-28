@@ -17,6 +17,7 @@ offsets = PackedFloat32Array(0, 0.235751, 0.549223, 0.852332, 1)
 colors = PackedColorArray(0.325722, 1, 0.970212, 1, 0.527353, 1, 0.342164, 1, 0.990833, 1, 0.45, 1, 1, 0.340159, 0.167886, 1, 1, 0.115274, 0.385968, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_21hql"]
+line_spacing = -10.0
 font_size = 32
 outline_size = 16
 outline_color = Color(0.101961, 0.101961, 0.101961, 1)
@@ -84,7 +85,8 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="GameInterface/GunSelectors/GunPanel"]
 layout_mode = 2
-text = "ONE-LINER"
+text = "ONE-LINER
+PISTOL"
 label_settings = SubResource("LabelSettings_21hql")
 horizontal_alignment = 1
 
@@ -94,7 +96,8 @@ size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="GameInterface/GunSelectors/GunPanel2"]
 layout_mode = 2
-text = "SHOCKGUN"
+text = "SHOCKGUN
+HUMOR"
 label_settings = SubResource("LabelSettings_21hql")
 horizontal_alignment = 1
 
@@ -104,7 +107,8 @@ size_flags_horizontal = 3
 
 [node name="Label3" type="Label" parent="GameInterface/GunSelectors/GunPanel3"]
 layout_mode = 2
-text = "GAFFE-ING GUN"
+text = "GAFFE-LING
+MACHINE GUN"
 label_settings = SubResource("LabelSettings_21hql")
 horizontal_alignment = 1
 
@@ -114,6 +118,7 @@ size_flags_horizontal = 3
 
 [node name="Label4" type="Label" parent="GameInterface/GunSelectors/GunPanel4"]
 layout_mode = 2
-text = "OK BOOMER"
+text = "KNOCK 'EM
+DEAD"
 label_settings = SubResource("LabelSettings_21hql")
 horizontal_alignment = 1

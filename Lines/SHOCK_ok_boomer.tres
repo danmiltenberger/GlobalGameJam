@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://df5xj5071ti5b"]
+
+[ext_resource type="AudioStream" uid="uid://ovxi8sibajjf" path="res://Audio/Jokes/Shotgun Samples/OK Boomer!.mp3" id="1_2g3tm"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_yi7xq"]
+
+[resource]
+script = ExtResource("2_yi7xq")
+text = "OK BOOMER"
+audio = ExtResource("1_2g3tm")

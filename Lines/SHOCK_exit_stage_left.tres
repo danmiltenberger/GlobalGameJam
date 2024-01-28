@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://bai85pyw6rv2m"]
+
+[ext_resource type="AudioStream" uid="uid://dqb6xn7fci6ie" path="res://Audio/Jokes/Shotgun Samples/exit, stage left!.mp3" id="1_frky2"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_xsgmc"]
+
+[resource]
+script = ExtResource("2_xsgmc")
+text = "EXIT STAGE"
+audio = ExtResource("1_frky2")

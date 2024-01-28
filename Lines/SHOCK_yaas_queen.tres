@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://ct5wsgtigsjve"]
+
+[ext_resource type="AudioStream" uid="uid://da687fy6hfewq" path="res://Audio/Jokes/Shotgun Samples/YAAAAAS QUEEEN.mp3" id="1_06dlf"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_56phg"]
+
+[resource]
+script = ExtResource("2_56phg")
+text = "YAAS QUEEN"
+audio = ExtResource("1_06dlf")
