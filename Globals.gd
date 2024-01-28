@@ -56,3 +56,4 @@ func play_sound_once_by_path(path: String, sec := -1.0, volume := 0.0):
 		
 		
 var current_level: int = 1
+var game_over: bool = false

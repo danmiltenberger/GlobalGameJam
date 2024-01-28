@@ -9,6 +9,7 @@ class_name Level
 func _ready() -> void:
 	heckler_handler.load_csv(csv_str, repetitions)
 	Globals.health = 100
+	Globals.game_over = false
 
 func _process(delta):
 	# Decay health 1:1 with time
