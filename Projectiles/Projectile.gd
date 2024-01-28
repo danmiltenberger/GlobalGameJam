@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 			destroy()
 		elif body is Word:		# if it hits a player's words
 			body.get_node("Label/ColorRect").visible = false
+			body.get_node("Label").modulate = Color(1, 1, 1, 0.7)
 			(body as StaticBody2D).collision_layer = 0
 			destroy()
 	

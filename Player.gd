@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 			Globals.setGunIndex(1)
 		elif Input.is_action_just_pressed("weapon3"):
 			Globals.setGunIndex(2)
-		elif Input.is_action_just_pressed("weapon4"):
+		elif Globals.timeTo4 <= 0.0 && Input.is_action_just_pressed("weapon4"):
 			Globals.setGunIndex(3)
 		update_gun()
 

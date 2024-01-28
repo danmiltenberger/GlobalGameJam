@@ -46,7 +46,7 @@ func shoot():
 	var line: Line = lines_shuffled.pop_front()
 
 	var bullet := bullet_scn.instantiate() as Node2D
-	get_tree().get_current_scene().add_child(bullet)
+	SceneSwitcher.current_level.add_child(bullet)
 	bullet.global_position = marker.global_position
 	bullet.rotation = global_rotation + PI
 	var dist = (get_global_mouse_position() - bullet.global_position).length()
@@ -74,6 +74,7 @@ func shoot():
 	stuck_timer.wait_time = line.timing + bullet.get_node("Bomber").lifetime
 	stuck_timer.start()
 	Globals.stuckFiring = true
+	Globals.timeTo4 = Globals.timeTo4Max
 
 	left_shoot.show()
 	right_shoot.show()

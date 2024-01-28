@@ -20,6 +20,8 @@ func setGunIndex(index: int):
 	currentGunIndex = index
 
 var stuckFiring := false
+var timeTo4Max := 20.0
+var timeTo4 := 20.0
 	
 var jokes_landed: int = 0		# how many times a word hit a tomato
 var total_damage_taken: int = 0	# tracks how much damage
