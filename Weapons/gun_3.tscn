@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" path="res://Weapons/gun_3.gd" id="1_47i84"]
 [ext_resource type="PackedScene" uid="uid://7aewwkjgc424" path="res://Weapons/bullet_3.tscn" id="2_fv1ks"]
-[ext_resource type="Texture2D" uid="uid://r1nd8hyahrp8" path="res://Graphics/Gun1.png" id="3_1qw51"]
 [ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_ngcwt"]
 [ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_pdq0k"]
-[ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun1_Badum.png" id="4_whgql"]
-[ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun1_Badum_Left.png" id="5_udkvl"]
+[ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun_Badum.png" id="6_sxxy1"]
+[ext_resource type="Texture2D" uid="uid://byc1vt45gi3ee" path="res://Graphics/TommyGun.png" id="6_uh6kw"]
+[ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun_Badum_Left.png" id="7_1mbhl"]
 
 [node name="Gun1" type="Node2D"]
-modulate = Color(0.952941, 0.364706, 0.364706, 1)
 script = ExtResource("1_47i84")
 bullet_scn = ExtResource("2_fv1ks")
 bullet_speed = 500.0
@@ -18,34 +17,34 @@ lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_ngcwt"), 
 
 [node name="Left" type="Node2D" parent="."]
 
-[node name="Base" type="Sprite2D" parent="Left"]
-position = Vector2(258.8, -48.8)
+[node name="Shoot" type="Sprite2D" parent="Left"]
+position = Vector2(421.1, -84)
 rotation = -3.14159
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("3_1qw51")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_sxxy1")
 region_rect = Rect2(320, 576, 64, 64)
 
-[node name="Shoot" type="Sprite2D" parent="Left"]
-position = Vector2(258.8, -48.8)
+[node name="Base" type="Sprite2D" parent="Left"]
+position = Vector2(99.0004, -53)
 rotation = -3.14159
-scale = Vector2(0.18, 0.18)
-texture = ExtResource("4_whgql")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_uh6kw")
 region_rect = Rect2(320, 576, 64, 64)
 
 [node name="Right" type="Node2D" parent="."]
 
-[node name="Base" type="Sprite2D" parent="Right"]
-position = Vector2(258.8, 45.2)
+[node name="Shoot" type="Sprite2D" parent="Right"]
+position = Vector2(421.1, 78)
 rotation = -3.14159
-scale = Vector2(0.18, -0.18)
-texture = ExtResource("3_1qw51")
+scale = Vector2(0.3, -0.3)
+texture = ExtResource("7_1mbhl")
 region_rect = Rect2(320, 576, 64, 64)
 
-[node name="Shoot" type="Sprite2D" parent="Right"]
-position = Vector2(258.8, 45.2)
+[node name="Base" type="Sprite2D" parent="Right"]
+position = Vector2(99.0004, 49)
 rotation = -3.14159
-scale = Vector2(0.18, -0.18)
-texture = ExtResource("5_udkvl")
+scale = Vector2(0.3, -0.3)
+texture = ExtResource("6_uh6kw")
 region_rect = Rect2(320, 576, 64, 64)
 
 [node name="InstancePoint" type="Marker2D" parent="."]
