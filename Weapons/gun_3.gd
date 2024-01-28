@@ -22,7 +22,12 @@ var words: Array[String] = []
 @onready var left_shoot: Node2D = get_node("Left/Shoot")
 @onready var right_shoot: Node2D = get_node("Right/Shoot")
 
+@onready var shoot_graphic_timer := Timer.new()
+
 func _ready() -> void:
+	shoot_graphic_timer.one_shot = true
+	shoot_graphic_timer.connect("timeout", reset_shoot_graphic)
+	add_child(shoot_graphic_timer)
 	left_shoot.hide()
 	right_shoot.hide()
 
@@ -47,8 +52,6 @@ func _process(delta: float) -> void:
 			var word = words.pop_front()
 			if words.size() == 0:
 				current_line = null
-				left_shoot.hide()
-				right_shoot.hide()
 				Globals.stuckFiring = false
 			
 			cooldown_remaining_sec = cooldown_base_sec * word.length() / 4.0
@@ -68,6 +71,11 @@ func _process(delta: float) -> void:
 			auto_free_timer.connect("timeout", bullet.queue_free)
 			add_child(auto_free_timer)
 
+			left_shoot.show()
+			right_shoot.show()
+			shoot_graphic_timer.wait_time = cooldown_remaining_sec * 0.75
+			shoot_graphic_timer.start()
+
 func shoot():
 	cooldown_remaining_sec = 0
 	if lines_shuffled.size() == 0:
@@ -82,5 +90,7 @@ func shoot():
 	Globals.play_sound_once(line.audio)
 	Globals.stuckFiring = true
 
-	left_shoot.show()
-	right_shoot.show()
+func reset_shoot_graphic():
+	left_shoot.hide()
+	right_shoot.hide()
+		
