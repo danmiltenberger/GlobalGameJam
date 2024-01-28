@@ -58,6 +58,7 @@ func shoot():
 		lines_shuffled.shuffle()
 	var line: Line = lines_shuffled.pop_front()
 	Globals.play_sound_once(line.audio)
+	Globals.play_sound_once_by_path("res://Audio/gun sounds/Shotgun (with gun cock).mp3")
 
 	var degs := -spread_degs / 2.0
 	var deg_step := spread_degs / (markers.size() - 1)
