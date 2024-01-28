@@ -31,15 +31,14 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
+[node name="CanvasGroup" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasGroup"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 673.0
-
-[node name="Label" type="Label" parent="CanvasGroup/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+anchor_right = 2.0
+anchor_bottom = 2.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = -50.0
+size_flags_vertical = 8
