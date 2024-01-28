@@ -55,12 +55,14 @@ func shoot():
 	bullet.get_node("Bomber").target_pos = get_global_mouse_position()
 	bullet.get_node("Bomber").text = line.text.split("|")[1]
 	Globals.play_sound_once(line.audio)
+	Globals.play_sound_once_by_path("res://Audio/gun sounds/bomb (pt 1).mp3")
 
 	var auto_free_timer := Timer.new()
 	add_child(auto_free_timer)
 	auto_free_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	auto_free_timer.connect("timeout", bullet.queue_free)
 	auto_free_timer.connect("timeout", auto_free_timer.queue_free)
+	auto_free_timer.connect("timeout", Globals.play_sound_once_by_path.bind(self, "res://Audio/gun sounds/bomb (pt 2).mp3"))
 	auto_free_timer.wait_time = line.timing
 	auto_free_timer.start()
 

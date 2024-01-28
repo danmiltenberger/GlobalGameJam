@@ -39,3 +39,17 @@ func play_sound_once(sound: AudioStream):
 		get_tree().get_root().add_child(player)
 		player.play()
 		player.connect("finished", player.queue_free)
+
+func play_sound_once_by_path(path: String, sec := -1.0, volume := 1.0):
+	if play_sound:
+		var player := AudioStreamPlayer.new()
+		# player.volume_db *= volume
+		var sound := load(path) as AudioStream
+		player.stream = sound
+		get_tree().get_root().add_child(player)
+		player.play()
+		if sec > 0:
+			player.connect("finished", player.queue_free)
+			await get_tree().create_timer(sec).timeout
+			player.queue_free()
+		

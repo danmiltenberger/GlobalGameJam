@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=27 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
 [ext_resource type="Texture2D" uid="uid://5xmnmhg5terw" path="res://Graphics/Stage.png" id="3_5km8r"]
-[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 [ext_resource type="Texture2D" uid="uid://dvxditgkqb1yh" path="res://Graphics/StageComponents/row11.png" id="5_2cbw0"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bnkk8eokdrw0i" path="res://Graphics/StageComponents/row1.png" id="15_eyrl7"]
 [ext_resource type="Texture2D" uid="uid://dn6v8fhtnf0ug" path="res://Graphics/StageComponents/stage.png" id="16_j6w5x"]
 [ext_resource type="PackedScene" uid="uid://dx07cwle2xove" path="res://LevelControl/heckler.tscn" id="19_73dy5"]
+[ext_resource type="AudioStream" uid="uid://dfnl4sx45n3k" path="res://Audio/MUSIC/Music - main game (loop).mp3" id="23_tmter"]
 
 [sub_resource type="Gradient" id="Gradient_d66g4"]
 interpolation_color_space = 2
@@ -452,3 +453,7 @@ text = "KNOCK 'EM
 DEAD"
 label_settings = SubResource("LabelSettings_21hql")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_tmter")
+autoplay = true

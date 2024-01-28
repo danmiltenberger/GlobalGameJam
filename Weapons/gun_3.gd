@@ -92,6 +92,8 @@ func shoot():
 	Globals.play_sound_once(line.audio)
 	Globals.stuckFiring = true
 
+	Globals.play_sound_once_by_path("res://Audio/gun sounds/machine gun (non loop).mp3", 3.0)
+
 func reset_shoot_graphic():
 	left_shoot.hide()
 	right_shoot.hide()
