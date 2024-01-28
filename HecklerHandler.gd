@@ -1,7 +1,7 @@
 extends Node2D
 class_name HecklerHandler
 @export var repetitions: int = 10
-@export var level_csv: String = "level_1"
+@export var level_csv_str: String = "level_1"
 # take a csv with defined paramters, pass to individual hecklers
 # the individual hecklers are children
 
@@ -10,7 +10,7 @@ var csv: Array
 var timer: Timer
 	
 func _ready() -> void:
-	var csv_str = "res://LevelControl/" + level_csv + ".csv"
+	var csv_str = "res://LevelControl/" + level_csv_str + ".csv"
 	print_debug(csv_str)
 	csv = load(csv_str).records
 	timer = Timer.new()
