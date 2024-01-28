@@ -1,27 +1,22 @@
 extends CanvasLayer
 
+
 @onready var health: Label = $Health
-@onready var timer : Timer 
+@onready var health_bar: ColorRect = $HealthBar
+@export var health_bar_gradient: Gradient
+
+@onready var health_original := Globals.health * 1.5 # give some space for the bar to go up
 
 func _ready() -> void:
-	timer = Timer.new()
-	timer.one_shot = false
-	add_child(timer)
-	timer.start(1)
-	timer.timeout.connect(count_seconds)
-	
-	
+	pass
 
 func _process(_delta: float) -> void:
-
-	health_is_time()
-
-func health_is_time():
+	# Health text
 	#TODO - fix this? it's pretty bad but it works!
-	@warning_ignore("integer_division")
-	var minutes = Globals.health / 60
-	var remainder = Globals.health / 60.0 - minutes
-	var seconds = snappedi(remainder * 60, 1)
+	# ^ it's fine, just better to store as float than int
+	var minutes := floori(Globals.health / 60.0)
+	var remainder := Globals.health / 60.0 - minutes
+	var seconds := snappedi(remainder * 60, 1)
 	var seconds_str: String
 	if seconds < 10:
 		seconds_str = "0" + str(seconds)
@@ -29,6 +24,11 @@ func health_is_time():
 		seconds_str = str(seconds)
 	var health_str: String = str(minutes) + ":" +  seconds_str
 	health.text = health_str
+
+	# Health bar
+	var health_percent: float = clamp(Globals.health / health_original, 0, 1)
+	health_bar.scale.x = health_percent
+	health_bar.color = health_bar_gradient.sample(1 - health_percent)
 
 func count_seconds():
 	print("timer done")

@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=10 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
-[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 [ext_resource type="PackedScene" uid="uid://bvfab7k7sikh" path="res://Custom Components/cursor.tscn" id="5_8yygk"]
 [ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="7_1gisq"]
 [ext_resource type="Script" path="res://LevelControl/GameInterface.gd" id="7_n41sm"]
+
+[sub_resource type="Gradient" id="Gradient_d66g4"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.235751, 0.549223, 0.852332, 1)
+colors = PackedColorArray(0.325722, 1, 0.970212, 1, 0.527353, 1, 0.342164, 1, 0.990833, 1, 0.45, 1, 1, 0.340159, 0.167886, 1, 1, 0.115274, 0.385968, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hyn5u")
@@ -34,12 +39,23 @@ scale = Vector2(0.5, 0.5)
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
 
 [node name="GameInterface" type="CanvasLayer" parent="."]
+layer = 10
 script = ExtResource("7_n41sm")
+health_bar_gradient = SubResource("Gradient_d66g4")
+
+[node name="HealthBar" type="ColorRect" parent="GameInterface"]
+offset_top = 1872.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+pivot_offset = Vector2(540, 20)
+color = Color(0.992157, 1, 0.439216, 1)
 
 [node name="Health" type="Label" parent="GameInterface"]
-offset_left = 93.0
-offset_top = 1804.0
-offset_right = 286.0
-offset_bottom = 1871.0
-text = "Hi Mom!"
+offset_left = 513.0
+offset_top = 1862.0
+offset_right = 607.0
+offset_bottom = 1929.0
+text = "9:99"
 label_settings = ExtResource("7_1gisq")
+horizontal_alignment = 1
+vertical_alignment = 1

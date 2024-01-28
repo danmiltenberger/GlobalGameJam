@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	close_all_menus()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	player_pause_unpause()
 	game_over()
 

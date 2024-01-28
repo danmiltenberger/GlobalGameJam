@@ -6,7 +6,7 @@ var dev_mode: bool = true
 
 var game_paused: bool = false
 
-var health: int = 100:
+var health: float = 100.0:
 	get:
 		return health
 	set(value):
