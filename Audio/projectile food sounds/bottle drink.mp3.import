@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wwd8igcom5p8"
+path="res://.godot/imported/bottle drink.mp3-5c979919d2aab863015a8021ba7d56b5.mp3str"
+
+[deps]
+
+source_file="res://Audio/projectile food sounds/bottle drink.mp3"
+dest_files=["res://.godot/imported/bottle drink.mp3-5c979919d2aab863015a8021ba7d56b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

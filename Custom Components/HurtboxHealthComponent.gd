@@ -26,7 +26,7 @@ func _process(_delta):
 		is_dead()
 
 func hit(atk: int):
-	current_health -= atk
+	current_health = max(current_health - atk, 0.0)
 	print("took damage: ", atk)
 	
 	# start by checking if the entity should be killed

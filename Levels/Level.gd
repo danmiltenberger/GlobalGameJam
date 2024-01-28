@@ -13,6 +13,5 @@ func _ready() -> void:
 
 func _process(delta):
 	# Decay health 1:1 with time
-	Globals.health -= delta
-
+	Globals.health = max(Globals.health - delta, 0.0)
 

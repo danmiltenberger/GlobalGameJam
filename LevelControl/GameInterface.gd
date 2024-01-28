@@ -29,7 +29,3 @@ func _process(_delta: float) -> void:
 	var health_percent: float = clamp(Globals.health / health_original, 0, 1)
 	health_bar.scale.x = health_percent
 	health_bar.color = health_bar_gradient.sample(1 - health_percent)
-
-func count_seconds():
-	print("timer done")
-	Globals.health -= 1
