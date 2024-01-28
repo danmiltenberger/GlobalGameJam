@@ -27,7 +27,8 @@ func _process(delta: float) -> void:
 			Globals.jokes_landed += 1
 			destroy()
 		elif body is Word:		# if it hits a player's words
-			body.queue_free()	#TODO - do we like this behavior?
+			body.get_node("Label/ColorRect").visible = false
+			(body as StaticBody2D).collision_layer = 0
 			destroy()
 	
 func move_down_screen(delta):
