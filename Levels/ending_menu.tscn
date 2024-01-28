@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://con75mguhyjab"]
+[gd_scene load_steps=5 format=3 uid="uid://con75mguhyjab"]
 
 [ext_resource type="Script" path="res://LevelControl/ending_menu.gd" id="1_do8nq"]
 [ext_resource type="Texture2D" uid="uid://bpa855k6f8i2n" path="res://Graphics/Menus/EndMenu.png" id="2_e13eg"]
 [ext_resource type="AudioStream" uid="uid://dll8jyduii6v8" path="res://Audio/heckler sounds/boo with YOU SUCK.mp3" id="3_jwmj5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ij80x"]
+font_size = 30
 
 [node name="EndingMenu" type="Node2D"]
 script = ExtResource("1_do8nq")
@@ -41,6 +44,43 @@ scale = Vector2(55.6198, 28.943)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jwmj5")
 autoplay = true
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 346.0
+offset_top = 1089.0
+offset_right = 789.0
+offset_bottom = 1262.0
+columns = 2
+
+[node name="JokesLanded" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Jokes Landed         "
+label_settings = SubResource("LabelSettings_ij80x")
+
+[node name="JokeFloat" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Float"
+label_settings = SubResource("LabelSettings_ij80x")
+
+[node name="DamageTaken" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Damage Taken"
+label_settings = SubResource("LabelSettings_ij80x")
+
+[node name="DamageFloat" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Float"
+label_settings = SubResource("LabelSettings_ij80x")
+
+[node name="Healing" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Healing"
+label_settings = SubResource("LabelSettings_ij80x")
+
+[node name="HealingFloat" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Float"
+label_settings = SubResource("LabelSettings_ij80x")
 
 [connection signal="button_down" from="Replay" to="." method="_on_replay_button_down"]
 [connection signal="button_down" from="NextLevel" to="." method="_on_next_level_button_down"]
