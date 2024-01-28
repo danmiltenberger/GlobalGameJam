@@ -71,10 +71,12 @@ func shoot():
 		Globals.play_sound_once(line.audio)
 
 		var auto_free_timer := Timer.new()
-		auto_free_timer.wait_time = lifetime_sec
-		auto_free_timer.autostart = true
-		auto_free_timer.connect("timeout", bullet.queue_free)
 		add_child(auto_free_timer)
+		auto_free_timer.process_mode = Node.PROCESS_MODE_ALWAYS
+		auto_free_timer.connect("timeout", bullet.queue_free)
+		auto_free_timer.connect("timeout", auto_free_timer.queue_free)
+		auto_free_timer.wait_time = lifetime_sec
+		auto_free_timer.start()
 
 		degs += deg_step
 

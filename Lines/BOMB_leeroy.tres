@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://ceh120i4s5o0v"]
+
+[ext_resource type="AudioStream" uid="uid://d2nvasl6fxy7f" path="res://Audio/Jokes/Bomb Samples/LEEEEROY JENKINSSSSSS.mp3" id="1_oie4r"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_1cbfm"]
+
+[resource]
+script = ExtResource("2_1cbfm")
+text = "LEEEROY|JEEENKINSSS"
+audio = ExtResource("1_oie4r")
+timing = 2.22

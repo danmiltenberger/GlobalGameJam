@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://c38pn7xyabyv3"]
+
+[ext_resource type="AudioStream" uid="uid://bdt3r2bxurnmv" path="res://Audio/Jokes/Bomb Samples/It's Over Nine Thousand!!!!.mp3" id="1_gqal1"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_heiy7"]
+
+[resource]
+script = ExtResource("2_heiy7")
+text = "IT'S OVER NINE|THOUSAAAAND"
+audio = ExtResource("1_gqal1")
+timing = 1.8

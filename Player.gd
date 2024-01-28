@@ -15,7 +15,8 @@ class_name Player
 @onready var gun1: Node2D = $Arm/Gun1
 @onready var gun2: Node2D = $Arm/Gun2
 @onready var gun3: Node2D = $Arm/Gun3
-@onready var guns = [gun1, gun2, gun3]
+@onready var gun4: Node2D = $Arm/Gun4
+@onready var guns = [gun1, gun2, gun3, gun4]
 
 func _ready():
 	update_gun()
@@ -33,11 +34,13 @@ func _process(delta: float) -> void:
 	# weapon switching
 	if !Globals.stuckFiring:
 		if Input.is_action_just_pressed("weapon1"):
-			Globals.currentGunIndex = 0
+			Globals.setGunIndex(0)
 		elif Input.is_action_just_pressed("weapon2"):
-			Globals.currentGunIndex = 1
+			Globals.setGunIndex(1)
 		elif Input.is_action_just_pressed("weapon3"):
-			Globals.currentGunIndex = 2
+			Globals.setGunIndex(2)
+		elif Input.is_action_just_pressed("weapon4"):
+			Globals.setGunIndex(3)
 		update_gun()
 
 	# aim at mouse

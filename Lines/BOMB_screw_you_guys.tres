@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://blrecjpks5nfg"]
+
+[ext_resource type="AudioStream" uid="uid://btk3oi4hni21c" path="res://Audio/Jokes/Bomb Samples/screw you guys, im going home.mp3" id="1_1hp4c"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_gfx0n"]
+
+[resource]
+script = ExtResource("2_gfx0n")
+text = "SCREW YOU GUYS|I'M GOING HOME"
+audio = ExtResource("1_1hp4c")
+timing = 1.75

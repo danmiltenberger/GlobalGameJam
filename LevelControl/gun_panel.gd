@@ -14,4 +14,4 @@ func _process(_delta):
 
 func _on_button_pressed():
 	if !Globals.stuckFiring:
-		Globals.currentGunIndex = gun_index
+		Globals.setGunIndex(gun_index)

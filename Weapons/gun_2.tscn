@@ -19,7 +19,7 @@ bullet_scn = ExtResource("2_dch8w")
 cooldown_base_sec = 2.0
 bullet_speed = 450.0
 lifetime_sec = 0.8
-lines = Array[Resource]([ExtResource("3_w7gts"), ExtResource("4_llbxw"), ExtResource("5_3glxo"), ExtResource("6_6djbm"), ExtResource("7_bie44"), ExtResource("8_uun4m"), ExtResource("9_m14pq")])
+lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_w7gts"), ExtResource("4_llbxw"), ExtResource("5_3glxo"), ExtResource("6_6djbm"), ExtResource("7_bie44"), ExtResource("8_uun4m"), ExtResource("9_m14pq")])
 
 [node name="Right" type="Node2D" parent="."]
 

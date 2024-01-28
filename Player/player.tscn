@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4jg1cfimm6ej"]
+[gd_scene load_steps=10 format=3 uid="uid://4jg1cfimm6ej"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_dt1rp"]
 [ext_resource type="Texture2D" uid="uid://djxb4aacauf7j" path="res://Graphics/SullyBody.png" id="2_bddrt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://pioiwm2jyoih" path="res://Weapons/gun_1.tscn" id="4_5ap0g"]
 [ext_resource type="PackedScene" uid="uid://bl4pfjln2i4ur" path="res://Weapons/gun_2.tscn" id="5_wixu5"]
 [ext_resource type="PackedScene" uid="uid://d4lsui76kc8y7" path="res://Weapons/gun_3.tscn" id="6_nhj0i"]
+[ext_resource type="PackedScene" uid="uid://6vg1odyn8r45" path="res://Weapons/gun_4.tscn" id="7_lvb5u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dddic"]
 radius = 63.0
@@ -46,6 +47,11 @@ rotation = 1.31598
 position = Vector2(98.2341, 215.933)
 rotation = 1.31598
 scale = Vector2(0.943242, 0.959444)
+
+[node name="Gun4" parent="Arm" instance=ExtResource("7_lvb5u")]
+position = Vector2(102.629, -41.9927)
+rotation = 1.31598
+scale = Vector2(1.33549, 1.33549)
 
 [node name="InspectComponent" parent="." instance=ExtResource("3_7akyb")]
 

@@ -7,7 +7,6 @@ extends Node2D
 
 @export var cooldown_base_sec: float = 0.2
 var cooldown_remaining_sec: float = 0.0
-@export var bullet_speed: float = 1500.0
 @export var lifetime_sec: float = 1.2
 
 @export var lines: Array[Line] = []
@@ -19,13 +18,7 @@ var lines_shuffled: Array[Line] = []
 @onready var left_shoot: Node2D = get_node("Left/Shoot")
 @onready var right_shoot: Node2D = get_node("Right/Shoot")
 
-@onready var shoot_graphic_timer := Timer.new()
-
 func _ready() -> void:
-	shoot_graphic_timer.one_shot = true
-	shoot_graphic_timer.wait_time = cooldown_base_sec * 0.75
-	shoot_graphic_timer.connect("timeout", reset_shoot_graphic)
-	add_child(shoot_graphic_timer)
 	left_shoot.hide()
 	right_shoot.hide()
 
@@ -56,23 +49,22 @@ func shoot():
 	get_tree().get_current_scene().add_child(bullet)
 	bullet.global_position = marker.global_position
 	bullet.rotation = global_rotation + PI
-	bullet.get_node("Mover").speed = bullet_speed
-	bullet.get_node("LabelResizer").set_text(line.text)
+	var dist = (get_global_mouse_position() - bullet.global_position).length()
+	bullet.get_node("Mover").speed = dist / line.timing
+	bullet.get_node("LabelResizer").set_text(line.text.split("|")[0])
+	bullet.get_node("Bomber").target_pos = get_global_mouse_position()
+	bullet.get_node("Bomber").text = line.text.split("|")[1]
 	Globals.play_sound_once(line.audio)
-
-	left_shoot.show()
-	right_shoot.show()
-	shoot_graphic_timer.start()
 
 	var auto_free_timer := Timer.new()
 	add_child(auto_free_timer)
 	auto_free_timer.process_mode = Node.PROCESS_MODE_ALWAYS
 	auto_free_timer.connect("timeout", bullet.queue_free)
 	auto_free_timer.connect("timeout", auto_free_timer.queue_free)
-	auto_free_timer.wait_time = lifetime_sec
+	auto_free_timer.wait_time = line.timing
 	auto_free_timer.start()
 
-func reset_shoot_graphic():
-	left_shoot.hide()
-	right_shoot.hide()
+	left_shoot.show()
+	right_shoot.show()
 	
+	Globals.currentGunIndex = Globals.previousGunIndex

@@ -14,6 +14,11 @@ var health: float = 100.0:
 		return health
 
 var currentGunIndex := 0
+var previousGunIndex := 0
+func setGunIndex(index: int):
+	previousGunIndex = currentGunIndex
+	currentGunIndex = index
+
 var stuckFiring := false
 	
 var jokes_landed: int = 0		# how many times a word hit a tomato

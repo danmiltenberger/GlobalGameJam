@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://6vg1odyn8r45"]
+
+[ext_resource type="Script" path="res://Weapons/gun_4.gd" id="1_te1p5"]
+[ext_resource type="PackedScene" uid="uid://ib0epsovn5fb" path="res://Weapons/bullet_4.tscn" id="2_7jbpq"]
+[ext_resource type="Resource" uid="uid://ceh120i4s5o0v" path="res://Lines/BOMB_leeroy.tres" id="3_5gkpr"]
+[ext_resource type="Resource" uid="uid://c38pn7xyabyv3" path="res://Lines/BOMB_nine_thousand.tres" id="4_spb0b"]
+[ext_resource type="Resource" uid="uid://blrecjpks5nfg" path="res://Lines/BOMB_screw_you_guys.tres" id="5_et8rc"]
+[ext_resource type="Texture2D" uid="uid://buhgrwjurefhe" path="res://Graphics/Bomb.png" id="11_17vyk"]
+
+[node name="Gun4" type="Node2D"]
+script = ExtResource("1_te1p5")
+bullet_scn = ExtResource("2_7jbpq")
+cooldown_base_sec = 0.5
+lifetime_sec = 1.0
+lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_5gkpr"), ExtResource("4_spb0b"), ExtResource("5_et8rc")])
+
+[node name="Right" type="Node2D" parent="."]
+
+[node name="Shoot" type="Sprite2D" parent="Right"]
+position = Vector2(370.86, 45.2)
+rotation = -3.14159
+scale = Vector2(0.18, -0.18)
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Base" type="Sprite2D" parent="Right"]
+position = Vector2(260.8, 1.20044)
+rotation = -3.14159
+scale = Vector2(0.18, -0.18)
+texture = ExtResource("11_17vyk")
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Left" type="Node2D" parent="."]
+
+[node name="Shoot" type="Sprite2D" parent="Left"]
+position = Vector2(370.86, 45.2)
+rotation = -3.14159
+scale = Vector2(0.18, -0.18)
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="Base" type="Sprite2D" parent="Left"]
+position = Vector2(260.8, 1.20044)
+rotation = -3.14159
+scale = Vector2(0.18, -0.18)
+texture = ExtResource("11_17vyk")
+region_rect = Rect2(320, 576, 64, 64)
+
+[node name="InstancePoint" type="Marker2D" parent="."]
+position = Vector2(257, 2.08165e-12)
