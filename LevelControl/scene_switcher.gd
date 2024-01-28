@@ -7,8 +7,8 @@ class_name SceneSwitcher
 # 4. Optionally, show a progress bar
 
 @export var starter_scene_str : String = "tutorial_2"
+@onready var animator: AnimationPlayer = $AnimationPlayer
 
-@onready var animator : AnimationPlayer = $AnimationPlayer
 
 var current_level: Node2D
 
@@ -62,5 +62,9 @@ func fade_to_black():
 func fade_from_black():
 	animator.play("fade_from_black")
 
+func fade_to_gray():
+	animator.play("fade_to_gray")
 
+func fade_from_gray():
+	animator.play("fade_from_gray")
 

@@ -1,16 +1,83 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvjljibe7tb3s"]
+[gd_scene load_steps=4 format=3 uid="uid://dvjljibe7tb3s"]
 
 [ext_resource type="Script" path="res://GameControl.gd" id="1_es2hv"]
+[ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="2_wlcyx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_p48de"]
-font_size = 40
+font_size = 60
 
 [node name="GameControl" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_es2hv")
 
-[node name="PausedLabel" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="SettingsMenu" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="GridContainer" type="GridContainer" parent="SettingsMenu"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 2.0
+columns = 2
+
+[node name="Label" type="Label" parent="SettingsMenu/GridContainer"]
+layout_mode = 2
+text = "Settings 
+"
+label_settings = ExtResource("2_wlcyx")
+
+[node name="Label2" type="Label" parent="SettingsMenu/GridContainer"]
+layout_mode = 2
+text = "
+"
+label_settings = ExtResource("2_wlcyx")
+
+[node name="CheckButton" type="CheckButton" parent="SettingsMenu/GridContainer"]
+layout_mode = 2
+text = "Spoken Jokes"
+flat = true
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="GridContainer" type="GridContainer" parent="MainMenu"]
+anchors_preset = -1
+anchor_right = 2.0
+offset_right = 2.0
+offset_bottom = 2.0
+columns = 2
+
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="PauseMenuControl" type="VBoxContainer" parent="PauseMenu"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -76.5
+offset_right = 210.0
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PausedLabel" type="Label" parent="PauseMenu/PauseMenuControl"]
+layout_mode = 2
 text = "GAME PAUSED"
 label_settings = SubResource("LabelSettings_p48de")
+horizontal_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="PauseMenu/PauseMenuControl"]
+layout_mode = 2
+text = "Settings"
+
+[node name="MainMenu" type="Button" parent="PauseMenu/PauseMenuControl"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="button_down" from="PauseMenu/PauseMenuControl/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_down" from="PauseMenu/PauseMenuControl/MainMenu" to="." method="_on_main_menu_button_down"]

@@ -16,9 +16,12 @@ class_name Heckler
 @export var total_heckler_num: int = 4
 var standing_up: bool = false
 
+@onready var timer : Timer = Timer.new()
+
 func _ready():
 	pick_heckler_icon()
 	sprite_2d.visible = true
+	add_child(timer)
 
 func pick_heckler_icon():
 	var num = randi_range(1,total_heckler_num)
@@ -69,7 +72,9 @@ func send_line(number: int, proj: PackedScene, spacing_sec: float):
 		projectile = proj.instantiate()
 		add_child(projectile)
 		projectile.global_position = global_position
-		await get_tree().create_timer(spacing_sec).timeout
+		timer.start(spacing_sec)
+		timer.one_shot = true
+		await timer.timeout
 	standing_up = false
 
 func send_circle(number: int, proj: PackedScene, spacing_sec: float):
@@ -89,7 +94,9 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 		var dir_x = tan(deg_to_rad(deg))
 		var dir = Vector2(dir_x, dir_y)
 		projectile.direction = dir
-		await get_tree().create_timer(spacing_sec).timeout
+		timer.start(spacing_sec)
+		timer.one_shot = true
+		await timer.timeout
 	standing_up = false
 
 func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
@@ -104,5 +111,6 @@ func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 		# the direction (down) doesn't change, but the position does
 		projectile.position.x = amplitude * sin(deg_to_rad(angle_spacing * i))
 		
-		await get_tree().create_timer(spacing_sec).timeout
+		timer.start(spacing_sec)
+		await timer.timeout
 	standing_up = false
