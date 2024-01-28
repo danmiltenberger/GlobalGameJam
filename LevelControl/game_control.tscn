@@ -15,11 +15,13 @@ layer = 3
 visible = false
 
 [node name="GridContainer" type="GridContainer" parent="SettingsMenu"]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = 2.0
 offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 columns = 2
 
 [node name="Label" type="Label" parent="SettingsMenu/GridContainer"]
@@ -51,6 +53,7 @@ columns = 2
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 layer = 10
+visible = false
 
 [node name="PauseMenuControl" type="VBoxContainer" parent="PauseMenu"]
 anchors_preset = 8
@@ -78,6 +81,29 @@ text = "Settings"
 [node name="MainMenu" type="Button" parent="PauseMenu/PauseMenuControl"]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="EndingMenu" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Label" type="Label" parent="EndingMenu"]
+offset_left = 79.0
+offset_top = 58.0
+offset_right = 467.0
+offset_bottom = 895.0
+text = "Temp game over
+screen
+
+Thank you 
+for playing!
+
+Morin
+Jeremy
+Sofia
+CJ
+Dan
+Sully"
+label_settings = ExtResource("2_wlcyx")
+horizontal_alignment = 1
 
 [connection signal="button_down" from="PauseMenu/PauseMenuControl/SettingsButton" to="." method="_on_settings_button_button_down"]
 [connection signal="button_down" from="PauseMenu/PauseMenuControl/MainMenu" to="." method="_on_main_menu_button_down"]

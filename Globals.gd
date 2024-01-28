@@ -12,3 +12,7 @@ var health: int = 100:
 	set(value):
 		health = value
 		return health
+	
+var jokes_landed: int = 0		# how many times a word hit a tomato
+var total_damage_taken: int = 0	# tracks how much damage
+var total_healing_taken: int = 0	# tracks how much healing (water bottles)

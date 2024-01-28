@@ -8,7 +8,6 @@ class_name Player
 @export var stage_top: int = 1980 - 300
 @export var stage_bot: int = 1980 - 100
 @export var speed: int = 500
-@export var health: int = 100
 
 @onready var inspect_component: InspectComponent = $InspectComponent
 @onready var arm: Node2D = $Arm
@@ -49,16 +48,16 @@ func _process(delta: float) -> void:
 	var arm_to_mouse := mouse_world_pos - arm.global_position
 	var angle_to_mouse_raw := arm_to_mouse.angle()
 	var is_right = abs(angle_to_mouse_raw) < PI/2
-	print_debug(is_right)
+	#print_debug(is_right)
 	arm.global_rotation = angle_to_mouse_raw + deg_to_rad(base_arm_degs if is_right else -base_arm_degs)
 	arm.scale.y = 1 if is_right else -1
 	currentGun.is_right = is_right
 
 	# health
-	var inspect_dict: Dictionary = {
-		"Health" : health
-	}
-	inspect_component.display(inspect_dict)
+	#var inspect_dict: Dictionary = {
+		#"Health" : health
+	#}
+	#inspect_component.display(inspect_dict)
 
 func update_gun():
 	for gun in guns:
@@ -68,5 +67,5 @@ func update_gun():
 	currentGun.process_mode = Node.PROCESS_MODE_INHERIT
 		
 func take_damage(damage: int):
-	health -= damage
+	Globals.health -= damage
 

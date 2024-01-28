@@ -20,6 +20,11 @@ func _process(delta: float) -> void:
 		if body is Player:		# if it hits the player
 		#	print_debug("projectile collision!")
 			body.take_damage(damage)
+			if damage >= 0:
+				Globals.total_damage_taken += damage
+			else:
+				Globals.total_healing_taken -= damage
+			Globals.jokes_landed += 1
 			destroy()
 		elif body is Word:		# if it hits a player's words
 			body.queue_free()	#TODO - do we like this behavior?
