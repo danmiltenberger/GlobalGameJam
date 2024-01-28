@@ -5,22 +5,33 @@ class_name Heckler
 # this node should handle the spawning of tomatoes, cabbages, and beer cans
 # in different patterns
 
+# projectiles
 @onready var beer_can: PackedScene = preload("res://Projectiles/beer_can.tscn")
 @onready var cabbage: PackedScene = preload("res://Projectiles/cabbage.tscn")
 @onready var tomato: PackedScene = preload("res://Projectiles/tomato.tscn")
 @onready var water_bottle: PackedScene = preload("res://Projectiles/water_bottle.tscn")
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
+@export var total_heckler_num: int = 4
 var standing_up: bool = false
 
 func _ready():
-	$Sprite2D.visible = false
-	
+	pick_heckler_icon()
+	sprite_2d.visible = true
+
+func pick_heckler_icon():
+	var num = randi_range(1,total_heckler_num)
+	#	"res://Graphics/HecklerIcons/Heckler2.png"
+	var path_str = "res://Graphics/HecklerIcons/Heckler" + str(num) + ".png"
+	printt("num", num, "rand heckler path", path_str)
+	sprite_2d.texture = load(path_str)
+
 func _process(_delta: float) -> void:
 	if standing_up:
-		$Sprite2D.visible = true
+		sprite_2d.visible = true
 	else:
-		$Sprite2D.visible = false
+		sprite_2d.visible = false
 
 func send_projectiles(pattern: String, number: int, type: String, spacing_sec: float):
 	printt(pattern, number, type, spacing_sec)

@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dx07cwle2xove"]
 
 [ext_resource type="Script" path="res://Heckler.gd" id="1_qsmpf"]
-[ext_resource type="Texture2D" uid="uid://c6c30485b8jgc" path="res://Graphics/Circle.png" id="2_r0aav"]
+[ext_resource type="Texture2D" uid="uid://dha02mmo3xu84" path="res://Graphics/HecklerIcons/Heckler2.png" id="2_vr2cn"]
 
 [node name="Heckler" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_qsmpf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.835294, 0.427451, 0.427451, 0.772549)
-texture = ExtResource("2_r0aav")
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("2_vr2cn")
