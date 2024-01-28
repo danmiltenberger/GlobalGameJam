@@ -6,7 +6,7 @@ class_name SceneSwitcher
 # 3. show a loading screen to hide the harsh transitions
 # 4. Optionally, show a progress bar
 
-@export var starter_scene_str : String = "tutorial_2"
+@export var starter_scene_str : String = "title_screen"
 @onready var animator: AnimationPlayer = $AnimationPlayer
 
 
@@ -40,7 +40,7 @@ func change(next_scene_str: String):
 	print_debug("changing to:", file_path_str)
 	# clean up the previous level
 	fade_to_black()
-	current_level.cleanup()
+	#current_level.cleanup()
 	
 	# the new one is now the current one
 	current_level = next_level.instantiate()
@@ -49,7 +49,21 @@ func change(next_scene_str: String):
 	# TODO - wait for transition to complete and then unpause
 	fade_from_black()
 
+var is_paused: bool
+func pause():
+	is_paused = true
+	current_level.get_tree().paused = true
 
+func unpause():
+	is_paused = false
+	current_level.get_tree().paused = false
+
+func toggle_pause():
+	# swap
+	is_paused = not is_paused
+	
+	# use swapped value
+	current_level.get_tree().paused = is_paused
 
 func build_file_path(level_str: String) -> String:
 	var file_path_str: String

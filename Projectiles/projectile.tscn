@@ -13,6 +13,7 @@ radius = 402.001
 radius = 388.104
 
 [node name="Projectile" type="StaticBody2D"]
+z_index = 13
 script = ExtResource("1_ywo5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

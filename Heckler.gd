@@ -12,6 +12,8 @@ class_name Heckler
 @onready var water_bottle: PackedScene = preload("res://Projectiles/water_bottle.tscn")
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animator: AnimationPlayer = $Animator
+
 
 @export var total_heckler_num: int = 4
 var standing_up: bool = false
@@ -19,22 +21,23 @@ var standing_up: bool = false
 @onready var timer : Timer = Timer.new()
 
 func _ready():
-	pick_heckler_icon()
-	sprite_2d.visible = true
+	pick_random_heckler_icon()
+	pop_down()
+	#sprite_2d.visible = false
 	add_child(timer)
 
-func pick_heckler_icon():
+func pick_random_heckler_icon():
 	var num = randi_range(1,total_heckler_num)
 	#	"res://Graphics/HecklerIcons/Heckler2.png"
 	var path_str = "res://Graphics/HecklerIcons/Heckler" + str(num) + ".png"
 	printt("num", num, "rand heckler path", path_str)
 	sprite_2d.texture = load(path_str)
 
-func _process(_delta: float) -> void:
-	if standing_up:
-		sprite_2d.visible = true
-	else:
-		sprite_2d.visible = false
+#func _process(_delta: float) -> void:
+	#if standing_up:
+		#sprite_2d.visible = true
+	#else:
+		#sprite_2d.visible = false
 
 func send_projectiles(pattern: String, number: int, type: String, spacing_sec: float):
 	printt(pattern, number, type, spacing_sec)
@@ -55,13 +58,17 @@ func send_projectiles(pattern: String, number: int, type: String, spacing_sec: f
 
 	match pattern:
 		"line":
+			pop_up()
 			send_line(number, proj_type, spacing_sec)
 		"circle":
+			pop_up()
 			send_circle(number, proj_type, spacing_sec)
 		"sine":
+			pop_up()
 			send_sinusoidal(number, proj_type, spacing_sec)
 		_:
 			print_debug("couldn't find pattern: ", pattern)
+			pop_up()
 			send_line(number, proj_type, spacing_sec)
 
 func send_line(number: int, proj: PackedScene, spacing_sec: float):
@@ -75,7 +82,7 @@ func send_line(number: int, proj: PackedScene, spacing_sec: float):
 		timer.start(spacing_sec)
 		timer.one_shot = true
 		await timer.timeout
-	standing_up = false
+	pop_down()
 
 func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 	var projectile : Projectile
@@ -97,7 +104,7 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 		timer.start(spacing_sec)
 		timer.one_shot = true
 		await timer.timeout
-	standing_up = false
+	pop_down()
 
 func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 	var projectile: Projectile
@@ -113,4 +120,14 @@ func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 		
 		timer.start(spacing_sec)
 		await timer.timeout
-	standing_up = false
+	pop_down()
+
+func pop_up():
+	# move the position up
+	animator.play_backwards("pop_down")
+	print_debug("heckler popping up")
+	
+func pop_down():
+	# hide behind the row
+	animator.play("pop_down")
+	print_debug("heckler popping down")

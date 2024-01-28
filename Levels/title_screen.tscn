@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbqevgg8jx4g8"]
+
+[ext_resource type="Texture2D" uid="uid://dyo1yonon6xxq" path="res://Graphics/Beer.png" id="1_5vou2"]
+[ext_resource type="Script" path="res://Levels/title_screen.gd" id="1_reegu"]
+[ext_resource type="Texture2D" uid="uid://bu7271sqa2cou" path="res://Graphics/cabbage.png" id="2_laecd"]
+[ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="3_jrexo"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_reegu")
+
+[node name="Beer" type="Sprite2D" parent="."]
+position = Vector2(300, 397)
+scale = Vector2(0.62963, 0.62963)
+texture = ExtResource("1_5vou2")
+
+[node name="Cabbage" type="Sprite2D" parent="."]
+position = Vector2(83.8125, 869.813)
+scale = Vector2(0.152199, 0.146643)
+texture = ExtResource("2_laecd")
+
+[node name="Label" type="Label" parent="Cabbage"]
+offset_left = 396.279
+offset_top = -256.744
+offset_right = 3261.28
+offset_bottom = 461.256
+text = "Start Game"
+label_settings = ExtResource("3_jrexo")
+
+[node name="StartGame" type="Button" parent="Cabbage"]
+offset_left = -380.0
+offset_top = -196.0
+offset_right = 238.0
+offset_bottom = 317.0
+
+[connection signal="button_down" from="Cabbage/StartGame" to="." method="_on_start_game_button_down"]

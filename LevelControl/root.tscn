@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0ac7lq8hhc60"]
+[gd_scene load_steps=2 format=3 uid="uid://d0ac7lq8hhc60"]
 
 [ext_resource type="PackedScene" uid="uid://dvjljibe7tb3s" path="res://LevelControl/game_control.tscn" id="1_hy6id"]
-[ext_resource type="PackedScene" uid="uid://cjgiidi7lj7nv" path="res://LevelControl/scene_switcher.tscn" id="2_2br3h"]
 
 [node name="Root" type="Node2D"]
 
 [node name="GameControl" parent="." node_paths=PackedStringArray("scene_control") instance=ExtResource("1_hy6id")]
-scene_control = NodePath("../SceneSwitcher")
-
-[node name="SceneSwitcher" parent="." instance=ExtResource("2_2br3h")]
-process_mode = 1
+scene_control = NodePath("")

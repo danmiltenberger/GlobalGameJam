@@ -1,15 +1,28 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=26 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
 [ext_resource type="Texture2D" uid="uid://5xmnmhg5terw" path="res://Graphics/Stage.png" id="3_5km8r"]
-[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
+[ext_resource type="Texture2D" uid="uid://dvxditgkqb1yh" path="res://Graphics/StageComponents/row11.png" id="5_2cbw0"]
 [ext_resource type="PackedScene" uid="uid://bvfab7k7sikh" path="res://Custom Components/cursor.tscn" id="5_8yygk"]
+[ext_resource type="Texture2D" uid="uid://cnyiyyfqhl4g8" path="res://Graphics/StageComponents/row10.png" id="6_t23jx"]
 [ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="7_1gisq"]
 [ext_resource type="Script" path="res://LevelControl/GameInterface.gd" id="7_n41sm"]
+[ext_resource type="Texture2D" uid="uid://c6s4afp4bwxms" path="res://Graphics/StageComponents/row9.png" id="7_w5gq4"]
+[ext_resource type="Texture2D" uid="uid://cm147wlvkfe7b" path="res://Graphics/StageComponents/row8.png" id="8_wjcci"]
+[ext_resource type="Texture2D" uid="uid://dfjbqh2vgyd8t" path="res://Graphics/StageComponents/row7.png" id="9_2c43u"]
+[ext_resource type="Texture2D" uid="uid://ct2ffkadpyw0d" path="res://Graphics/StageComponents/row6.png" id="10_4bdpn"]
 [ext_resource type="PackedScene" uid="uid://bdqk4v00m7u2e" path="res://LevelControl/gun_panel.tscn" id="10_pfun6"]
+[ext_resource type="Texture2D" uid="uid://cft3d406rvul3" path="res://Graphics/StageComponents/row5.png" id="11_5i8g3"]
+[ext_resource type="Texture2D" uid="uid://okmc0i6jty2t" path="res://Graphics/StageComponents/row4.png" id="12_672jg"]
+[ext_resource type="Texture2D" uid="uid://dvcxpxnfmc32n" path="res://Graphics/StageComponents/row3.png" id="13_irhoh"]
+[ext_resource type="Texture2D" uid="uid://cilhxhrh04gue" path="res://Graphics/StageComponents/row2.png" id="14_bhgps"]
+[ext_resource type="Texture2D" uid="uid://bnkk8eokdrw0i" path="res://Graphics/StageComponents/row1.png" id="15_eyrl7"]
+[ext_resource type="Texture2D" uid="uid://dn6v8fhtnf0ug" path="res://Graphics/StageComponents/stage.png" id="16_j6w5x"]
+[ext_resource type="PackedScene" uid="uid://dx07cwle2xove" path="res://LevelControl/heckler.tscn" id="19_73dy5"]
 
 [sub_resource type="Gradient" id="Gradient_d66g4"]
 interpolation_color_space = 2
@@ -28,10 +41,12 @@ script = ExtResource("1_hyn5u")
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="StageOLD" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(540, 960)
 texture = ExtResource("2_so7so")
 
 [node name="Stage" type="Sprite2D" parent="Environment"]
+visible = false
 position = Vector2(540, 960)
 texture = ExtResource("3_5km8r")
 
@@ -40,13 +55,324 @@ z_index = 100
 position = Vector2(540, 960)
 texture = ExtResource("3_65kmd")
 
-[node name="Projectiles" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="Environment"]
+
+[node name="Row11" type="Sprite2D" parent="Environment/Background"]
+position = Vector2(540, 965)
+texture = ExtResource("5_2cbw0")
+
+[node name="Row10" type="Sprite2D" parent="Environment/Background"]
+z_index = 1
+position = Vector2(544, 715)
+texture = ExtResource("6_t23jx")
+
+[node name="Row9" type="Sprite2D" parent="Environment/Background"]
+z_index = 2
+position = Vector2(554, 854)
+texture = ExtResource("7_w5gq4")
+
+[node name="Row8" type="Sprite2D" parent="Environment/Background"]
+z_index = 3
+position = Vector2(547, 853)
+texture = ExtResource("8_wjcci")
+
+[node name="Row7" type="Sprite2D" parent="Environment/Background"]
+z_index = 4
+position = Vector2(540, 886)
+texture = ExtResource("9_2c43u")
+
+[node name="Row6" type="Sprite2D" parent="Environment/Background"]
+z_index = 5
+position = Vector2(552, 914)
+texture = ExtResource("10_4bdpn")
+
+[node name="Row5" type="Sprite2D" parent="Environment/Background"]
+z_index = 7
+position = Vector2(540, 852)
+texture = ExtResource("11_5i8g3")
+
+[node name="Row4" type="Sprite2D" parent="Environment/Background"]
+z_index = 8
+position = Vector2(540, 905)
+texture = ExtResource("12_672jg")
+
+[node name="Row3" type="Sprite2D" parent="Environment/Background"]
+z_index = 9
+position = Vector2(540, 914)
+texture = ExtResource("13_irhoh")
+
+[node name="Row2" type="Sprite2D" parent="Environment/Background"]
+z_index = 10
+position = Vector2(540, 942)
+texture = ExtResource("14_bhgps")
+
+[node name="Row1" type="Sprite2D" parent="Environment/Background"]
+z_index = 11
+position = Vector2(543, 961)
+texture = ExtResource("15_eyrl7")
+
+[node name="Stage" type="Sprite2D" parent="Environment/Background"]
+z_index = 12
+position = Vector2(540, 965)
+texture = ExtResource("16_j6w5x")
 
 [node name="Player" parent="." instance=ExtResource("3_w8w0m")]
+z_index = 13
 position = Vector2(214, 1504)
 scale = Vector2(0.5, 0.5)
 
 [node name="HecklerHandler" parent="." instance=ExtResource("4_x8qmw")]
+
+[node name="Row12" type="Node2D" parent="HecklerHandler"]
+position = Vector2(-15, -973)
+
+[node name="Heckler1" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row12" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row11" type="Node2D" parent="HecklerHandler"]
+z_index = 1
+position = Vector2(75, -635)
+
+[node name="Heckler1" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row11" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row10" type="Node2D" parent="HecklerHandler"]
+z_index = 1
+position = Vector2(0, 118)
+
+[node name="Heckler1" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row10" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row9" type="Node2D" parent="HecklerHandler"]
+z_index = 2
+position = Vector2(6, 257)
+
+[node name="Heckler1" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row9" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row8" type="Node2D" parent="HecklerHandler"]
+z_index = 3
+position = Vector2(95, 382)
+
+[node name="Heckler1" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row8" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row7" type="Node2D" parent="HecklerHandler"]
+z_index = 4
+position = Vector2(-11, 511)
+
+[node name="Heckler1" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row7" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row6" type="Node2D" parent="HecklerHandler"]
+z_index = 6
+position = Vector2(92, 677)
+
+[node name="Heckler1" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row6" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row5" type="Node2D" parent="HecklerHandler"]
+z_index = 7
+position = Vector2(82, 862)
+
+[node name="Heckler1" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row5" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row4" type="Node2D" parent="HecklerHandler"]
+z_index = 8
+position = Vector2(-8, 1007)
+
+[node name="Heckler1" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row4" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row3" type="Node2D" parent="HecklerHandler"]
+z_index = 9
+position = Vector2(85, 1144)
+
+[node name="Heckler1" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row3" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row2" type="Node2D" parent="HecklerHandler"]
+z_index = 10
+position = Vector2(-23, 1300)
+
+[node name="Heckler1" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row2" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
+
+[node name="Row1" type="Node2D" parent="HecklerHandler"]
+z_index = 11
+position = Vector2(94, 1447)
+
+[node name="Heckler1" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+
+[node name="Heckler2" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+position = Vector2(194, 0)
+
+[node name="Heckler3" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+position = Vector2(381, 0)
+
+[node name="Heckler4" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+position = Vector2(554, 0)
+
+[node name="Heckler5" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+position = Vector2(743, 0)
+
+[node name="Heckler6" parent="HecklerHandler/Row1" instance=ExtResource("19_73dy5")]
+position = Vector2(925, 0)
 
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
 
