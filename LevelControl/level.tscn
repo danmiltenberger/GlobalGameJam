@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckxqttk5emo1g"]
+[gd_scene load_steps=9 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
-[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 [ext_resource type="PackedScene" uid="uid://bvfab7k7sikh" path="res://Custom Components/cursor.tscn" id="5_8yygk"]
+[ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="7_1gisq"]
+[ext_resource type="Script" path="res://LevelControl/GameInterface.gd" id="7_n41sm"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_hyn5u")
@@ -31,14 +33,13 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
 
-[node name="CanvasGroup" type="CanvasLayer" parent="."]
+[node name="GameInterface" type="CanvasLayer" parent="."]
+script = ExtResource("7_n41sm")
 
-[node name="Control" type="Control" parent="CanvasGroup"]
-layout_mode = 3
-anchor_right = 2.0
-anchor_bottom = 2.0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = -50.0
-offset_bottom = -50.0
-size_flags_vertical = 8
+[node name="Health" type="Label" parent="GameInterface"]
+offset_left = 93.0
+offset_top = 1804.0
+offset_right = 286.0
+offset_bottom = 1871.0
+text = "Hi Mom!"
+label_settings = ExtResource("7_1gisq")
