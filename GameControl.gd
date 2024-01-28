@@ -10,7 +10,9 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	player_pause_unpause()
 	game_over()
-	$PauseMenu.visible = get_tree().paused
+	#$PauseMenu.visible = get_tree().paused
+
+
 
 func close_all_menus():
 	$PauseMenu.visible = false
@@ -20,9 +22,9 @@ func close_all_menus():
 
 func player_pause_unpause():
 	if Input.is_action_just_pressed("pause"):
-		#print_debug("paused toggled!")
-		# toggle
 		Scn.toggle_pause()
+		$PauseMenu.visible = Scn.is_paused
+
 
 
 func game_over():
@@ -38,7 +40,7 @@ func _on_settings_button_button_down() -> void:
 
 func _on_main_menu_button_down() -> void:
 	close_all_menus()
-	$MainMenu.visible = true
+	Scn.change("title_screen")
 
 var is_spoken_jokes: bool = true
 func _on_spoken_jokes_toggle_button_down() -> void:

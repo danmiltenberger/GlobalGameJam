@@ -39,9 +39,11 @@ func change(next_scene_str: String):
 	var file_path_str = build_file_path(next_scene_str)
 	var next_level = load(file_path_str)
 	print_debug("changing to:", file_path_str)
+	
+	
 	# clean up the previous level
-	fade_to_black()
-
+	curtain_close()
+	pause()
 	# get rid of the level
 	current_level.queue_free()
 	
@@ -50,24 +52,38 @@ func change(next_scene_str: String):
 	current_level = next_level.instantiate()
 	current_level.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(current_level)
-	
-	# TODO - wait for transition to complete and then unpause
-	fade_from_black()
+	get_tree().paused = true
+
+
+	await animator.animation_finished
+	curtain_open()
+	await animator.animation_finished
+	get_tree().paused = false
 
 func pause():
 	print_debug("paused current level:", current_level)
+	curtain_close()
+	await animator.animation_finished
 	get_tree().paused = true
 
 func unpause():
 	print_debug("unpaused current level:", current_level)
+	curtain_open()
+	await animator.animation_finished
 	get_tree().paused = false
-
+	
+var is_paused: bool
 func toggle_pause():
 	# swap
-	var is_paused = not get_tree().paused
+	is_paused = not get_tree().paused
 	
 	# use swapped value
 	printt("toggle pause: is_paused = ", is_paused)
+	if is_paused:
+		curtain_close()
+	else:
+		curtain_open()
+	await animator.animation_finished
 	get_tree().paused = is_paused
 
 
@@ -88,3 +104,8 @@ func fade_to_gray():
 func fade_from_gray():
 	animator.play("fade_from_gray")
 
+func curtain_close():
+	animator.play("curtain_close")
+	
+func curtain_open():
+	animator.play_backwards("curtain_close")

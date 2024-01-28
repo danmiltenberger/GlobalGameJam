@@ -16,6 +16,7 @@ script = ExtResource("1_es2hv")
 
 [node name="SettingsMenu" type="CanvasLayer" parent="."]
 layer = 20
+visible = false
 
 [node name="GridContainer" type="GridContainer" parent="SettingsMenu"]
 anchors_preset = 15
@@ -57,16 +58,9 @@ offset_bottom = 452.0
 [node name="MainMenu" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="GridContainer" type="GridContainer" parent="MainMenu"]
-anchors_preset = -1
-anchor_right = 2.0
-offset_right = 2.0
-offset_bottom = 2.0
-columns = 2
-
 [node name="PauseMenu" type="CanvasLayer" parent="."]
-process_mode = 2
 layer = 10
+visible = false
 
 [node name="PauseMenuControl" type="VBoxContainer" parent="PauseMenu"]
 anchors_preset = 8
