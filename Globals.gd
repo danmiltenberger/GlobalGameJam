@@ -53,3 +53,5 @@ func play_sound_once_by_path(path: String, sec := -1.0, volume := 1.0):
 			await get_tree().create_timer(sec).timeout
 			player.queue_free()
 		
+		
+var current_level: int = 1

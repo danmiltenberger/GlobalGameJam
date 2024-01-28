@@ -26,11 +26,12 @@ func player_pause_unpause():
 		$PauseMenu.visible = Scn.is_paused
 
 
-
+var activated: bool = false
 func game_over():
 	if Globals.health <= 0:
-		Scn.pause()
-		$EndingMenu.visible = true
+		if activated == false:
+			activated = true
+			Scn.change("ending_menu")
 
 func _on_settings_button_button_down() -> void:
 	close_all_menus()

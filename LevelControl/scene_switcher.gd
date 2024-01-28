@@ -43,8 +43,9 @@ func change(next_scene_str: String):
 	
 	# clean up the previous level
 	curtain_close()
-	pause()
+	#pause()
 	# get rid of the level
+	await animator.animation_finished
 	current_level.queue_free()
 	
 	
@@ -54,8 +55,6 @@ func change(next_scene_str: String):
 	add_child(current_level)
 	get_tree().paused = true
 
-
-	await animator.animation_finished
 	curtain_open()
 	await animator.animation_finished
 	get_tree().paused = false

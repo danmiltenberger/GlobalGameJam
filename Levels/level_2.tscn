@@ -1,0 +1,71 @@
+[gd_scene load_steps=13 format=3 uid="uid://daoeaqmkio02w"]
+
+[ext_resource type="PackedScene" uid="uid://ckxqttk5emo1g" path="res://LevelControl/level.tscn" id="1_h7w75"]
+[ext_resource type="Texture2D" uid="uid://deico4l4pp06q" path="res://Graphics/Level2Stage/row10.png" id="2_vssb2"]
+[ext_resource type="Texture2D" uid="uid://bhbjllis23jmo" path="res://Graphics/Level2Stage/row9.png" id="3_7e0n5"]
+[ext_resource type="Texture2D" uid="uid://qbmgsb08bsd5" path="res://Graphics/Level2Stage/row8.png" id="4_wm810"]
+[ext_resource type="Texture2D" uid="uid://3mioeo0yio28" path="res://Graphics/Level2Stage/row7.png" id="5_tnqol"]
+[ext_resource type="Texture2D" uid="uid://bws00wgficdvc" path="res://Graphics/Level2Stage/row6.png" id="6_7xomk"]
+[ext_resource type="Texture2D" uid="uid://b42uuptlgucy4" path="res://Graphics/Level2Stage/row5.png" id="7_l4gdy"]
+[ext_resource type="Texture2D" uid="uid://d4eggl2l53tkk" path="res://Graphics/Level2Stage/row4.png" id="8_6sa7g"]
+[ext_resource type="Texture2D" uid="uid://dir2gv6kyfygb" path="res://Graphics/Level2Stage/row3.png" id="9_gcns0"]
+[ext_resource type="Texture2D" uid="uid://b6cxj7fencdgk" path="res://Graphics/Level2Stage/row2.png" id="10_aqcml"]
+[ext_resource type="Texture2D" uid="uid://dfah1bidjqd35" path="res://Graphics/Level2Stage/row1.png" id="11_qy1hv"]
+[ext_resource type="Texture2D" uid="uid://d4jl3hijwo125" path="res://Graphics/Level2Stage/stage.png" id="12_l4xov"]
+
+[node name="Level2" instance=ExtResource("1_h7w75")]
+position = Vector2(-5, -9)
+csv_str = "level_2"
+
+[node name="Row10" parent="Environment/Background" index="1"]
+texture = ExtResource("2_vssb2")
+
+[node name="Row9" parent="Environment/Background" index="2"]
+texture = ExtResource("3_7e0n5")
+
+[node name="Row8" parent="Environment/Background" index="3"]
+texture = ExtResource("4_wm810")
+
+[node name="Row7" parent="Environment/Background" index="4"]
+texture = ExtResource("5_tnqol")
+
+[node name="Row6" parent="Environment/Background" index="5"]
+texture = ExtResource("6_7xomk")
+
+[node name="Row5" parent="Environment/Background" index="6"]
+position = Vector2(534, 940)
+texture = ExtResource("7_l4gdy")
+
+[node name="Row4" parent="Environment/Background" index="7"]
+position = Vector2(540, 987)
+texture = ExtResource("8_6sa7g")
+
+[node name="Row3" parent="Environment/Background" index="8"]
+position = Vector2(540, 694)
+texture = ExtResource("9_gcns0")
+
+[node name="Row2" parent="Environment/Background" index="9"]
+position = Vector2(555, 855)
+texture = ExtResource("10_aqcml")
+
+[node name="Row1" parent="Environment/Background" index="10"]
+position = Vector2(543, 1006)
+texture = ExtResource("11_qy1hv")
+
+[node name="Stage" parent="Environment/Background" index="11"]
+texture = ExtResource("12_l4xov")
+
+[node name="Row12" parent="HecklerHandler" index="0"]
+visible = false
+
+[node name="Row11" parent="HecklerHandler" index="1"]
+visible = false
+
+[node name="Row10" parent="HecklerHandler" index="2"]
+visible = false
+
+[node name="Row9" parent="HecklerHandler" index="3"]
+visible = false
+
+[node name="Row8" parent="HecklerHandler" index="4"]
+visible = false
