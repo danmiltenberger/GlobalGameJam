@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://dbliivrih73oy"]
+
+[ext_resource type="AudioStream" uid="uid://dk7j1exdihk03" path="res://Audio/Jokes/rapid fire samples/i like tinder, because it hurts less when you are rejected by someone you DON'T know.mp3" id="1_6pks4"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_aetri"]
+
+[resource]
+script = ExtResource("2_aetri")
+text = "i like|tinder|because|it hurts|less when|you are|rejected|by someone|you|DON'T|know"
+audio = ExtResource("1_6pks4")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://casqqjfs5sp4k"]
+
+[ext_resource type="AudioStream" uid="uid://b8pube5rkysyd" path="res://Audio/Jokes/rapid fire samples/what's the deal with mint. is it sweet. is it spicy. is it cold spicy (add questions marks).mp3" id="1_6w05q"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_b2s37"]
+
+[resource]
+script = ExtResource("2_b2s37")
+text = "what's|the deal|with mint|...|is it|sweet??|...|is it|spicy??|...|is it|COLD SPICY?"
+audio = ExtResource("1_6w05q")

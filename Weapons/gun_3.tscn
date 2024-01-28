@@ -1,19 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4lsui76kc8y7"]
+[gd_scene load_steps=17 format=3 uid="uid://d4lsui76kc8y7"]
 
 [ext_resource type="Script" path="res://Weapons/gun_3.gd" id="1_47i84"]
 [ext_resource type="PackedScene" uid="uid://7aewwkjgc424" path="res://Weapons/bullet_3.tscn" id="2_fv1ks"]
-[ext_resource type="Resource" uid="uid://d38yfy77p6164" path="res://Lines/test.tres" id="3_ngcwt"]
-[ext_resource type="Resource" uid="uid://bti1vxmcl0j2j" path="res://Lines/test2.tres" id="4_pdq0k"]
+[ext_resource type="Resource" uid="uid://dbnc648fhl3px" path="res://Lines/RAPID_dont_quit_day.tres" id="3_pq6pk"]
+[ext_resource type="Resource" uid="uid://ckvkvwpeogh5g" path="res://Lines/RAPID_gonna_write_a_book.tres" id="4_5bvlf"]
 [ext_resource type="Texture2D" uid="uid://bokthx3wvhs7q" path="res://Graphics/Gun_Badum_Flipped.png" id="5_d8m0e"]
+[ext_resource type="Resource" uid="uid://c8yy6p3q300cy" path="res://Lines/RAPID_im_so_pale.tres" id="5_n2l36"]
+[ext_resource type="Resource" uid="uid://dbliivrih73oy" path="res://Lines/RAPID_i_like_tinder.tres" id="6_4dj7f"]
 [ext_resource type="Texture2D" uid="uid://cbsmdr8o22exl" path="res://Graphics/Gun_Badum.png" id="6_sxxy1"]
 [ext_resource type="Texture2D" uid="uid://byc1vt45gi3ee" path="res://Graphics/TommyGun.png" id="6_uh6kw"]
+[ext_resource type="Resource" uid="uid://d1bles8urx3bp" path="res://Lines/RAPID_i_never_forget.tres" id="7_3spvs"]
+[ext_resource type="Resource" uid="uid://casqqjfs5sp4k" path="res://Lines/RAPID_mint.tres" id="8_pqu4m"]
+[ext_resource type="Resource" uid="uid://c31scwm3bxqvx" path="res://Lines/RAPID_my_friend_told_me.tres" id="9_5pkrr"]
+[ext_resource type="Resource" uid="uid://bgvh22wfq4is7" path="res://Lines/RAPID_my_girlfriend_is_like.tres" id="10_j3fl4"]
+[ext_resource type="Resource" uid="uid://dpooida50id4b" path="res://Lines/RAPID_smartest_idiot.tres" id="11_osbib"]
+[ext_resource type="Resource" uid="uid://btsktpvbk0vyu" path="res://Lines/RAPID_understand_what_women.tres" id="12_x3ufn"]
+[ext_resource type="Resource" uid="uid://yefbwrjr1dvi" path="res://Lines/RAPID_voice_for_onlyfans.tres" id="13_dg8dt"]
 
-[node name="Gun1" type="Node2D"]
+[node name="Gun3" type="Node2D"]
 script = ExtResource("1_47i84")
 bullet_scn = ExtResource("2_fv1ks")
+cooldown_base_sec = 0.18
 bullet_speed = 500.0
 lifetime_sec = 5.0
-lines = Array[Resource("res://Lines/LineResource.gd")]([ExtResource("3_ngcwt"), ExtResource("4_pdq0k")])
+lines = Array[Resource]([ExtResource("3_pq6pk"), ExtResource("4_5bvlf"), ExtResource("5_n2l36"), ExtResource("6_4dj7f"), ExtResource("7_3spvs"), ExtResource("8_pqu4m"), ExtResource("9_5pkrr"), ExtResource("10_j3fl4"), ExtResource("11_osbib"), ExtResource("12_x3ufn"), ExtResource("13_dg8dt")])
 
 [node name="Right" type="Node2D" parent="."]
 

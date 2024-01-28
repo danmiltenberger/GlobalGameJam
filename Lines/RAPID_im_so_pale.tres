@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://c8yy6p3q300cy"]
+
+[ext_resource type="AudioStream" uid="uid://bn2n13ut8fbkd" path="res://Audio/Jokes/rapid fire samples/i'm so pale, i burn if i look at a picture of the sun.mp3" id="1_jc6wd"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_jjk21"]
+
+[resource]
+script = ExtResource("2_jjk21")
+text = "i'm so|pale|...|i burn|if i|look|at a|picture|of the|sun"
+audio = ExtResource("1_jc6wd")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://dbnc648fhl3px"]
+
+[ext_resource type="AudioStream" uid="uid://dgejkor511h5" path="res://Audio/Jokes/rapid fire samples/don't quit my day job... bold of you to assume I HAVE a job!.mp3" id="1_0s3a5"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_vfu1u"]
+
+[resource]
+script = ExtResource("2_vfu1u")
+text = "don't|quit my|day job|...|bold of|you to|assume|I HAVE|a job!"
+audio = ExtResource("1_0s3a5")
