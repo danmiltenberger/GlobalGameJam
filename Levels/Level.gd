@@ -4,7 +4,7 @@ class_name Level
 @onready var heckler_handler: HecklerHandler = $HecklerHandler
 
 func _ready() -> void:
-	heckler_handler.level_csv = "level_1__version_1_-mazza"
+	heckler_handler.load_csv("level_2", 4)
 
 
 

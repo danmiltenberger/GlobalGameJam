@@ -14,5 +14,5 @@ dest_files=["res://.godot/imported/level_2.csv-a73cee9db3533d6f6b1e8aefc6d39a03.
 
 delimiter=0
 headers=true
-detect_numbers=false
+detect_numbers=true
 force_float=true
