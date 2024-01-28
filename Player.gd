@@ -31,13 +31,14 @@ func _process(delta: float) -> void:
 	position.y = clamp(position.y, stage_top, stage_bot)
 
 	# weapon switching
-	if Input.is_action_just_pressed("weapon1"):
-		Globals.currentGunIndex = 0
-	elif Input.is_action_just_pressed("weapon2"):
-		Globals.currentGunIndex = 1
-	elif Input.is_action_just_pressed("weapon3"):
-		Globals.currentGunIndex = 2
-	update_gun()
+	if !Globals.stuckFiring:
+		if Input.is_action_just_pressed("weapon1"):
+			Globals.currentGunIndex = 0
+		elif Input.is_action_just_pressed("weapon2"):
+			Globals.currentGunIndex = 1
+		elif Input.is_action_just_pressed("weapon3"):
+			Globals.currentGunIndex = 2
+		update_gun()
 
 	# aim at mouse
 	var mouse_world_pos := get_global_mouse_position()

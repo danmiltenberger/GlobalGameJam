@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://d1bles8urx3bp"]
+
+[ext_resource type="AudioStream" uid="uid://benbjmnktwa72" path="res://Audio/Jokes/rapid fire samples/i never forget a face. but in your case I'll make an exception.mp3" id="1_jr1oy"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_kt4ls"]
+
+[resource]
+script = ExtResource("2_kt4ls")
+text = "i never|forget|a face|...|but in|your|case|I'll|make an|exception"
+audio = ExtResource("1_jr1oy")

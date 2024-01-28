@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://ckvkvwpeogh5g"]
+
+[ext_resource type="AudioStream" uid="uid://cyow4h8vo8gwd" path="res://Audio/Jokes/rapid fire samples/i'm gonna write a book called 'Confidantly Awkward.' It'll be an autobiography.mp3" id="1_0ierk"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_h0vbf"]
+
+[resource]
+script = ExtResource("2_h0vbf")
+text = "i'm gonna|write|a book|called|Confidently|Awkward|...|It'll|be an|autobio|graphy"
+audio = ExtResource("1_0ierk")

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://yefbwrjr1dvi"]
+
+[ext_resource type="AudioStream" uid="uid://c6rcxli80fsy1" path="res://Audio/Jokes/rapid fire samples/i have a voice for onlyfans but a face for twitter.mp3" id="1_ygmke"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_5tl8o"]
+
+[resource]
+script = ExtResource("2_5tl8o")
+text = "i have|a voice|for|onlyfans|...|but a|face|for|twitter"
+audio = ExtResource("1_ygmke")

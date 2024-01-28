@@ -13,6 +13,9 @@ var cooldown_remaining_sec: float = 0.0
 @export var lines: Array[Line] = []
 var lines_shuffled: Array[Line] = []
 
+var current_line: Line = null
+var words: Array[String] = []
+
 @onready var marker: Marker2D = get_node("InstancePoint")
 @onready var left: Node2D = get_node("Left")
 @onready var right: Node2D = get_node("Right")
@@ -23,7 +26,6 @@ var lines_shuffled: Array[Line] = []
 
 func _ready() -> void:
 	shoot_graphic_timer.one_shot = true
-	shoot_graphic_timer.wait_time = cooldown_base_sec * 0.75
 	shoot_graphic_timer.connect("timeout", reset_shoot_graphic)
 	add_child(shoot_graphic_timer)
 	left_shoot.hide()
@@ -38,39 +40,57 @@ func _process(delta: float) -> void:
 		left.show()
 		right.hide()
 
-	# shoot automatically
-	cooldown_remaining_sec -= delta
-	if cooldown_remaining_sec <= 0.0:
-		if Input.is_action_pressed("shoot"):
+	# shoot
+	if current_line == null:
+		if Input.is_action_just_pressed("shoot"):
 			shoot()
+	
+	# automatic shoot whole line
+	if current_line != null:
+		cooldown_remaining_sec -= delta
+		if cooldown_remaining_sec <= 0.0:
+			var word = words.pop_front()
+			if words.size() == 0:
+				current_line = null
+				Globals.stuckFiring = false
+			
+			cooldown_remaining_sec = cooldown_base_sec * word.length() / 4.0
+			if word == "...":
+				cooldown_remaining_sec *= 2.0
+			
+			var bullet := bullet_scn.instantiate() as Node2D
+			get_tree().get_current_scene().add_child(bullet)
+			bullet.global_position = marker.global_position
+			bullet.rotation = global_rotation + PI
+			bullet.get_node("Mover").speed = bullet_speed
+			bullet.get_node("LabelResizer").set_text(word)
+		
+			var auto_free_timer := Timer.new()
+			auto_free_timer.wait_time = lifetime_sec
+			auto_free_timer.autostart = true
+			auto_free_timer.connect("timeout", bullet.queue_free)
+			add_child(auto_free_timer)
+
+			left_shoot.show()
+			right_shoot.show()
+			shoot_graphic_timer.wait_time = cooldown_remaining_sec * 0.75
+			shoot_graphic_timer.start()
 
 func shoot():
-	cooldown_remaining_sec = cooldown_base_sec
-
+	cooldown_remaining_sec = 0
 	if lines_shuffled.size() == 0:
 		lines_shuffled.append_array(lines)
 		lines_shuffled.shuffle()
 	var line: Line = lines_shuffled.pop_front()
 
-	var bullet := bullet_scn.instantiate() as Node2D
-	get_tree().get_current_scene().add_child(bullet)
-	bullet.global_position = marker.global_position
-	bullet.rotation = global_rotation + PI
-	bullet.get_node("Mover").speed = bullet_speed
-	bullet.get_node("LabelResizer").set_text(line.text)
+	current_line = line
+	words.clear()
+	for w in line.text.split("|"):
+		words.append(w)
 	Globals.play_sound_once(line.audio)
-
-	left_shoot.show()
-	right_shoot.show()
-	shoot_graphic_timer.start()
-
-	var auto_free_timer := Timer.new()
-	auto_free_timer.wait_time = lifetime_sec
-	auto_free_timer.autostart = true
-	auto_free_timer.connect("timeout", bullet.queue_free)
-	add_child(auto_free_timer)
+	Globals.stuckFiring = true
 
 func reset_shoot_graphic():
 	left_shoot.hide()
 	right_shoot.hide()
-	
+		

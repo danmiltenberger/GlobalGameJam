@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://c31scwm3bxqvx"]
+
+[ext_resource type="AudioStream" uid="uid://ehmodn8ov5ga" path="res://Audio/Jokes/rapid fire samples/my friend told me that i'm old man hot, and let me tell you, i've never been so offended by something i completely agree with.mp3" id="1_twyfj"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_hon0m"]
+
+[resource]
+script = ExtResource("2_hon0m")
+text = "my friend|told me|that i'm|old man|hot...|and let|me tell|you...|i've|never|been so|offended|by something|i completely|agree|with"
+audio = ExtResource("1_twyfj")

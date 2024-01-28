@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Line" load_steps=3 format=3 uid="uid://bgvh22wfq4is7"]
+
+[ext_resource type="AudioStream" uid="uid://el1g87jwdk1q" path="res://Audio/Jokes/rapid fire samples/my girlfriend is like the square root of negative one hundred... a perfect 10! She's also imaginary.mp3" id="1_ipl7o"]
+[ext_resource type="Script" path="res://Lines/LineResource.gd" id="2_wt73v"]
+
+[resource]
+script = ExtResource("2_wt73v")
+text = "my girl|friend|is like|the|square|root of|negative|one|hundred|...|a perfect|10!|...|She's|also|imaginary"
+audio = ExtResource("1_ipl7o")
