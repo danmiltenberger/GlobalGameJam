@@ -16,30 +16,30 @@ texture = ExtResource("2_e13eg")
 
 [node name="Replay" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 325.0
-offset_top = 1170.0
-offset_right = 333.0
-offset_bottom = 1178.0
+offset_left = 337.0
+offset_top = 1358.0
+offset_right = 345.0
+offset_bottom = 1366.0
 rotation = 0.0061844
-scale = Vector2(55.6198, 28.943)
+scale = Vector2(55.6198, 11.0606)
 
 [node name="NextLevel" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 325.0
-offset_top = 1351.0
-offset_right = 333.0
-offset_bottom = 1359.0
+offset_left = 373.0
+offset_top = 1508.0
+offset_right = 381.0
+offset_bottom = 1516.0
 rotation = 0.0061844
-scale = Vector2(55.6198, 28.943)
+scale = Vector2(48.516, 12.9343)
 
 [node name="MainMenu" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 332.0
-offset_top = 1526.0
-offset_right = 340.0
-offset_bottom = 1534.0
+offset_left = 327.0
+offset_top = 1678.0
+offset_right = 335.0
+offset_bottom = 1686.0
 rotation = 0.0061844
-scale = Vector2(55.6198, 28.943)
+scale = Vector2(55.6198, 10.9411)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jwmj5")
