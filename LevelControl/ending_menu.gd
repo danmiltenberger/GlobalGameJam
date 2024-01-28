@@ -9,7 +9,8 @@ func _on_replay_button_down() -> void:
 
 
 func _on_next_level_button_down() -> void:
-	var index = Globals.current_level + 1
+	Globals.current_level += 1
+	var index = Globals.current_level
 	Scn.change("level_"+str(index))
 
 

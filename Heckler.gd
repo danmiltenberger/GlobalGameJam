@@ -15,7 +15,7 @@ class_name Heckler
 @onready var animator: AnimationPlayer = $Animator
 
 
-@export var total_heckler_num: int = 4
+@export var total_heckler_num: int = 6
 var standing_up: bool = false
 
 @onready var timer : Timer = Timer.new()
