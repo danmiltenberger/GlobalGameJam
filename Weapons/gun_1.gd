@@ -59,7 +59,7 @@ func shoot():
 	bullet.get_node("Mover").speed = bullet_speed
 	bullet.get_node("LabelResizer").set_text(line.text)
 	Globals.play_sound_once(line.audio)
-	Globals.play_sound_once_by_path("res://Audio/gun sounds/pistol fire.mp3")
+	Globals.play_sound_once_by_path("res://Audio/gun sounds/pistol fire.mp3", -1, -7.0)
 
 	left_shoot.show()
 	right_shoot.show()
