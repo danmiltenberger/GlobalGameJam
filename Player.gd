@@ -67,5 +67,5 @@ func update_gun():
 	guns[Globals.currentGunIndex].process_mode = Node.PROCESS_MODE_INHERIT
 		
 func take_damage(damage: int):
-	Globals.health -= damage
+	Globals.health = max(Globals.health - damage, 0.0)
 

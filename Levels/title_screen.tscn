@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbqevgg8jx4g8"]
+[gd_scene load_steps=4 format=3 uid="uid://bbqevgg8jx4g8"]
 
 [ext_resource type="Script" path="res://Levels/title_screen.gd" id="1_reegu"]
 [ext_resource type="Texture2D" uid="uid://bdkh06856a1no" path="res://Graphics/Menus/MainMenuStart.png" id="2_dqm2y"]
+[ext_resource type="AudioStream" uid="uid://bdaxpn6liv5k3" path="res://Audio/MUSIC/Music - start screen (loop).mp3" id="3_lcfjj"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_reegu")
@@ -16,5 +17,9 @@ offset_left = 324.0
 offset_top = 1197.0
 offset_right = 762.0
 offset_bottom = 1430.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lcfjj")
+autoplay = true
 
 [connection signal="button_down" from="StartGame" to="." method="_on_start_game_button_down"]
