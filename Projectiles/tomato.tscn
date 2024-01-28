@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqn34jqx2vd1t"]
+[gd_scene load_steps=4 format=3 uid="uid://drjxeml05ld62"]
 
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_t8ghr"]
+[ext_resource type="AudioStream" uid="uid://1k2mrxpeis4b" path="res://Audio/projectile food sounds/tomato splat.mp3" id="2_mwfsp"]
 [ext_resource type="Texture2D" uid="uid://b8r7k42cl70n" path="res://Graphics/tomato_v1.png" id="2_pi0vn"]
 
 [node name="Tomato" instance=ExtResource("1_t8ghr")]
 speed = 2500
 health = 10
+sound = ExtResource("2_mwfsp")
 
 [node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_pi0vn")

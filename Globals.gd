@@ -32,9 +32,10 @@ var play_sound: bool = true
 #endregion
 
 
-func play_sound_once(sound: AudioStream):
+func play_sound_once(sound: AudioStream, volume := 0.0):
 	if play_sound:
 		var player := AudioStreamPlayer.new()
+		player.volume_db = volume
 		player.stream = sound
 		get_tree().get_root().add_child(player)
 		player.play()

@@ -6,6 +6,7 @@ class_name Projectile
 @export var speed: int = 500
 @export var damage: int = 10
 @export var health: int = 100
+@export var sound: AudioStream
 
 @onready var collision_area: AreaTrackerComponent = $CollisionArea
 
@@ -25,6 +26,7 @@ func _process(delta: float) -> void:
 			else:
 				Globals.total_healing_taken -= damage
 			Globals.jokes_landed += 1
+			Globals.play_sound_once(sound)
 			destroy()
 		elif body is Word:		# if it hits a player's words
 			body.get_node("Label/ColorRect").visible = false

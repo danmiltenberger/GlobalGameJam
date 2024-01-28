@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbie3h413glfw"]
+[gd_scene load_steps=3 format=3 uid="uid://cbie3h413glfw"]
 
 [ext_resource type="PackedScene" uid="uid://c7gcuvs68u04l" path="res://Projectiles/projectile.tscn" id="1_eh8f2"]
+[ext_resource type="AudioStream" uid="uid://1k2mrxpeis4b" path="res://Audio/projectile food sounds/tomato splat.mp3" id="2_mg6e1"]
 
 [node name="Cabbage" instance=ExtResource("1_eh8f2")]
 speed = 1000
 damage = 100
 health = 10
+sound = ExtResource("2_mg6e1")
 
 [node name="Sprite2D" parent="." index="1"]
 region_rect = Rect2(384, 512, 64, 64)
