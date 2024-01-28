@@ -30,7 +30,7 @@ position = Vector2(82, 2.08165e-12)
 shape = SubResource("RectangleShape2D_bpb2j")
 
 [node name="Label" type="Label" parent="."]
-z_index = 10
+z_index = 50
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
