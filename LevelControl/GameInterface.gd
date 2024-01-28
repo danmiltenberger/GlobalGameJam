@@ -23,6 +23,7 @@ func _process(_delta: float) -> void:
 	else:
 		seconds_str = str(seconds)
 	var health_str: String = str(minutes) + ":" +  seconds_str
+	health.visible = true
 	health.text = health_str
 
 	# Health bar

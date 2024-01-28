@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://con75mguhyjab"]
+[gd_scene load_steps=4 format=3 uid="uid://cwcw7d7qchx45"]
 
 [ext_resource type="Script" path="res://LevelControl/ending_menu.gd" id="1_do8nq"]
 [ext_resource type="Texture2D" uid="uid://bpa855k6f8i2n" path="res://Graphics/Menus/EndMenu.png" id="2_e13eg"]
+[ext_resource type="AudioStream" uid="uid://dll8jyduii6v8" path="res://Audio/heckler sounds/boo with YOU SUCK.mp3" id="3_jwmj5"]
 
 [node name="EndingMenu" type="Node2D"]
 script = ExtResource("1_do8nq")
@@ -36,6 +37,10 @@ offset_right = 340.0
 offset_bottom = 1534.0
 rotation = 0.0061844
 scale = Vector2(55.6198, 28.943)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jwmj5")
+autoplay = true
 
 [connection signal="button_down" from="Replay" to="." method="_on_replay_button_down"]
 [connection signal="button_down" from="NextLevel" to="." method="_on_next_level_button_down"]
