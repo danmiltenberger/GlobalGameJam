@@ -68,7 +68,9 @@ func toggle_pause():
 	is_paused = not is_paused
 	
 	# use swapped value
-	current_level.get_tree().paused = is_paused
+	printt("toggle pause: is_paused = ", is_paused)
+	get_tree().paused = is_paused
+
 
 func build_file_path(level_str: String) -> String:
 	var file_path_str: String

@@ -30,7 +30,7 @@ func pick_random_heckler_icon():
 	var num = randi_range(1,total_heckler_num)
 	#	"res://Graphics/HecklerIcons/Heckler2.png"
 	var path_str = "res://Graphics/HecklerIcons/Heckler" + str(num) + ".png"
-	printt("num", num, "rand heckler path", path_str)
+	#printt("num", num, "rand heckler path", path_str)
 	sprite_2d.texture = load(path_str)
 
 #func _process(_delta: float) -> void:

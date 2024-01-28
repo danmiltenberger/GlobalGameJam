@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Global Game Jam"
-run/main_scene="res://LevelControl/root.tscn"
+run/main_scene="res://LevelControl/game_control.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
