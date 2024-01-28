@@ -1,25 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvjljibe7tb3s"]
+[gd_scene load_steps=5 format=3 uid="uid://dvjljibe7tb3s"]
 
 [ext_resource type="Script" path="res://GameControl.gd" id="1_es2hv"]
 [ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="2_wlcyx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62nbr"]
+font_size = 150
 
 [sub_resource type="LabelSettings" id="LabelSettings_p48de"]
 font_size = 60
 
 [node name="GameControl" type="Node2D"]
 process_mode = 3
+z_index = 20
 script = ExtResource("1_es2hv")
 
 [node name="SettingsMenu" type="CanvasLayer" parent="."]
-layer = 3
-visible = false
+layer = 20
 
 [node name="GridContainer" type="GridContainer" parent="SettingsMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 2.0
-offset_bottom = 2.0
+offset_left = -5.0
+offset_top = 24.0
+offset_right = 1006.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
@@ -36,10 +41,18 @@ text = "
 "
 label_settings = ExtResource("2_wlcyx")
 
-[node name="CheckButton" type="CheckButton" parent="SettingsMenu/GridContainer"]
+[node name="SpokenJokes" type="Label" parent="SettingsMenu/GridContainer"]
 layout_mode = 2
-text = "Spoken Jokes"
-flat = true
+text = "
+Spoken Jokes: "
+label_settings = SubResource("LabelSettings_62nbr")
+
+[node name="SpokenJokesToggle" type="Button" parent="SettingsMenu/GridContainer/SpokenJokes"]
+layout_mode = 2
+offset_left = 1052.0
+offset_top = 184.0
+offset_right = 1602.0
+offset_bottom = 452.0
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 layer = 3
@@ -84,6 +97,7 @@ text = "Main Menu"
 
 [node name="EndingMenu" type="CanvasLayer" parent="."]
 layer = 10
+visible = false
 
 [node name="Label" type="Label" parent="EndingMenu"]
 offset_left = 79.0
@@ -105,5 +119,6 @@ Sully"
 label_settings = ExtResource("2_wlcyx")
 horizontal_alignment = 1
 
+[connection signal="button_down" from="SettingsMenu/GridContainer/SpokenJokes/SpokenJokesToggle" to="." method="_on_spoken_jokes_toggle_button_down"]
 [connection signal="button_down" from="PauseMenu/PauseMenuControl/SettingsButton" to="." method="_on_settings_button_button_down"]
 [connection signal="button_down" from="PauseMenu/PauseMenuControl/MainMenu" to="." method="_on_main_menu_button_down"]

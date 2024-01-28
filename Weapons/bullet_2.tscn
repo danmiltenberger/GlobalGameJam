@@ -13,6 +13,7 @@ outline_size = 24
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Bullet2" type="StaticBody2D"]
+z_index = 15
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(0.310442, 0.295159)
 script = ExtResource("1_w5bag")

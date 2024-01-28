@@ -20,9 +20,17 @@ var jokes_landed: int = 0		# how many times a word hit a tomato
 var total_damage_taken: int = 0	# tracks how much damage
 var total_healing_taken: int = 0	# tracks how much healing (water bottles)
 
+#region Settings
+#TODO - change this to true, but for testing it's quite
+var play_sound: bool = false
+
+#endregion
+
+
 func play_sound_once(sound: AudioStream):
-	var player := AudioStreamPlayer.new()
-	player.stream = sound
-	get_tree().get_root().add_child(player)
-	player.play()
-	player.connect("finished", player.queue_free)
+	if play_sound:
+		var player := AudioStreamPlayer.new()
+		player.stream = sound
+		get_tree().get_root().add_child(player)
+		player.play()
+		player.connect("finished", player.queue_free)

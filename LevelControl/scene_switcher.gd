@@ -40,7 +40,10 @@ func change(next_scene_str: String):
 	print_debug("changing to:", file_path_str)
 	# clean up the previous level
 	fade_to_black()
-	#current_level.cleanup()
+
+	# get rid of the level
+	current_level.queue_free()
+	
 	
 	# the new one is now the current one
 	current_level = next_level.instantiate()
@@ -52,10 +55,12 @@ func change(next_scene_str: String):
 var is_paused: bool
 func pause():
 	is_paused = true
+	print_debug("paused current level:", current_level)
 	current_level.get_tree().paused = true
 
 func unpause():
 	is_paused = false
+	print_debug("unpaused current level:", current_level)
 	current_level.get_tree().paused = false
 
 func toggle_pause():

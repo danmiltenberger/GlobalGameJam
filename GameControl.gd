@@ -38,3 +38,9 @@ func _on_settings_button_button_down() -> void:
 func _on_main_menu_button_down() -> void:
 	close_all_menus()
 	$MainMenu.visible = true
+
+var is_spoken_jokes: bool = true
+func _on_spoken_jokes_toggle_button_down() -> void:
+	is_spoken_jokes = not is_spoken_jokes
+	Globals.play_sound = is_spoken_jokes
+	

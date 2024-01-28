@@ -77,7 +77,7 @@ func send_line(number: int, proj: PackedScene, spacing_sec: float):
 	for i in range(number):
 		#print_debug("sent projectile!", projectile)
 		projectile = proj.instantiate()
-		add_child(projectile)
+		$'.'.add_child(projectile)
 		projectile.global_position = global_position
 		timer.start(spacing_sec)
 		timer.one_shot = true
@@ -93,7 +93,7 @@ func send_circle(number: int, proj: PackedScene, spacing_sec: float):
 	for i in range(number):
 		# create and organize
 		projectile = proj.instantiate()
-		add_child(projectile)
+		$'.'.add_child(projectile)
 		
 		# assigning direction vectors
 		var dir_y = 1		# positive is DOWN the screen
@@ -113,7 +113,7 @@ func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 	for i in range(number):
 		# create and organize
 		projectile = proj.instantiate()
-		add_child(projectile)
+		$'.'.add_child(projectile)
 		
 		# the direction (down) doesn't change, but the position does
 		projectile.position.x = amplitude * sin(deg_to_rad(angle_spacing * i))
@@ -125,9 +125,9 @@ func send_sinusoidal(number: int, proj: PackedScene, spacing_sec: float):
 func pop_up():
 	# move the position up
 	animator.play_backwards("pop_down")
-	print_debug("heckler popping up")
+	#print_debug("heckler popping up")
 	
 func pop_down():
 	# hide behind the row
 	animator.play("pop_down")
-	print_debug("heckler popping down")
+	#print_debug("heckler popping down")

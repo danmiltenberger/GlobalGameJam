@@ -377,7 +377,7 @@ position = Vector2(925, 0)
 [node name="Cursor" parent="." instance=ExtResource("5_8yygk")]
 
 [node name="GameInterface" type="CanvasLayer" parent="."]
-layer = 10
+layer = 15
 script = ExtResource("7_n41sm")
 health_bar_gradient = SubResource("Gradient_d66g4")
 
@@ -389,10 +389,10 @@ pivot_offset = Vector2(540, 20)
 color = Color(0.992157, 1, 0.439216, 1)
 
 [node name="Health" type="Label" parent="GameInterface"]
-offset_left = 493.0
-offset_top = 1862.0
-offset_right = 587.0
-offset_bottom = 1929.0
+offset_left = 361.0
+offset_top = 1481.0
+offset_right = 758.0
+offset_bottom = 1754.0
 text = "9:99"
 label_settings = ExtResource("7_1gisq")
 horizontal_alignment = 1

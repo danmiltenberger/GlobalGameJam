@@ -4,5 +4,4 @@
 
 [node name="Root" type="Node2D"]
 
-[node name="GameControl" parent="." node_paths=PackedStringArray("scene_control") instance=ExtResource("1_hy6id")]
-scene_control = NodePath("")
+[node name="GameControl" parent="." instance=ExtResource("1_hy6id")]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjgiidi7lj7nv"]
+[gd_scene load_steps=10 format=3 uid="uid://cjgiidi7lj7nv"]
 
 [ext_resource type="Script" path="res://LevelControl/scene_switcher.gd" id="1_8uo8u"]
+[ext_resource type="Texture2D" uid="uid://buvitvou5p7j7" path="res://Graphics/StageComponents/CurtainSpriteSheet.png" id="2_v0ce4"]
 
 [sub_resource type="Animation" id="Animation_qwk2d"]
 length = 0.001
@@ -15,6 +16,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CurtainSpriteSheet:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_q5ut6"]
@@ -77,9 +90,26 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(0, 0, 0, 0.552941)]
 }
 
+[sub_resource type="Animation" id="Animation_wmamp"]
+resource_name = "curtain_close"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CurtainSpriteSheet:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(0, 2), Vector2i(1, 2)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vykhw"]
 _data = {
 "RESET": SubResource("Animation_qwk2d"),
+"curtain_close": SubResource("Animation_wmamp"),
 "fade_from_black": SubResource("Animation_q5ut6"),
 "fade_from_gray": SubResource("Animation_j2euh"),
 "fade_to_black": SubResource("Animation_m0017"),
@@ -105,3 +135,10 @@ color = Color(0, 0, 0, 1)
 libraries = {
 "": SubResource("AnimationLibrary_vykhw")
 }
+
+[node name="CurtainSpriteSheet" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1732, 1415)
+texture = ExtResource("2_v0ce4")
+hframes = 3
+vframes = 3
