@@ -74,6 +74,7 @@ func shoot():
 	stuck_timer.wait_time = line.timing + bullet.get_node("Bomber").lifetime
 	stuck_timer.start()
 	Globals.stuckFiring = true
+	Globals.timeTo4 = Globals.timeTo4Max
 
 	left_shoot.show()
 	right_shoot.show()
