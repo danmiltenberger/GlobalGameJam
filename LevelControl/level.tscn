@@ -1,15 +1,14 @@
 [gd_scene load_steps=26 format=3 uid="uid://ckxqttk5emo1g"]
 
 [ext_resource type="Script" path="res://Levels/Level.gd" id="1_hyn5u"]
-[ext_resource type="Texture2D" uid="uid://dd7rpi7isq4c6" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
+[ext_resource type="Texture2D" uid="uid://b6ba4apvtn8bc" path="res://Graphics/stage_empty_v1.png" id="2_so7so"]
 [ext_resource type="Texture2D" uid="uid://5xmnmhg5terw" path="res://Graphics/Stage.png" id="3_5km8r"]
-[ext_resource type="Texture2D" uid="uid://d0eiy8qd42in0" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
+[ext_resource type="Texture2D" uid="uid://cygfpgr3o58rj" path="res://Graphics/curtains_v1.png" id="3_65kmd"]
 [ext_resource type="PackedScene" uid="uid://4jg1cfimm6ej" path="res://Player/player.tscn" id="3_w8w0m"]
 [ext_resource type="PackedScene" uid="uid://cxh6pfj8joxx6" path="res://LevelControl/heckler_handler.tscn" id="4_x8qmw"]
 [ext_resource type="Texture2D" uid="uid://dvxditgkqb1yh" path="res://Graphics/StageComponents/row11.png" id="5_2cbw0"]
 [ext_resource type="PackedScene" uid="uid://bvfab7k7sikh" path="res://Custom Components/cursor.tscn" id="5_8yygk"]
 [ext_resource type="Texture2D" uid="uid://cnyiyyfqhl4g8" path="res://Graphics/StageComponents/row10.png" id="6_t23jx"]
-[ext_resource type="LabelSettings" uid="uid://bmfv6ya8fj6s6" path="res://placeholder_label_settings.tres" id="7_1gisq"]
 [ext_resource type="Script" path="res://LevelControl/GameInterface.gd" id="7_n41sm"]
 [ext_resource type="Texture2D" uid="uid://c6s4afp4bwxms" path="res://Graphics/StageComponents/row9.png" id="7_w5gq4"]
 [ext_resource type="Texture2D" uid="uid://cm147wlvkfe7b" path="res://Graphics/StageComponents/row8.png" id="8_wjcci"]
@@ -28,6 +27,11 @@
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.235751, 0.549223, 0.852332, 1)
 colors = PackedColorArray(0.325722, 1, 0.970212, 1, 0.527353, 1, 0.342164, 1, 0.990833, 1, 0.45, 1, 1, 0.340159, 0.167886, 1, 1, 0.115274, 0.385968, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6ofky"]
+font_size = 200
+outline_size = 20
+outline_color = Color(0.101961, 0.101961, 0.101961, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_21hql"]
 line_spacing = -10.0
@@ -390,11 +394,11 @@ color = Color(0.992157, 1, 0.439216, 1)
 
 [node name="Health" type="Label" parent="GameInterface"]
 offset_left = 361.0
-offset_top = 1481.0
+offset_top = 1508.0
 offset_right = 758.0
-offset_bottom = 1754.0
+offset_bottom = 1781.0
 text = "9:99"
-label_settings = ExtResource("7_1gisq")
+label_settings = SubResource("LabelSettings_6ofky")
 horizontal_alignment = 1
 vertical_alignment = 1
 
